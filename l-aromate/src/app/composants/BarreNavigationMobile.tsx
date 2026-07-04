@@ -2,7 +2,13 @@
 "use client"
 
 import Image from "next/image";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
+
+type OuvertureMenuLateral = {
+    //Valeur : false
+    ouvertureMenuLateral: boolean;
+    setOuvertureMenuLateral: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
 //Image du logo
 type ImageLogo = {
@@ -23,16 +29,19 @@ type StyleBarreNavigationMobile = {
 type BarreNavigationMobileProps = {
     imageLogo: ImageLogo;
     stylesBarreNavigationMobile: StyleBarreNavigationMobile;
+    ouvertureMenuLateral: OuvertureMenuLateral;
 };
 
-export default function BarreNavigationMobile({imageLogo, stylesBarreNavigationMobile} : BarreNavigationMobileProps) {
+export default function BarreNavigationMobile({imageLogo, stylesBarreNavigationMobile, ouvertureMenuLateral} : BarreNavigationMobileProps) {
     return (
         <>
-            <nav className={`absolute inset-x-0 top-0 flex justify-between items-center text-lg py-2 px-6 md:hidden ${stylesBarreNavigationMobile.couleurFond}`}>
+            <nav className={`absolute inset-x-0 top-0 flex justify-between items-center text-lg py-4 px-6 md:hidden ${stylesBarreNavigationMobile.couleurFond}`}>
                 {/*Image logo*/}
                 <Image className={`w-8 xs:w-9 sm:w-10 h-auto`} src={imageLogo.src} alt={imageLogo.alt} width={224} height={405} loading="eager"/>
-                {/*Icone menu latérale mobile*/}
-                <Menu className={`w-6 xs:w-7 sm:w-8 h-auto ${stylesBarreNavigationMobile.couleurIcone}`}/>
+                {/*Icone menu et croix pour le menu latérale mobile*/}
+                <button onClick={() => ouvertureMenuLateral.setOuvertureMenuLateral(!ouvertureMenuLateral.ouvertureMenuLateral)}>         
+                    {ouvertureMenuLateral.ouvertureMenuLateral ? <X className={`w-6 xs:w-7 sm:w-8 h-auto ${stylesBarreNavigationMobile.couleurIcone}`}/> : <Menu className={`w-6 xs:w-7 sm:w-8 h-auto ${stylesBarreNavigationMobile.couleurIcone}`}/>}    
+                </button>
             </nav>
         </>
     );
