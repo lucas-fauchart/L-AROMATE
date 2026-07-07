@@ -70,7 +70,11 @@ type MenuLateralMobileProps = {
 export default function MenuLateralMobile({categoriesNavigations, iconesReseauxSociaux, imagesDecorations, stylesMenuLateralMobile, ouvertureMenuLateralVisibilite}: MenuLateralMobileProps) {
     return (
         <>
-            <div className={`fixed left-0 top-0 h-screen z-index w-3/4 flex flex-col gap-5 pt-2 md:hidden ${stylesMenuLateralMobile.couleurFond} ${ouvertureMenuLateralVisibilite.ouvertureMenuLateral ? "animation-glisser-gauche" : "animation-glisser-droite"}`} onAnimationEnd={() => { if (!ouvertureMenuLateralVisibilite.ouvertureMenuLateral) { ouvertureMenuLateralVisibilite.setVisibiliteMenuLateral(false) }}}>
+            {/*Overlay*/}
+            <div className="fixed inset-0 z-40 bg-transparent" onClick={() => ouvertureMenuLateralVisibilite.setOuvertureMenuLateral(false)}/>
+
+            {/*Menu latéral mobile*/}
+            <div className={`fixed left-0 top-0 h-screen z-50 w-3/4 flex flex-col gap-5 pt-2 md:hidden ${stylesMenuLateralMobile.couleurFond} ${ouvertureMenuLateralVisibilite.ouvertureMenuLateral ? "animation-glisser-gauche" : "animation-glisser-droite"}`} onAnimationEnd={() => { if (!ouvertureMenuLateralVisibilite.ouvertureMenuLateral) { ouvertureMenuLateralVisibilite.setVisibiliteMenuLateral(false) }}}>
 
                 {/*Titre et barre de séparation*/}
                 <div className={`flex flex-col items-center`}>

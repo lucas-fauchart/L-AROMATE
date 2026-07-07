@@ -35,6 +35,7 @@ type BarreNavigationMobileProps = {
 };
 
 export default function BarreNavigationMobile({imageLogo, stylesBarreNavigationMobile, ouvertureMenuLateral} : BarreNavigationMobileProps) {
+    
     return (
         <>
             <nav className={`absolute inset-x-0 top-0 flex justify-between items-center text-lg py-4 px-6 md:hidden ${stylesBarreNavigationMobile.couleurFond}`}>
