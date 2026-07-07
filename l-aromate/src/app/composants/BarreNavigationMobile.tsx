@@ -4,12 +4,6 @@
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
-type OuvertureMenuLateral = {
-    //Valeur : false
-    ouvertureMenuLateral: boolean;
-    setOuvertureMenuLateral: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
 //Image du logo
 type ImageLogo = {
     //Valeur : /images/agrumes/oranges/orange_1.png
@@ -23,6 +17,14 @@ type StyleBarreNavigationMobile = {
     //Valeur : bg-[#292B49]
     couleurFond: string;
     couleurIcone: string;
+};
+
+type OuvertureMenuLateral = {
+    //Valeur : false
+    ouvertureMenuLateral: boolean;
+    setOuvertureMenuLateral: React.Dispatch<React.SetStateAction<boolean>>;
+    ouvrirMenu: () => void;
+    fermerMenu: () => void;
 };
 
 //Props de la barre de navigation mobile
@@ -39,8 +41,17 @@ export default function BarreNavigationMobile({imageLogo, stylesBarreNavigationM
                 {/*Image logo*/}
                 <Image className={`w-8 xs:w-9 sm:w-10 h-auto`} src={imageLogo.src} alt={imageLogo.alt} width={224} height={405} loading="eager"/>
                 {/*Icone menu et croix pour le menu latérale mobile*/}
-                <button onClick={() => ouvertureMenuLateral.setOuvertureMenuLateral(!ouvertureMenuLateral.ouvertureMenuLateral)}>         
-                    {ouvertureMenuLateral.ouvertureMenuLateral ? <X className={`w-6 xs:w-7 sm:w-8 h-auto ${stylesBarreNavigationMobile.couleurIcone}`}/> : <Menu className={`w-6 xs:w-7 sm:w-8 h-auto ${stylesBarreNavigationMobile.couleurIcone}`}/>}    
+                <button onClick={() => {
+                    if (ouvertureMenuLateral.ouvertureMenuLateral) {
+                        ouvertureMenuLateral.fermerMenu();
+                    }    
+                    else {
+                        ouvertureMenuLateral.ouvrirMenu();
+                    }
+                }}>   
+                    <div className={ouvertureMenuLateral.ouvertureMenuLateral ? "animation-rotation-gauche" : "animation-rotation-droite"}>
+                        {ouvertureMenuLateral.ouvertureMenuLateral ? <X className={`w-6 xs:w-7 sm:w-8 h-auto ${stylesBarreNavigationMobile.couleurIcone}`}/> : <Menu className={`w-6 xs:w-7 sm:w-8 h-auto ${stylesBarreNavigationMobile.couleurIcone}`}/>}    
+                    </div>      
                 </button>
             </nav>
         </>

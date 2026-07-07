@@ -50,18 +50,27 @@ type StyleMenuLateralMobile = {
     largeurDeuxiemeBarre: string;
 };
 
+type OuvertureMenuLateralVisibilite = {
+    //Valeur : false
+    ouvertureMenuLateral: boolean;
+    setOuvertureMenuLateral: React.Dispatch<React.SetStateAction<boolean>>;
+    visibiliteMenuLateral: boolean;
+    setVisibiliteMenuLateral: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
 //Props du menu latéral mobile
 type MenuLateralMobileProps = {
     categoriesNavigations: CategorieNavigation[];
     iconesReseauxSociaux: IconeReseauSocial[];
     imagesDecorations: ImageDecoration[];
     stylesMenuLateralMobile: StyleMenuLateralMobile;
+    ouvertureMenuLateralVisibilite: OuvertureMenuLateralVisibilite;
 };
 
-export default function MenuLateralMobile({categoriesNavigations, iconesReseauxSociaux, imagesDecorations, stylesMenuLateralMobile}: MenuLateralMobileProps) {
+export default function MenuLateralMobile({categoriesNavigations, iconesReseauxSociaux, imagesDecorations, stylesMenuLateralMobile, ouvertureMenuLateralVisibilite}: MenuLateralMobileProps) {
     return (
         <>
-            <div className={`fixed left-0 top-0 h-screen z-index w-3/4 flex flex-col gap-5 pt-2 md:hidden ${stylesMenuLateralMobile.couleurFond}`}>
+            <div className={`fixed left-0 top-0 h-screen z-index w-3/4 flex flex-col gap-5 pt-2 md:hidden ${stylesMenuLateralMobile.couleurFond} ${ouvertureMenuLateralVisibilite.ouvertureMenuLateral ? "animation-glisser-gauche" : "animation-glisser-droite"}`} onAnimationEnd={() => { if (!ouvertureMenuLateralVisibilite.ouvertureMenuLateral) { ouvertureMenuLateralVisibilite.setVisibiliteMenuLateral(false) }}}>
 
                 {/*Titre et barre de séparation*/}
                 <div className={`flex flex-col items-center`}>

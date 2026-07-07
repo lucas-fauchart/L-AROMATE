@@ -28,6 +28,8 @@ export default function Home() {
       />
 
       <NavigationMobile/>
+
+      <div className="h-200"></div>
     </div>
   );
 }
