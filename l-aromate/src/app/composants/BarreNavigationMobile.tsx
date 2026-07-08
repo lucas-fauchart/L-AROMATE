@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 //Image du logo
 type ImageLogo = {
@@ -35,6 +36,8 @@ type BarreNavigationMobileProps = {
 };
 
 export default function BarreNavigationMobile({imageLogo, stylesBarreNavigationMobile, ouvertureMenuLateral} : BarreNavigationMobileProps) {
+
+    const [animationActive, setAnimationActive] = useState(false);
     
     return (
         <>
@@ -43,6 +46,8 @@ export default function BarreNavigationMobile({imageLogo, stylesBarreNavigationM
                 <Image className={`w-8 xs:w-9 sm:w-10 h-auto`} src={imageLogo.src} alt={imageLogo.alt} width={224} height={405} loading="eager"/>
                 {/*Icone menu et croix pour le menu latérale mobile*/}
                 <button onClick={() => {
+
+                    setAnimationActive(true);
                     if (ouvertureMenuLateral.ouvertureMenuLateral) {
                         ouvertureMenuLateral.fermerMenu();
                     }    
@@ -50,7 +55,7 @@ export default function BarreNavigationMobile({imageLogo, stylesBarreNavigationM
                         ouvertureMenuLateral.ouvrirMenu();
                     }
                 }}>   
-                    <div className={ouvertureMenuLateral.ouvertureMenuLateral ? "animation-rotation-gauche" : "animation-rotation-droite"}>
+                    <div className={animationActive ? (ouvertureMenuLateral.ouvertureMenuLateral ? "animation-rotation-gauche" : "animation-rotation-droite") : ""}>
                         {ouvertureMenuLateral.ouvertureMenuLateral ? <X className={`w-6 xs:w-7 sm:w-8 h-auto ${stylesBarreNavigationMobile.couleurIcone}`}/> : <Menu className={`w-6 xs:w-7 sm:w-8 h-auto ${stylesBarreNavigationMobile.couleurIcone}`}/>}    
                     </div>      
                 </button>

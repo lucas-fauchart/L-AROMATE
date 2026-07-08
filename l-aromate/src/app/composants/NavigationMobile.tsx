@@ -10,7 +10,6 @@ export default function NavigationMobile() {
     const [menuLateralOuvert, setMenuLateralOuvert] = useState(false);
     const [menuLateralVisible, setMenuLateralVisible] = useState(false);
 
-
     const ouvrirMenuLateral = () => {
         setMenuLateralVisible(true);
         setMenuLateralOuvert(true);
