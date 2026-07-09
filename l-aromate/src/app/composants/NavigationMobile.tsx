@@ -7,23 +7,26 @@ import MenuLateralMobile from "./MenuLateralMobile";
 import { FaYoutube, FaTiktok, FaInstagram, FaFacebook } from "react-icons/fa";
 
 export default function NavigationMobile() {
-    const [menuLateralOuvert, setMenuLateralOuvert] = useState(false);
-    const [menuLateralVisible, setMenuLateralVisible] = useState(false);
+    //Variables
+    const [menuLateralOuvert, setMenuLateralOuvert] = useState<boolean>(false);
+    const [menuLateralVisible, setMenuLateralVisible] = useState<boolean>(false);
 
-    const ouvrirMenuLateral = () => {
+    //Fonction pour l'ouverture du menu latéral
+    const ouvrirMenuLateral = (): void => {
         setMenuLateralVisible(true);
         setMenuLateralOuvert(true);
     };
 
-    const fermerMenuLateral = () => {
+    //Fonction pour la fermeture du menu latéral
+    const fermerMenuLateral = (): void => {
         setMenuLateralOuvert(false);
     };
-
+    
     return (
         <>
             <BarreNavigationMobile
                 stylesBarreNavigationMobile={{
-                    couleurFond: "transparent",
+                    couleurFond: "bg-[#21233C]",
                     couleurIcone: "text-[#FFFFFF]"
                 }}
                 imageLogo={{

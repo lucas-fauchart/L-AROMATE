@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //Image du logo
 type ImageLogo = {
@@ -20,10 +20,12 @@ type StyleBarreNavigationMobile = {
     couleurIcone: string;
 };
 
+//Ouverture du menu latéral
 type OuvertureMenuLateral = {
     //Valeur : false
     ouvertureMenuLateral: boolean;
     setOuvertureMenuLateral: React.Dispatch<React.SetStateAction<boolean>>;
+    /*const fermerMenuLateral = () => { setMenuLateralOuvert(false); };*/
     ouvrirMenu: () => void;
     fermerMenu: () => void;
 };
@@ -36,17 +38,30 @@ type BarreNavigationMobileProps = {
 };
 
 export default function BarreNavigationMobile({imageLogo, stylesBarreNavigationMobile, ouvertureMenuLateral} : BarreNavigationMobileProps) {
+    //Variables
+    const [animationActive, setAnimationActive] = useState<boolean>(false);
+    const [scroll, setScroll] = useState<boolean>(false);
 
-    const [animationActive, setAnimationActive] = useState(false);
+    //Gére le scroll de la page pour le barre de navigation mobile
+    useEffect(() => {
+        //Déclanchement du scroll
+        const gererScroll = () => {
+            setScroll(window.scrollY > 0);
+        };
+
+        window.addEventListener("scroll", gererScroll);
+
+        return () => {
+            window.removeEventListener("scroll", gererScroll);
+        };
+    }, []);
     
     return (
         <>
-            <nav className={`absolute inset-x-0 top-0 flex justify-between items-center text-lg py-4 px-6 md:hidden ${stylesBarreNavigationMobile.couleurFond}`}>
-                {/*Image logo*/}
+           <nav className={`fixed inset-x-0 top-0 z-50 flex justify-between items-center text-lg py-4 px-6 md:hidden transition-all duration-300 ${scroll ? stylesBarreNavigationMobile.couleurFond : "bg-transparent" } animation-glisser-haut`}>
                 <Image className={`w-8 xs:w-9 sm:w-10 h-auto`} src={imageLogo.src} alt={imageLogo.alt} width={224} height={405} loading="eager"/>
                 {/*Icone menu et croix pour le menu latérale mobile*/}
                 <button onClick={() => {
-
                     setAnimationActive(true);
                     if (ouvertureMenuLateral.ouvertureMenuLateral) {
                         ouvertureMenuLateral.fermerMenu();
@@ -63,4 +78,3 @@ export default function BarreNavigationMobile({imageLogo, stylesBarreNavigationM
         </>
     );
 }
-

@@ -64,6 +64,8 @@ body {
 .animation-glisser-gauche {
     animation: glisserGauche 0.6s ease forwards;
 }
+
+/*Apparition glisser de la droite*/
 @keyframes glisserDroite {
     from {
         transform: translateX(0);
@@ -75,6 +77,20 @@ body {
 }
 .animation-glisser-droite {
     animation: glisserDroite 0.6s ease forwards;
+}
+
+/*Apparition glisser du haut*/
+@keyframes glisserHaut {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+.animation-glisser-haut {
+    animation: glisserHaut 1.0s ease forwards;
 }
 
 /*Apparition au centre*/
