@@ -93,18 +93,68 @@ body {
     animation: glisserHaut 1.0s ease forwards;
 }
 
-/*Apparition au centre*/
-@keyframes apparitionCentre {
-    0% {
-        transform: scaleX(0);
+@keyframes glisserGaucheFondu {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animation-glisser-gauche-fondu {
+    animation: glisserGaucheFondu 0.8s ease forwards;
+}
+
+@keyframes apparitionSimple {
+    from {
         opacity: 0;
     }
 
-    100% {
-        transform: scaleX(1);
+    to {
         opacity: 1;
     }
 }
-.animation-apparition-centre {
-    animation: apparitionCentre 0.8s ease-out forwards;
+
+.animation-apparition-simple {
+    animation: apparitionSimple 0.8s ease forwards;
+}
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animation-apparition {
+    animation: apparition 1.2s ease forwards;
+}
+
+
+@keyframes levitationHautBas {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-8px) scale(1.03);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+.animation-levitation-haut-bas {
+    animation: levitationHautBas 4s ease-in-out infinite;
+    transform-origin: center;
 }

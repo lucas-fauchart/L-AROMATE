@@ -86,7 +86,11 @@ export default function MenuLateralMobile({categoriesNavigations, iconesReseauxS
                 {/*Catégories de navigations*/}
                 <ul className={`flex flex-col pl-4 text-md gap-5 xs:text-lg xs:gap-6 sm:text-2xl sm:gap-7 ${stylesMenuLateralMobile.couleurTexteCategorieIconeReseauSocial}`}>
                     {categoriesNavigations.map((uneCategorie, index) =>(
-                        <li key={index}><Link href={uneCategorie.href}>{uneCategorie.nom}</Link></li>
+                        <li className="animation-glisser-gauche-fondu opacity-0" style={{ animationDelay: `${index * 250}ms`}} key={index}>
+                            <Link href={uneCategorie.href}>
+                                {uneCategorie.nom}
+                            </Link>
+                        </li>
                     ))}    
                 </ul>
 
@@ -103,7 +107,7 @@ export default function MenuLateralMobile({categoriesNavigations, iconesReseauxS
                         const IconeReseauSocial = unReseauSocial.icone;
                         
                         return (
-                            <Link key={index} href={unReseauSocial.href}>
+                            <Link  key={index} href={unReseauSocial.href} className="animation-apparition opacity-0" style={{ animationDelay: `${index * 250}ms`}}>
                                 <IconeReseauSocial className="w-5 xs:w-6 sm:w-7 h-auto"/>
                             </Link>
                         )
@@ -113,7 +117,7 @@ export default function MenuLateralMobile({categoriesNavigations, iconesReseauxS
                 {/*Images décorations*/}
                 <div className={`relative h-screen`}>
                     {imagesDecorations.map((uneImageDecoration, index) => (
-                        <Image key={index} className={uneImageDecoration.className} src={uneImageDecoration.src} alt={uneImageDecoration.alt} width={uneImageDecoration.width} height={uneImageDecoration.height} loading="eager"/>
+                        <Image key={index} className={`${uneImageDecoration.className} animation-levitation-haut-bas`} src={uneImageDecoration.src} alt={uneImageDecoration.alt} width={uneImageDecoration.width} height={uneImageDecoration.height} loading="eager"/>
                     ))}
                 </div>
             </div>
