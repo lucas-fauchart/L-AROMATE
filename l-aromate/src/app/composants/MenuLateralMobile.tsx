@@ -74,7 +74,7 @@ export default function MenuLateralMobile({categoriesNavigations, iconesReseauxS
             <div className="fixed inset-0 z-40 bg-transparent" onClick={() => ouvertureMenuLateralVisibilite.setOuvertureMenuLateral(false)}/>
 
             {/*Menu latéral mobile*/}
-            <div className={`fixed left-0 top-0 h-screen z-50 w-3/4 flex flex-col gap-5 pt-2 md:hidden ${stylesMenuLateralMobile.couleurFond} ${ouvertureMenuLateralVisibilite.ouvertureMenuLateral ? "animation-glisser-gauche" : "animation-glisser-droite"}`} onAnimationEnd={() => { if (!ouvertureMenuLateralVisibilite.ouvertureMenuLateral) { ouvertureMenuLateralVisibilite.setVisibiliteMenuLateral(false) }}}>
+            <div className={`fixed left-0 top-0 h-screen z-50 w-3/4 flex flex-col gap-5 pt-4 md:hidden ${stylesMenuLateralMobile.couleurFond} ${ouvertureMenuLateralVisibilite.ouvertureMenuLateral ? "animation-glisser-gauche" : "animation-glisser-droite"}`} onAnimationEnd={() => { if (!ouvertureMenuLateralVisibilite.ouvertureMenuLateral) { ouvertureMenuLateralVisibilite.setVisibiliteMenuLateral(false) }}}>
 
                 {/*Titre et barre de séparation*/}
                 <div className={`flex flex-col items-center`}>
@@ -84,7 +84,7 @@ export default function MenuLateralMobile({categoriesNavigations, iconesReseauxS
                 </div>
 
                 {/*Catégories de navigations*/}
-                <ul className={`flex flex-col pl-4 text-md gap-5 xs:text-lg xs:gap-6 sm:text-2xl sm:gap-7 ${stylesMenuLateralMobile.couleurTexteCategorieIconeReseauSocial}`}>
+                <ul className={`flex flex-col pl-4 pb-2 xs:pb-4 sm:pb-6 text-md gap-5 xs:text-lg xs:gap-6 sm:text-2xl sm:gap-7 ${stylesMenuLateralMobile.couleurTexteCategorieIconeReseauSocial}`}>
                     {categoriesNavigations.map((uneCategorie, index) =>(
                         <li className="animation-glisser-gauche-fondu opacity-0" style={{ animationDelay: `${index * 250}ms`}} key={index}>
                             <Link href={uneCategorie.href}>
@@ -102,12 +102,12 @@ export default function MenuLateralMobile({categoriesNavigations, iconesReseauxS
                 </div>
 
                 {/*Icones réseaux sociaux*/}
-                <div className={`flex justify-center gap-4 ${stylesMenuLateralMobile.couleurTexteCategorieIconeReseauSocial}`}>
+                <div className={`flex justify-center gap-4 pb-2 xs:pb-4 sm:pb-6 ${stylesMenuLateralMobile.couleurTexteCategorieIconeReseauSocial}`}>
                     {iconesReseauxSociaux.map((unReseauSocial, index) => {
                         const IconeReseauSocial = unReseauSocial.icone;
                         
                         return (
-                            <Link  key={index} href={unReseauSocial.href} className="animation-apparition opacity-0" style={{ animationDelay: `${index * 250}ms`}}>
+                            <Link  key={index} href={unReseauSocial.href} className="animation-apparition-simple-fondu opacity-0" style={{ animationDelay: `${index * 250}ms`}}>
                                 <IconeReseauSocial className="w-5 xs:w-6 sm:w-7 h-auto"/>
                             </Link>
                         )
