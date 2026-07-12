@@ -4,6 +4,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IconType } from "react-icons";
+import TitreBarreSeparation, {
+    type TitreBarreSeparationProps,
+} from "./titreBarreSeparation";
 
 //Catégories de navigation
 type CategorieNavigation = {
@@ -41,13 +44,8 @@ type ImageDecoration = {
 type StyleMenuLateralMobile = {
     //Valeur : bg-[#292B49]
     couleurFond: string;
-    couleurBarreSeparation: string;
     //Valeur : text-[#292B49]
-    couleurTexteTitre: string;
     couleurTexteCategorieIconeReseauSocial: string;
-    //Valeur : w-[60px] sm:w-[90px]
-    largeurPremiereBarre: string;
-    largeurDeuxiemeBarre: string;
 };
 
 type OuvertureMenuLateralVisibilite = {
@@ -65,9 +63,11 @@ type MenuLateralMobileProps = {
     imagesDecorations: ImageDecoration[];
     stylesMenuLateralMobile: StyleMenuLateralMobile;
     ouvertureMenuLateralVisibilite: OuvertureMenuLateralVisibilite;
+    premiereTitreBarreSeparation: TitreBarreSeparationProps;
+    deuxiemeTitreBarreSeparation: TitreBarreSeparationProps;
 };
 
-export default function MenuLateralMobile({categoriesNavigations, iconesReseauxSociaux, imagesDecorations, stylesMenuLateralMobile, ouvertureMenuLateralVisibilite}: MenuLateralMobileProps) {
+export default function MenuLateralMobile({premiereTitreBarreSeparation, deuxiemeTitreBarreSeparation, categoriesNavigations, iconesReseauxSociaux, imagesDecorations, stylesMenuLateralMobile, ouvertureMenuLateralVisibilite}: MenuLateralMobileProps) {
     return (
         <>
             {/*Overlay*/}
@@ -77,11 +77,7 @@ export default function MenuLateralMobile({categoriesNavigations, iconesReseauxS
             <div className={`fixed left-0 top-0 h-screen z-50 w-3/4 flex flex-col gap-5 pt-4 md:hidden ${stylesMenuLateralMobile.couleurFond} ${ouvertureMenuLateralVisibilite.ouvertureMenuLateral ? "animation-glisser-gauche" : "animation-glisser-droite"}`} onAnimationEnd={() => { if (!ouvertureMenuLateralVisibilite.ouvertureMenuLateral) { ouvertureMenuLateralVisibilite.setVisibiliteMenuLateral(false) }}}>
 
                 {/*Titre et barre de séparation*/}
-                <div className={`flex flex-col items-center`}>
-                    <h2 className={`text-center pb-1 text-md xs:text-lg sm:text-2xl sm:pb-2 ${stylesMenuLateralMobile.couleurTexteTitre}`}>Menu</h2>
-
-                    <div className={`${stylesMenuLateralMobile.largeurPremiereBarre} h-[4px] rounded-full ${stylesMenuLateralMobile.couleurBarreSeparation}`}/>
-                </div>
+                <TitreBarreSeparation {...premiereTitreBarreSeparation}/>
 
                 {/*Catégories de navigations*/}
                 <ul className={`flex flex-col pl-4 pb-2 xs:pb-4 sm:pb-6 text-md gap-5 xs:text-lg xs:gap-6 sm:text-2xl sm:gap-7 ${stylesMenuLateralMobile.couleurTexteCategorieIconeReseauSocial}`}>
@@ -95,11 +91,7 @@ export default function MenuLateralMobile({categoriesNavigations, iconesReseauxS
                 </ul>
 
                 {/*Titre et barre de séparation*/}
-                <div className={`flex flex-col items-center`}>
-                    <h2 className={`text-center pb-1 text-md xs:text-lg sm:text-2xl sm:pb-2 ${stylesMenuLateralMobile.couleurTexteTitre}`}>Nos réseaux</h2>
-
-                    <div className={`${stylesMenuLateralMobile.largeurDeuxiemeBarre} h-[4px] rounded-full ${stylesMenuLateralMobile.couleurBarreSeparation}`}/>
-                </div>
+                <TitreBarreSeparation {...deuxiemeTitreBarreSeparation}/>
 
                 {/*Icones réseaux sociaux*/}
                 <div className={`flex justify-center gap-4 pb-2 xs:pb-4 sm:pb-6 ${stylesMenuLateralMobile.couleurTexteCategorieIconeReseauSocial}`}>

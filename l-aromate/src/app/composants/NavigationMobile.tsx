@@ -64,17 +64,32 @@ export default function NavigationMobile() {
                     ]}
                     stylesMenuLateralMobile={{
                         couleurFond: "bg-[#292B49]",
-                        couleurBarreSeparation: "bg-[#FED17C]",
-                        couleurTexteTitre: "text-[#FFFFFF]",
                         couleurTexteCategorieIconeReseauSocial: "text-[#FFFFFF]",
-                        largeurPremiereBarre: "w-[60px] sm:w-[90px]",
-                        largeurDeuxiemeBarre: "w-[110px] sm:w-[160px]",
                     }}
+                    
                     ouvertureMenuLateralVisibilite={{
                         ouvertureMenuLateral: menuLateralOuvert,
                         setOuvertureMenuLateral: setMenuLateralOuvert,
                         visibiliteMenuLateral: menuLateralVisible,
                         setVisibiliteMenuLateral: setMenuLateralVisible,
+                    }}
+
+                    premiereTitreBarreSeparation={{ titre: "Menu",
+                        styleTitreBarreSeparation: {
+                            couleurTexteTitre: "text-[#FFFFFF]",
+                            tailleTexteTitre: "text-md xs:text-lg sm:text-2xl",
+                            couleurBarreSeparation: "bg-[#FED17C]",
+                            largeurBarre: "w-[60px] xs:w-[60px] sm:w-[90px]",
+                        },
+                    }}
+
+                    deuxiemeTitreBarreSeparation={{ titre: "Réseaux sociaux",
+                        styleTitreBarreSeparation: {
+                            couleurTexteTitre: "text-[#FFFFFF]",
+                            tailleTexteTitre: "text-md xs:text-lg sm:text-2xl",
+                            couleurBarreSeparation: "bg-[#FED17C]",
+                            largeurBarre: "w-[140px] xs:w-[155px] sm:w-[205px]",
+                        },
                     }}
                 />
             )}
