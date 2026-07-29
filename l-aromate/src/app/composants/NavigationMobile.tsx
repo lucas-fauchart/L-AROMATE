@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -44,14 +43,6 @@ export default function NavigationMobile() {
 
             {menuLateralVisible && (
                 <MenuLateralMobile
-                    categoriesNavigations={[
-                        { nom: "Accueil", href: "/" }, 
-                        { nom: "La Carte", href: "/laCarte" }, 
-                        { nom: "Notre Histoire", href: "/notreHistoire" },
-                        { nom: "Les Aromes", href: "/lesAromes" },
-                        { nom: "Réservation", href: "/reservation" },
-                        { nom: "Contact", href: "/contact" },
-                    ]} 
                     iconesReseauxSociaux={[
                         { className: "w-5 xs:w-6 sm:w-7 h-auto", href: "https://www.youtube.com", icone: FaYoutube },
                         { className: "w-5 xs:w-6 sm:w-7 h-auto", href: "https://www.tiktok.com", icone: FaTiktok },
@@ -74,7 +65,8 @@ export default function NavigationMobile() {
                         setVisibiliteMenuLateral: setMenuLateralVisible,
                     }}
 
-                    premiereTitreBarreSeparation={{ titre: "Menu",
+                    premiereTitreBarreSeparation={{ 
+                        titre: "Menu",
                         styleTitreBarreSeparation: {
                             couleurTexteTitre: "text-[#FFFFFF]",
                             tailleTexteTitre: "text-md xs:text-lg sm:text-2xl",
@@ -83,13 +75,32 @@ export default function NavigationMobile() {
                         },
                     }}
 
-                    deuxiemeTitreBarreSeparation={{ titre: "Réseaux sociaux",
+                    deuxiemeTitreBarreSeparation={{ 
+                        titre: "Réseaux sociaux",
                         styleTitreBarreSeparation: {
                             couleurTexteTitre: "text-[#FFFFFF]",
                             tailleTexteTitre: "text-md xs:text-lg sm:text-2xl",
                             couleurBarreSeparation: "bg-[#FED17C]",
                             largeurBarre: "w-[140px] xs:w-[155px] sm:w-[205px]",
                         },
+                    }}
+
+                    listeCategorieNavigation={{
+                        categoriesNavigations: [
+                            { nom: "Accueil", href: "/" },
+                            { nom: "La Carte", href: "/laCarte" },
+                            { nom: "Notre Histoire", href: "/notreHistoire" },
+                            { nom: "Les Aromes", href: "/lesAromes" },
+                            { nom: "Réservation", href: "/reservation" },
+                            { nom: "Contact", href: "/contact" },
+                        ],
+                        styleListeNavigation: {
+                            couleurTexte: "text-[#FFFFFF]",
+                            classNameListe: "flex flex-col pl-4 pb-2 xs:pb-4 sm:pb-6 text-md gap-5 xs:text-lg xs:gap-6 sm:text-2xl sm:gap-7"
+                        },
+                        animationListeNavigation: {
+                            animation: "animation-glisser-gauche-fondu",
+                        }
                     }}
                 />
             )}

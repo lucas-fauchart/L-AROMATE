@@ -1,4 +1,4 @@
-/*TITRE Et BARRE DE SEPARATION*/
+/*TITRE ET BARRE DE SEPARATION*/
 "use client"
 
 //Style du titre et de la barre de séparation

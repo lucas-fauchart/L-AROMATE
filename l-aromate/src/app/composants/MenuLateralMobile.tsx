@@ -4,17 +4,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IconType } from "react-icons";
-import TitreBarreSeparation, {
-    type TitreBarreSeparationProps,
-} from "./titreBarreSeparation";
-
-//Catégories de navigation
-type CategorieNavigation = {
-    //Valeur : Accueil
-    nom: string;
-    //Valeur : /accueil
-    href: string;
-};
+import TitreBarreSeparation, { type TitreBarreSeparationProps } from "./TitreBarreSeparation";
+import ListeCategorie, { type ListeNavigationProps } from "./ListeCategorie";
 
 //Reseau social
 type IconeReseauSocial = {
@@ -58,16 +49,16 @@ type OuvertureMenuLateralVisibilite = {
 
 //Props du menu latéral mobile
 type MenuLateralMobileProps = {
-    categoriesNavigations: CategorieNavigation[];
     iconesReseauxSociaux: IconeReseauSocial[];
     imagesDecorations: ImageDecoration[];
     stylesMenuLateralMobile: StyleMenuLateralMobile;
     ouvertureMenuLateralVisibilite: OuvertureMenuLateralVisibilite;
     premiereTitreBarreSeparation: TitreBarreSeparationProps;
     deuxiemeTitreBarreSeparation: TitreBarreSeparationProps;
+    listeCategorieNavigation: ListeNavigationProps;
 };
 
-export default function MenuLateralMobile({premiereTitreBarreSeparation, deuxiemeTitreBarreSeparation, categoriesNavigations, iconesReseauxSociaux, imagesDecorations, stylesMenuLateralMobile, ouvertureMenuLateralVisibilite}: MenuLateralMobileProps) {
+export default function MenuLateralMobile({premiereTitreBarreSeparation, deuxiemeTitreBarreSeparation, listeCategorieNavigation, iconesReseauxSociaux, imagesDecorations, stylesMenuLateralMobile, ouvertureMenuLateralVisibilite}: MenuLateralMobileProps) {
     return (
         <>
             {/*Overlay*/}
@@ -80,15 +71,7 @@ export default function MenuLateralMobile({premiereTitreBarreSeparation, deuxiem
                 <TitreBarreSeparation {...premiereTitreBarreSeparation}/>
 
                 {/*Catégories de navigations*/}
-                <ul className={`flex flex-col pl-4 pb-2 xs:pb-4 sm:pb-6 text-md gap-5 xs:text-lg xs:gap-6 sm:text-2xl sm:gap-7 ${stylesMenuLateralMobile.couleurTexteCategorieIconeReseauSocial}`}>
-                    {categoriesNavigations.map((uneCategorie, index) =>(
-                        <li className="animation-glisser-gauche-fondu opacity-0" style={{ animationDelay: `${index * 250}ms`}} key={index}>
-                            <Link href={uneCategorie.href}>
-                                {uneCategorie.nom}
-                            </Link>
-                        </li>
-                    ))}    
-                </ul>
+                <ListeCategorie {...listeCategorieNavigation}/>
 
                 {/*Titre et barre de séparation*/}
                 <TitreBarreSeparation {...deuxiemeTitreBarreSeparation}/>
