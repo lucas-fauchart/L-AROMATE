@@ -6,6 +6,7 @@ import Link from "next/link";
 import { IconType } from "react-icons";
 import TitreBarreSeparation, { type TitreBarreSeparationProps } from "./TitreBarreSeparation";
 import ListeCategorie, { type ListeNavigationProps } from "./ListeCategorie";
+import ImageDecoration, { type ImageDecorationProps } from "./ImageDecoration";
 
 //Reseau social
 type IconeReseauSocial = {
@@ -56,9 +57,11 @@ type MenuLateralMobileProps = {
     premiereTitreBarreSeparation: TitreBarreSeparationProps;
     deuxiemeTitreBarreSeparation: TitreBarreSeparationProps;
     listeCategorieNavigation: ListeNavigationProps;
+    imageDecoration: ImageDecorationProps;
+
 };
 
-export default function MenuLateralMobile({premiereTitreBarreSeparation, deuxiemeTitreBarreSeparation, listeCategorieNavigation, iconesReseauxSociaux, imagesDecorations, stylesMenuLateralMobile, ouvertureMenuLateralVisibilite}: MenuLateralMobileProps) {
+export default function MenuLateralMobile({premiereTitreBarreSeparation, deuxiemeTitreBarreSeparation, listeCategorieNavigation, imageDecoration, iconesReseauxSociaux, stylesMenuLateralMobile, ouvertureMenuLateralVisibilite}: MenuLateralMobileProps) {
     return (
         <>
             {/*Overlay*/}
@@ -90,11 +93,7 @@ export default function MenuLateralMobile({premiereTitreBarreSeparation, deuxiem
                 </div>
 
                 {/*Images décorations*/}
-                <div className={`relative h-screen`}>
-                    {imagesDecorations.map((uneImageDecoration, index) => (
-                        <Image key={index} className={`${uneImageDecoration.className} animation-levitation-haut-bas`} src={uneImageDecoration.src} alt={uneImageDecoration.alt} width={uneImageDecoration.width} height={uneImageDecoration.height} loading="eager"/>
-                    ))}
-                </div>
+                <ImageDecoration {...imageDecoration}/>
             </div>
         </>
     );
