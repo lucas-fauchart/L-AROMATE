@@ -43,16 +43,6 @@ export default function NavigationMobile() {
 
             {menuLateralVisible && (
                 <MenuLateralMobile
-                    iconesReseauxSociaux={[
-                        { className: "w-5 xs:w-6 sm:w-7 h-auto", href: "https://www.youtube.com", icone: FaYoutube },
-                        { className: "w-5 xs:w-6 sm:w-7 h-auto", href: "https://www.tiktok.com", icone: FaTiktok },
-                        { className: "w-5 xs:w-6 sm:w-7 h-auto", href: "https://www.instagram.com", icone: FaInstagram },
-                        { className: "w-5 xs:w-6 sm:w-7 h-auto", href: "https://www.facebook.com", icone: FaFacebook },
-                    ]}
-                    imagesDecorations={[
-                        {className: "absolute top-[20%] right-[10%] scale-65 rotate-270 xs:scale-95 xs:top-[20%] xs:right-[15%] sm:top-[15%] sm:right-[20%] sm:scale-110", src: "/images/agrumes/oranges/orange_1.png", width:100, height: 73, alt: "Quartier d'orange"}, 
-                        {className: "absolute top-[30%] left-[25%] scale-120 rotate-5 xs:scale-160 xs:top-[35%] xs:left-[25%] sm:top-[35%] sm:left-[35%] sm:scale-200", src: "/images/agrumes/oranges/orange_2.png", alt: "Quartier d'orange", width: 100, height: 93}
-                    ]}
                     stylesMenuLateralMobile={{
                         couleurFond: "bg-[#292B49]",
                         couleurTexteCategorieIconeReseauSocial: "text-[#FFFFFF]",
@@ -96,11 +86,41 @@ export default function NavigationMobile() {
                         ],
                         styleListeNavigation: {
                             couleurTexte: "text-[#FFFFFF]",
-                            classNameListe: "flex flex-col pl-4 pb-2 xs:pb-4 sm:pb-6 text-md gap-5 xs:text-lg xs:gap-6 sm:text-2xl sm:gap-7"
+                            tailleTexte: "text-md xs:text-lg sm:text-2xl",
+                            positionnement: "flex flex-col pl-4 pb-2 xs:pb-4 sm:pb-6 text-md gap-5 xs:text-lg xs:gap-6 sm:text-2xl sm:gap-7"
                         },
                         animationListeNavigation: {
                             animation: "animation-glisser-gauche-fondu",
                         }
+                    }}
+
+                    listeIconeReseauxSociaux={{
+                        iconesReseauxSociaux: [
+                            {
+                                href: "https://www.youtube.com",
+                                icone: FaYoutube,
+                            },
+                            {
+                                href: "https://www.tiktok.com",
+                                icone: FaTiktok,
+                            },
+                            {
+                                href: "https://www.instagram.com",
+                                icone: FaInstagram,
+                            },
+                            {
+                                href: "https://www.facebook.com",
+                                icone: FaFacebook,
+                            },
+                        ],
+                        styleReseauxSociaux: {
+                            positionnement: "flex justify-center gap-4 pb-2 xs:pb-4 sm:pb-6",
+                            tailleTexte: "text-md xs:text-lg sm:text-2xl",
+                            couleurTexte: "text-[#FFFFFF]",
+                        },
+                        animationReseauxSociaux: {
+                            animation: "animation-apparition-simple-fondu",
+                        },
                     }}
 
                     imageDecoration={{

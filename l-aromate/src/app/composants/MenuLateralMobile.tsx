@@ -1,36 +1,10 @@
 /*MENU LATERALE MOBILE*/
 "use client"
 
-import Image from "next/image";
-import Link from "next/link";
-import { IconType } from "react-icons";
 import TitreBarreSeparation, { type TitreBarreSeparationProps } from "./TitreBarreSeparation";
 import ListeCategorie, { type ListeNavigationProps } from "./ListeCategorie";
 import ImageDecoration, { type ImageDecorationProps } from "./ImageDecoration";
-
-//Reseau social
-type IconeReseauSocial = {
-    //Valeur : /accueil
-    href: string;
-    //Valeur : <FaYoutube />
-    icone: IconType;
-    //Valeur : w-5 xs:w-6 sm:w-7 h-auto
-    className: string;
-};
-
-//Image de décoration
-type ImageDecoration = {
-    //Valeur : /images/agrumes/oranges/orange_1.png
-    src: string;
-    //Valeur : Quartier d'orange
-    alt: string;
-    //Valeur : 100
-    width: number;
-    //Valeur : 93
-    height: number;
-    //Valeur : right-[10%] scale-65 rotate-270  
-    className: string;
-};
+import ListeIconesReseauxSociaux, { type ReseauxSociauxProps } from "./ListeIconeReseauxSociaux";
 
 //Style du menu latérale mobile
 type StyleMenuLateralMobile = {
@@ -50,18 +24,16 @@ type OuvertureMenuLateralVisibilite = {
 
 //Props du menu latéral mobile
 type MenuLateralMobileProps = {
-    iconesReseauxSociaux: IconeReseauSocial[];
-    imagesDecorations: ImageDecoration[];
     stylesMenuLateralMobile: StyleMenuLateralMobile;
     ouvertureMenuLateralVisibilite: OuvertureMenuLateralVisibilite;
     premiereTitreBarreSeparation: TitreBarreSeparationProps;
     deuxiemeTitreBarreSeparation: TitreBarreSeparationProps;
     listeCategorieNavigation: ListeNavigationProps;
     imageDecoration: ImageDecorationProps;
-
+    listeIconeReseauxSociaux: ReseauxSociauxProps;
 };
 
-export default function MenuLateralMobile({premiereTitreBarreSeparation, deuxiemeTitreBarreSeparation, listeCategorieNavigation, imageDecoration, iconesReseauxSociaux, stylesMenuLateralMobile, ouvertureMenuLateralVisibilite}: MenuLateralMobileProps) {
+export default function MenuLateralMobile({premiereTitreBarreSeparation, deuxiemeTitreBarreSeparation, listeCategorieNavigation, listeIconeReseauxSociaux, imageDecoration, stylesMenuLateralMobile, ouvertureMenuLateralVisibilite}: MenuLateralMobileProps) {
     return (
         <>
             {/*Overlay*/}
@@ -80,17 +52,7 @@ export default function MenuLateralMobile({premiereTitreBarreSeparation, deuxiem
                 <TitreBarreSeparation {...deuxiemeTitreBarreSeparation}/>
 
                 {/*Icones réseaux sociaux*/}
-                <div className={`flex justify-center gap-4 pb-2 xs:pb-4 sm:pb-6 ${stylesMenuLateralMobile.couleurTexteCategorieIconeReseauSocial}`}>
-                    {iconesReseauxSociaux.map((unReseauSocial, index) => {
-                        const IconeReseauSocial = unReseauSocial.icone;
-                        
-                        return (
-                            <Link  key={index} href={unReseauSocial.href} className="animation-apparition-simple-fondu opacity-0" style={{ animationDelay: `${index * 250}ms`}}>
-                                <IconeReseauSocial className="w-5 xs:w-6 sm:w-7 h-auto"/>
-                            </Link>
-                        )
-                    })}
-                </div>
+                <ListeIconesReseauxSociaux {...listeIconeReseauxSociaux}/>
 
                 {/*Images décorations*/}
                 <ImageDecoration {...imageDecoration}/>
