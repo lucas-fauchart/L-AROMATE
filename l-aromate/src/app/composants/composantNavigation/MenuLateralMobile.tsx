@@ -1,10 +1,10 @@
 /*MENU LATERALE MOBILE*/
 "use client"
 
-import TitreBarreSeparation, { type TitreBarreSeparationProps } from "./TitreBarreSeparation";
-import ListeCategorie, { type ListeNavigationProps } from "./ListeCategorie";
-import ImageDecoration, { type ImageDecorationProps } from "./ImageDecoration";
-import ListeIconesReseauxSociaux, { type ReseauxSociauxProps } from "./ListeIconeReseauxSociaux";
+import TitreBarreSeparation, { type TitreBarreSeparationProps } from "../composantsReutilisables/TitreBarreSeparation";
+import ListeCategorie, { type ListeNavigationProps } from "../composantsReutilisables/ListeCategorie";
+import ImageDecoration, { type ImageDecorationProps } from "../composantsReutilisables/ImageDecoration";
+import ListeIconesReseauxSociaux, { type ReseauxSociauxProps } from "../composantsReutilisables/ListeIconeReseauxSociaux";
 
 //Style du menu latérale mobile
 type StyleMenuLateralMobile = {

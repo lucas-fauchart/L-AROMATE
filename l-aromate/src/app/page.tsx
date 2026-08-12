@@ -1,8 +1,8 @@
 "use client"
 
-import BarreNavigationPC from "./composants/BarreNavigationPC";
-import NavigationPC from "./composants/NavigationPC";
-import NavigationMobile from "./composants/NavigationMobile"
+import BarreNavigationPC from "./composants/composantNavigation/BarreNavigationPC";
+import NavigationPC from "./composants/composantNavigation/NavigationPC";
+import NavigationMobile from "./composants/composantNavigation/NavigationMobile"
 
 export default function Home() {
   return (
