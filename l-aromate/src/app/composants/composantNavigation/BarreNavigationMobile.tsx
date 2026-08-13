@@ -4,14 +4,7 @@
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-
-//Image du logo
-type ImageLogo = {
-    //Valeur : /images/agrumes/oranges/orange_1.png
-    src: string;
-    //Valeur : Quartier d'orange
-    alt: string;
-};
+import Logo, {type LogoProps} from "../composantsReutilisables/Logo";
 
 //Style de la barre de navigation mobile
 type StyleBarreNavigationMobile = {
@@ -32,12 +25,12 @@ type OuvertureMenuLateral = {
 
 //Props de la barre de navigation mobile
 type BarreNavigationMobileProps = {
-    imageLogo: ImageLogo;
     stylesBarreNavigationMobile: StyleBarreNavigationMobile;
     ouvertureMenuLateral: OuvertureMenuLateral;
+    logo: LogoProps;
 };
 
-export default function BarreNavigationMobile({imageLogo, stylesBarreNavigationMobile, ouvertureMenuLateral} : BarreNavigationMobileProps) {
+export default function BarreNavigationMobile({stylesBarreNavigationMobile, ouvertureMenuLateral, logo} : BarreNavigationMobileProps) {
     //Variables
     const [animationActive, setAnimationActive] = useState<boolean>(false);
     const [scroll, setScroll] = useState<boolean>(false);
@@ -59,7 +52,8 @@ export default function BarreNavigationMobile({imageLogo, stylesBarreNavigationM
     return (
         <>
            <nav className={`fixed inset-x-0 top-0 z-50 flex justify-between items-center text-lg py-4 px-6 md:hidden transition-all duration-300 ${scroll ? stylesBarreNavigationMobile.couleurFond : "bg-transparent" } animation-glisser-haut`}>
-                <Image className={`w-8 xs:w-9 sm:w-10 h-auto`} src={imageLogo.src} alt={imageLogo.alt} width={224} height={405} loading="eager"/>
+                {/*Image logo*/}
+                <Logo {...logo}/>
                 {/*Icone menu et croix pour le menu latérale mobile*/}
                 <button onClick={() => {
                     setAnimationActive(true);

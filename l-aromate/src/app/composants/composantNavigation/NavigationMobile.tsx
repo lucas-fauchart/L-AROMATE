@@ -28,16 +28,21 @@ export default function NavigationMobile() {
                     couleurFond: "bg-[#21233C]",
                     couleurIcone: "text-[#FFFFFF]"
                 }}
-                imageLogo={{
-                    src: "/logo/logo_blanc_aromate.png",
-                    alt: "Logo du restaurant l'Aromate"
-                }}
                 ouvertureMenuLateral={{
                     ouvertureMenuLateral: menuLateralOuvert,
                     setOuvertureMenuLateral: setMenuLateralOuvert,
                     ouvrirMenu: ouvrirMenuLateral,
                     fermerMenu: fermerMenuLateral
 
+                }}
+                logo={{
+                    logo: {
+                        src: "/logo/logo_blanc_aromate.png",
+                        alt: "Logo du restaurant l'Aromate",
+                        className: "w-8 xs:w-9 sm:w-10",
+                        width: 224,
+                        height: 405,
+                    }
                 }}
             />
 

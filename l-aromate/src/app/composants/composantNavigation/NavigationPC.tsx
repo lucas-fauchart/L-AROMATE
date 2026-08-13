@@ -21,9 +21,14 @@ export default function NavigationPC() {
                     couleurFond: "transparent",
                     couleurTexteCategorie: "text-[#FFFFFF]",
                 }}
-                imageLogo={{
-                    src: "/logo/logo_blanc_aromate.png",
-                    alt: "Logo du restaurant l'Aromate"
+                logo={{
+                    logo: {
+                        src: "/logo/logo_blanc_aromate.png",
+                        alt: "Logo du restaurant l'Aromate",
+                        className: "w-6 md:w-6 lg:w-8 xl:w-10",
+                        width: 224,
+                        height: 405,
+                    }
                 }}
             />
         </>
