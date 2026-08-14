@@ -18,7 +18,7 @@ export default function NavigationPC() {
                     { nom: "Contact", href: "/contact" },
                 ]}
                 stylesBarreNavigationPC={{
-                    couleurFond: "transparent",
+                    couleurFond: "bg-[#21233C]",
                     couleurTexteCategorie: "text-[#FFFFFF]",
                 }}
                 logo={{

@@ -2,6 +2,7 @@
 "use client"
 
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import Logo, {type LogoProps } from "../composantsReutilisables/Logo";
 
 //Catégories de navigation
@@ -29,9 +30,26 @@ type BarreNavigationProps = {
 };
 
 export default function BarreNavigationPC({categoriesGauche, categoriesDroite, stylesBarreNavigationPC, logo}: BarreNavigationProps) {
+        //Variables
+    const [scroll, setScroll] = useState<boolean>(false);
+
+    //Gére le scroll de la page pour le barre de navigation mobile
+    useEffect(() => {
+        //Déclanchement du scroll
+        const gererScroll = () => {
+            setScroll(window.scrollY > 0);
+        };
+
+        window.addEventListener("scroll", gererScroll);
+
+        return () => {
+            window.removeEventListener("scroll", gererScroll);
+        };
+    }, []);
+
     return (
         <>
-            <nav className={`absolute inset-x-0 top-0 hidden md:flex justify-center items-center py-2 ${stylesBarreNavigationPC.couleurFond} md:gap-16 lg:gap-24 xl:gap-28 animation-glisser-haut`}>
+            <nav className={`fixed inset-x-0 top-0 hidden md:flex justify-center items-center py-2 transition-all duration-300 ${scroll ? stylesBarreNavigationPC.couleurFond : "bg-transparent" } md:gap-16 lg:gap-24 xl:gap-28 animation-glisser-haut`}>
                 {/*Catégories de navigations*/}
                 <ul className={`flex md:gap-12 lg:gap-20 xl:gap-24 md:text-sm lg:text-base xl:text-lg ${stylesBarreNavigationPC.couleurTexteCategorie}`}>
                     {categoriesGauche.map((uneCategorie, index) =>(
