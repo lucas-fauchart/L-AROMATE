@@ -1,6 +1,5 @@
 "use client"
 
-import BarreNavigationPC from "./composants/composantNavigation/BarreNavigationPC";
 import NavigationPC from "./composants/composantNavigation/NavigationPC";
 import NavigationMobile from "./composants/composantNavigation/NavigationMobile"
 
@@ -11,7 +10,7 @@ export default function Home() {
       <NavigationPC/>
       <NavigationMobile/>
 
-      <div className="h-500"></div>
+      <div className="h-1000"></div>
     </div>
   );
 }

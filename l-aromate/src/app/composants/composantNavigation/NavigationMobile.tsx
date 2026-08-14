@@ -4,6 +4,7 @@ import { useState } from "react";
 import BarreNavigationMobile from "./BarreNavigationMobile";
 import MenuLateralMobile from "./MenuLateralMobile";
 import { FaYoutube, FaTiktok, FaInstagram, FaFacebook } from "react-icons/fa";
+import { Menu, X } from "lucide-react";
 
 export default function NavigationMobile() {
     //Variables
@@ -27,14 +28,7 @@ export default function NavigationMobile() {
                 stylesBarreNavigationMobile={{
                     couleurFond: "bg-[#21233C]",
                     couleurIcone: "text-[#FFFFFF]"
-                }}
-                ouvertureMenuLateral={{
-                    ouvertureMenuLateral: menuLateralOuvert,
-                    setOuvertureMenuLateral: setMenuLateralOuvert,
-                    ouvrirMenu: ouvrirMenuLateral,
-                    fermerMenu: fermerMenuLateral
-
-                }}
+                }} 
                 logo={{
                     logo: {
                         src: "/logo/logo_blanc_aromate.png",
@@ -43,6 +37,27 @@ export default function NavigationMobile() {
                         width: 224,
                         height: 405,
                     }
+                }}
+                boutonSwitchIcone={{
+                    premiereIcone: {
+                        icone: X,
+                    },
+                    deuxiemeIcone: {
+                        icone: Menu,
+                    },
+                    styleBoutonSwitchIcone: {
+                        couleurIcone: "text-[#FFFFFF]",
+                    },
+                    animationIcone: {
+                        premiereAnimation: "animation-rotation-gauche",
+                        deuxiemeAnimation: "animation-rotation-droite",
+                    },
+                    ouvertureFermeture: {
+                        ouverture: menuLateralOuvert,
+                        setOuverture: setMenuLateralOuvert,
+                        ouvrir: ouvrirMenuLateral,
+                        fermer: fermerMenuLateral,
+                    },
                 }}
             />
 
