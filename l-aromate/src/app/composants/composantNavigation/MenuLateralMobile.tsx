@@ -1,18 +1,11 @@
 /*MENU LATERALE MOBILE*/
 "use client"
 
-import TitreBarreSeparation, { type TitreBarreSeparationProps } from "../composantsReutilisables/TitreBarreSeparation";
-import ListeCategorie, { type ListeNavigationProps } from "../composantsReutilisables/ListeCategorie";
-import ImageDecoration, { type ImageDecorationProps } from "../composantsReutilisables/ImageDecoration";
-import ListeIconesReseauxSociaux, { type ReseauxSociauxProps } from "../composantsReutilisables/ListeIconeReseauxSociaux";
-
-//Style du menu latérale mobile
-type StyleMenuLateralMobile = {
-    //Valeur : bg-[#292B49]
-    couleurFond: string;
-    //Valeur : text-[#292B49]
-    couleurTexteCategorieIconeReseauSocial: string;
-};
+import EnTeteSection, { type EnTeteSectionProps } from "../composantsReutilisables/EnTeteSection";
+import ListeNavigation, { type ListeNavigationProps } from "../composantsReutilisables/ListeNavigation";
+import GroupeImages, { type GroupeImagesProps } from "../composantsReutilisables/GroupeImages";
+import Overlay, { type OverlayProps } from "../composantsReutilisables/Overlay";
+import ListeReseauxSociaux, { type ListeReseauxSociauxProps } from "../composantsReutilisables/ListeReseauxSociaux";
 
 type OuvertureMenuLateralVisibilite = {
     //Valeur : false
@@ -24,40 +17,40 @@ type OuvertureMenuLateralVisibilite = {
 
 //Props du menu latéral mobile
 type MenuLateralMobileProps = {
-    stylesMenuLateralMobile: StyleMenuLateralMobile;
+    premiereEnTeteSection: EnTeteSectionProps;
+    deuxiemeEnTeteSection: EnTeteSectionProps;
+    listeNavigationProps: ListeNavigationProps;
+    groupeImagesProps: GroupeImagesProps;
+    listeReseauxSociaux: ListeReseauxSociauxProps;
+    overlayProps: OverlayProps;
     ouvertureMenuLateralVisibilite: OuvertureMenuLateralVisibilite;
-    premiereTitreBarreSeparation: TitreBarreSeparationProps;
-    deuxiemeTitreBarreSeparation: TitreBarreSeparationProps;
-    listeCategorieNavigation: ListeNavigationProps;
-    imageDecoration: ImageDecorationProps;
-    listeIconeReseauxSociaux: ReseauxSociauxProps;
+    className: string;
 };
 
-export default function MenuLateralMobile({premiereTitreBarreSeparation, deuxiemeTitreBarreSeparation, listeCategorieNavigation, listeIconeReseauxSociaux, imageDecoration, stylesMenuLateralMobile, ouvertureMenuLateralVisibilite}: MenuLateralMobileProps) {
+export default function MenuLateralMobile({premiereEnTeteSection, deuxiemeEnTeteSection, listeNavigationProps, groupeImagesProps, listeReseauxSociaux, overlayProps, ouvertureMenuLateralVisibilite, className}: MenuLateralMobileProps) {
     return (
         <>
             {/*Overlay*/}
-            <div className="fixed inset-0 z-40 bg-transparent" onClick={() => ouvertureMenuLateralVisibilite.setOuvertureMenuLateral(false)}/>
+            <Overlay {...overlayProps}/>
 
             {/*Menu latéral mobile*/}
-            <div className={`fixed left-0 top-0 h-screen z-50 w-3/4 flex flex-col gap-5 pt-4 md:hidden ${stylesMenuLateralMobile.couleurFond} ${ouvertureMenuLateralVisibilite.ouvertureMenuLateral ? "animation-glisser-gauche" : "animation-glisser-droite"}`} onAnimationEnd={() => { if (!ouvertureMenuLateralVisibilite.ouvertureMenuLateral) { ouvertureMenuLateralVisibilite.setVisibiliteMenuLateral(false) }}}>
+            <div className={`fixed left-0 top-0 h-screen z-50 w-3/4 flex flex-col md:hidden ${className} ${ouvertureMenuLateralVisibilite.ouvertureMenuLateral ? "animation-glisser-gauche" : "animation-glisser-droite"}`} onAnimationEnd={() => { if (!ouvertureMenuLateralVisibilite.ouvertureMenuLateral) { ouvertureMenuLateralVisibilite.setVisibiliteMenuLateral(false) }}}>
 
-                {/*Titre et barre de séparation*/}
-                <TitreBarreSeparation {...premiereTitreBarreSeparation}/>
+                {/*En tête section*/}
+                <EnTeteSection {...premiereEnTeteSection}/>
 
                 {/*Catégories de navigations*/}
-                <ListeCategorie {...listeCategorieNavigation}/>
+                <ListeNavigation {...listeNavigationProps}/>
 
-                {/*Titre et barre de séparation*/}
-                <TitreBarreSeparation {...deuxiemeTitreBarreSeparation}/>
+                {/*En tête section*/}
+                <EnTeteSection {...deuxiemeEnTeteSection}/>
 
                 {/*Icones réseaux sociaux*/}
-                <ListeIconesReseauxSociaux {...listeIconeReseauxSociaux}/>
+                <ListeReseauxSociaux {...listeReseauxSociaux}/>
 
-                {/*Images décorations*/}
-                <ImageDecoration {...imageDecoration}/>
+                {/*Groupe d'images*/}
+                <GroupeImages {...groupeImagesProps}/>
             </div>
         </>
     );
 }
-

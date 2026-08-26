@@ -1,49 +1,51 @@
-/*BARRE DE NAVIGATION MOBILE, LOGO/NOM GAUCHE, MENU BURGER DROITE*/
+/*BARRE NAVIGATION MOBILE*/
 "use client"
 
 import { useState, useEffect } from "react";
-import Logo, {type LogoProps} from "../composantsReutilisables/Logo";
-import BoutonSwitchIcone, { type BoutonSwitchIconeProps } from "../composantsReutilisables/BoutonSwitchIcone";
+import ImageElement, { type ImageElementProps } from "../composantsReutilisables/ImageElement";
+import BoutonIconeAlternante, { type BoutonIconeAlternanteProps } from "../composantsReutilisables/BoutonIconeAlternante";
 
-//Style de la barre de navigation mobile
-type StyleBarreNavigationMobile = {
-    //Valeur : bg-[#292B49]
-    couleurFond: string;
-    couleurIcone: string;
-};
-
-//Props de la barre de navigation mobile
+//Props du composant
 type BarreNavigationMobileProps = {
-    stylesBarreNavigationMobile: StyleBarreNavigationMobile;
-    logo: LogoProps;
-    boutonSwitchIcone : BoutonSwitchIconeProps;
+    imageElement: ImageElementProps;
+    boutonIconeAlternante : BoutonIconeAlternanteProps;
+    couleurFond: string;
+    couleurFondScroll: string;
+    activerScroll?: boolean;
+    className: string;
 };
 
-export default function BarreNavigationMobile({stylesBarreNavigationMobile, logo, boutonSwitchIcone} : BarreNavigationMobileProps) {
+export default function BarreNavigationMobile({ imageElement, boutonIconeAlternante, couleurFond, couleurFondScroll, activerScroll = true, className } : BarreNavigationMobileProps) {
+
     //Variables
     const [scroll, setScroll] = useState<boolean>(false);
 
-    //Gére le scroll de la page pour le barre de navigation mobile
+
+    //Gére le scroll de la page pour le barre de navigation
     useEffect(() => {
+        if (!activerScroll) return;
+
         //Déclanchement du scroll
         const gererScroll = () => {
             setScroll(window.scrollY > 0);
         };
 
+        //Rappelle la fonction à chaque mouvement
         window.addEventListener("scroll", gererScroll);
 
         return () => {
+            //Nettoie le useEffect
             window.removeEventListener("scroll", gererScroll);
         };
-    }, []);
+    }, [activerScroll]);
     
     return (
         <>
-           <nav className={`fixed inset-x-0 top-0 z-50 flex justify-between items-center text-lg py-4 px-6 md:hidden transition-all duration-300 ${scroll ? stylesBarreNavigationMobile.couleurFond : "bg-transparent" } animation-glisser-haut`}>
+           <nav className={`fixed inset-x-0 top-0 z-50 md:hidden flex justify-between items-center ${className} ${activerScroll ? scroll ? couleurFond : couleurFondScroll : couleurFond}`}>
                 {/*Image logo*/}
-                <Logo {...logo}/>
+                <ImageElement {...imageElement}/>
                 {/*Icone menu et croix pour le menu latérale mobile*/}
-                <BoutonSwitchIcone {...boutonSwitchIcone}/>
+                <BoutonIconeAlternante {...boutonIconeAlternante}/>
             </nav>
         </>
     );

@@ -1,10 +1,11 @@
+/*NAVIGATION MOBILE*/
 "use client";
 
 import { useState } from "react";
-import BarreNavigationMobile from "./BarreNavigationMobile";
-import MenuLateralMobile from "./MenuLateralMobile";
 import { FaYoutube, FaTiktok, FaInstagram, FaFacebook } from "react-icons/fa";
 import { Menu, X } from "lucide-react";
+import BarreNavigationMobile from "./BarreNavigationMobile";
+import MenuLateralMobile from "./MenuLateralMobile";
 
 export default function NavigationMobile() {
     //Variables
@@ -25,78 +26,42 @@ export default function NavigationMobile() {
     return (
         <>
             <BarreNavigationMobile
-                stylesBarreNavigationMobile={{
-                    couleurFond: "bg-[#21233C]",
-                    couleurIcone: "text-[#FFFFFF]"
-                }} 
-                logo={{
-                    logo: {
-                        src: "/logo/logo_blanc_aromate.png",
-                        alt: "Logo du restaurant l'Aromate",
-                        className: "w-8 xs:w-9 sm:w-10",
-                        width: 224,
-                        height: 405,
-                    }
+                imageElement={{
+                    src: "/logo/logo_blanc_aromate.png",
+                    alt: "Logo du restaurant l'Aromate",
+                    className: "w-8 xs:w-9 sm:w-10",
+                    width: 224,
+                    height: 405,
                 }}
-                boutonSwitchIcone={{
-                    premiereIcone: {
+                boutonIconeAlternante={{
+                    premiereIconeElement: {
                         icone: X,
+                        className: "text-[#FFFFFF] w-6 xs:w-7 sm:w-8 h-auto",
                     },
-                    deuxiemeIcone: {
+                    deuxiemeIconeElement: {
                         icone: Menu,
-                    },
-                    styleBoutonSwitchIcone: {
-                        couleurIcone: "text-[#FFFFFF]",
+                        className: "text-[#FFFFFF] w-6 xs:w-7 sm:w-8 h-auto",
                     },
                     animationIcone: {
                         premiereAnimation: "animation-rotation-gauche",
                         deuxiemeAnimation: "animation-rotation-droite",
                     },
-                    ouvertureFermeture: {
-                        ouverture: menuLateralOuvert,
-                        setOuverture: setMenuLateralOuvert,
+                    etatOuverture: {
+                        ouvert: menuLateralOuvert,
+                        setOuvert: setMenuLateralOuvert,
                         ouvrir: ouvrirMenuLateral,
                         fermer: fermerMenuLateral,
                     },
                 }}
+                couleurFond="bg-[#21233C]"
+                couleurFondScroll="bg-transparent"
+                className="top-0 text-lg py-4 px-6 transition-all duration-300 animation-glisser-haut"
             />
 
             {menuLateralVisible && (
                 <MenuLateralMobile
-                    stylesMenuLateralMobile={{
-                        couleurFond: "bg-[#292B49]",
-                        couleurTexteCategorieIconeReseauSocial: "text-[#FFFFFF]",
-                    }}
-                    
-                    ouvertureMenuLateralVisibilite={{
-                        ouvertureMenuLateral: menuLateralOuvert,
-                        setOuvertureMenuLateral: setMenuLateralOuvert,
-                        visibiliteMenuLateral: menuLateralVisible,
-                        setVisibiliteMenuLateral: setMenuLateralVisible,
-                    }}
-
-                    premiereTitreBarreSeparation={{ 
-                        titre: "Menu",
-                        styleTitreBarreSeparation: {
-                            couleurTexteTitre: "text-[#FFFFFF]",
-                            tailleTexteTitre: "text-md xs:text-lg sm:text-2xl",
-                            couleurBarreSeparation: "bg-[#FED17C]",
-                            largeurBarre: "w-[60px] xs:w-[60px] sm:w-[90px]",
-                        },
-                    }}
-
-                    deuxiemeTitreBarreSeparation={{ 
-                        titre: "Réseaux sociaux",
-                        styleTitreBarreSeparation: {
-                            couleurTexteTitre: "text-[#FFFFFF]",
-                            tailleTexteTitre: "text-md xs:text-lg sm:text-2xl",
-                            couleurBarreSeparation: "bg-[#FED17C]",
-                            largeurBarre: "w-[140px] xs:w-[155px] sm:w-[205px]",
-                        },
-                    }}
-
-                    listeCategorieNavigation={{
-                        categoriesNavigations: [
+                    listeNavigationProps={{
+                        categoriesNavigation: [
                             { nom: "Accueil", href: "/" },
                             { nom: "La Carte", href: "/laCarte" },
                             { nom: "Notre Histoire", href: "/notreHistoire" },
@@ -104,17 +69,30 @@ export default function NavigationMobile() {
                             { nom: "Réservation", href: "/reservation" },
                             { nom: "Contact", href: "/contact" },
                         ],
-                        styleListeNavigation: {
-                            couleurTexte: "text-[#FFFFFF]",
-                            tailleTexte: "text-md xs:text-lg sm:text-2xl",
-                            positionnement: "flex flex-col pl-4 pb-2 xs:pb-4 sm:pb-6 text-md gap-5 xs:text-lg xs:gap-6 sm:text-2xl sm:gap-7"
-                        },
-                        animationListeNavigation: {
-                            animation: "animation-glisser-gauche-fondu",
-                        }
+                        classNameListe: "flex flex-col pl-4 pb-2 xs:pb-4 sm:pb-6 gap-5 xs:gap-6 sm:gap-7 text-md xs:text-lg sm:text-2xl",
+                        classNameElementListe: "animation-glisser-gauche-fondu opacity-0",
+                        animationDelayListe: 250,
                     }}
 
-                    listeIconeReseauxSociaux={{
+                    premiereEnTeteSection={{
+                        titreProps: {
+                            titre: "Menu",
+                            type: "h2",
+                            className: "text-[#FFFFFF] text-md xs:text-lg sm:text-2xl",
+                        },
+                        barreSeparationProps: { className: "bg-[#FED17C] w-[60px] xs:w-[60px] sm:w-[90px] h-[4px] rounded-full" },
+                    }}
+
+                    deuxiemeEnTeteSection={{
+                        titreProps: {
+                            titre: "Réseaux sociaux",
+                            type: "h2",
+                            className: "text-[#FFFFFF] text-md xs:text-lg sm:text-2xl pb-1 sm:pb-2",
+                        },
+                        barreSeparationProps: { className: "bg-[#FED17C] w-[140px] xs:w-[155px] sm:w-[205px] h-[4px] rounded-full" },
+                    }}
+
+                    listeReseauxSociaux={{
                         iconesReseauxSociaux: [
                             {
                                 href: "https://www.youtube.com",
@@ -133,44 +111,50 @@ export default function NavigationMobile() {
                                 icone: FaFacebook,
                             },
                         ],
-                        styleReseauxSociaux: {
-                            positionnement: "flex justify-center gap-4 pb-2 xs:pb-4 sm:pb-6",
-                            tailleTexte: "text-md xs:text-lg sm:text-2xl",
-                            couleurTexte: "text-[#FFFFFF]",
-                        },
-                        animationReseauxSociaux: {
-                            animation: "animation-apparition-simple-fondu",
-                        },
+                        classNameListe: "flex justify-center gap-4 pb-2 xs:pb-4 sm:pb-6 text-md xs:text-lg sm:text-2xl text-[#FFFFFF]",
+                        classNameElementListe: "animation-apparition-simple-fondu opacity-0",
+                        animationDelayListe: 250,
                     }}
 
-                    imageDecoration={{
-                        imagesDecoration: [
+                    overlayProps={{
+                        className: "fixed inset-0 z-40 bg-transparent",
+                        onClick: () => setMenuLateralOuvert(false),
+                    }}
+
+                    groupeImagesProps={{
+                        lesImagesGroupe: [
                             {
-                                src: "/images/agrumes/oranges/orange_1.png",
-                                alt: "Quartier d'orange",
-                                width: 100,
-                                height: 73,
-                                style: {
-                                    positionImage: "top-[20%] right-[10%] xs:top-[20%] xs:right-[15%] sm:top-[15%] sm:right-[20%]",
-                                    tailleImage: "scale-65 xs:scale-95 sm:scale-110",
-                                    rotationImage: "rotate-270",
+                                imageElementProps: {
+                                    src: "/images/agrumes/oranges/orange_1.png",
+                                    alt: "Quartier d'orange",
+                                    width: 100,
+                                    height: 73,
+                                    className:
+                                        "absolute top-[20%] right-[10%] xs:top-[20%] xs:right-[15%] sm:top-[15%] sm:right-[20%] scale-65 xs:scale-95 sm:scale-110 rotate-270 animation-levitation-haut-bas",
                                 },
-                                animation: "animation-levitation-haut-bas"
                             },
                             {
-                                src: "/images/agrumes/oranges/orange_2.png",
-                                alt: "Quartier d'orange",
-                                width: 100,
-                                height: 93,
-                                style: {
-                                    positionImage: "top-[30%] left-[25%] xs:top-[35%] xs:left-[25%] sm:top-[35%] sm:left-[35%]",
-                                    tailleImage: "scale-120 xs:scale-160 sm:scale-200",
-                                    rotationImage: "rotate-5",
+                                imageElementProps: {
+                                    src: "/images/agrumes/oranges/orange_2.png",
+                                    alt: "Quartier d'orange",
+                                    width: 100,
+                                    height: 93,
+                                    className:
+                                        "absolute top-[30%] left-[25%] xs:top-[35%] xs:left-[25%] sm:top-[35%] sm:left-[35%] scale-120 xs:scale-160 sm:scale-200 rotate-5 animation-levitation-haut-bas",
                                 },
-                                animation: "animation-levitation-haut-bas"
                             },
                         ],
+                        className: "relative h-screen",
                     }}
+
+                    ouvertureMenuLateralVisibilite={{
+                        ouvertureMenuLateral: menuLateralOuvert,
+                        setOuvertureMenuLateral: setMenuLateralOuvert,
+                        visibiliteMenuLateral: menuLateralVisible,
+                        setVisibiliteMenuLateral: setMenuLateralVisible,
+                    }}
+
+                    className="gap-5 pt-4 bg-[#292B49]"
                 />
             )}
         </>

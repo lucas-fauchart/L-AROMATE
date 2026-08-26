@@ -1,39 +1,26 @@
-/*BARRE DE NAVIGATION PC, LOGO/NOM CENTRE*/
+/*BARRE NAVIGATION PC*/
 "use client"
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
-import Logo, {type LogoProps } from "../composantsReutilisables/Logo";
+import ImageElement, { type ImageElementProps } from "../composantsReutilisables/ImageElement";
+import ListeNavigation, { type ListeNavigationProps } from "../composantsReutilisables/ListeNavigation";
 
-//Catégories de navigation
-type CategoriesNavigation = {
-    //Valeur : Accueil
-    nom: string;
-    //Valeur : /accueil
-    href: string;
-};
-
-//Style du menu latérale mobile
-type StyleBarreNavigationPC = {
-    //Valeur : bg-[#292B49]
-    couleurFond: string;
-    //Valeur : text-[#292B49]
-    couleurTexteCategorie: string;
-};
-
-//Props de la barre de navigation PC
+//Props du composant
 type BarreNavigationProps = {
-    categoriesGauche: CategoriesNavigation[];
-    categoriesDroite: CategoriesNavigation[];
-    stylesBarreNavigationPC: StyleBarreNavigationPC;
-    logo: LogoProps;
+    imageElement: ImageElementProps;
+    couleurFond: string;
+    couleurFondScroll: string;
+    activerScroll?: boolean;
+    listeNavigationGauche: ListeNavigationProps;
+    listeNavigationDroite : ListeNavigationProps;
 };
 
-export default function BarreNavigationPC({categoriesGauche, categoriesDroite, stylesBarreNavigationPC, logo}: BarreNavigationProps) {
-        //Variables
+export default function BarreNavigationPC({imageElement, listeNavigationGauche, listeNavigationDroite, couleurFond, couleurFondScroll, activerScroll = true}: BarreNavigationProps) {
+
+    //Variables
     const [scroll, setScroll] = useState<boolean>(false);
 
-    //Gére le scroll de la page pour le barre de navigation mobile
+    //Gére le scroll de la page pour le barre de navigation
     useEffect(() => {
         //Déclanchement du scroll
         const gererScroll = () => {
@@ -49,23 +36,13 @@ export default function BarreNavigationPC({categoriesGauche, categoriesDroite, s
 
     return (
         <>
-            <nav className={`fixed inset-x-0 top-0 hidden md:flex justify-center items-center py-2 transition-all duration-300 ${scroll ? stylesBarreNavigationPC.couleurFond : "bg-transparent" } md:gap-16 lg:gap-24 xl:gap-28 animation-glisser-haut`}>
-                {/*Catégories de navigations*/}
-                <ul className={`flex md:gap-12 lg:gap-20 xl:gap-24 md:text-sm lg:text-base xl:text-lg ${stylesBarreNavigationPC.couleurTexteCategorie}`}>
-                    {categoriesGauche.map((uneCategorie, index) =>(
-                        <li key={index}><Link href={uneCategorie.href}>{uneCategorie.nom}</Link></li>
-                    ))}          
-                </ul>
-
+            <nav className={`fixed inset-x-0 top-0 hidden md:flex justify-center items-center py-2 transition-all duration-300 ${activerScroll ? scroll ? couleurFond : couleurFondScroll : couleurFond} md:gap-16 lg:gap-24 xl:gap-28 animation-glisser-haut`}>
+                {/*Catégories de navigation gauche*/}
+                <ListeNavigation {...listeNavigationGauche}/>
                 {/*Image logo*/}
-                <Logo {...logo}/>
-
-                {/*Catégories de navigations*/}
-                <ul className={`flex md:gap-12 lg:gap-20 xl:gap-24 md:text-sm lg:text-base xl:text-lg`}>
-                    {categoriesDroite.map((uneCategorie, index) =>(
-                        <li key={index}><Link href={uneCategorie.href}>{uneCategorie.nom}</Link></li>
-                    ))}
-                </ul>
+                <ImageElement {...imageElement}/>
+                {/*Catégories de navigation droite*/}
+                <ListeNavigation {...listeNavigationDroite}/>
             </nav>
         </>
     );
