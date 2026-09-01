@@ -36,7 +36,7 @@ export default function BarreNavigationPC({imageElement, listeNavigationGauche, 
 
     return (
         <>
-            <nav className={`fixed inset-x-0 top-0 hidden md:flex justify-center items-center py-2 transition-all duration-300 ${activerScroll ? scroll ? couleurFond : couleurFondScroll : couleurFond} md:gap-16 lg:gap-24 xl:gap-28 animation-glisser-haut`}>
+            <nav className={`sticky inset-x-0 top-0 hidden md:flex justify-center items-center py-2 transition-all duration-300 ${activerScroll ? scroll ? couleurFond : couleurFondScroll : couleurFond} md:gap-16 lg:gap-24 xl:gap-28 animation-glisser-haut`}>
                 {/*Catégories de navigation gauche*/}
                 <ListeNavigation {...listeNavigationGauche}/>
                 {/*Image logo*/}

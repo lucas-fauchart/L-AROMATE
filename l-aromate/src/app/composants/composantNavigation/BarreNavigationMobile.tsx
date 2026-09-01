@@ -41,7 +41,7 @@ export default function BarreNavigationMobile({ imageElement, boutonIconeAlterna
     
     return (
         <>
-           <nav className={`fixed inset-x-0 top-0 z-50 md:hidden flex justify-between items-center ${className} ${activerScroll ? scroll ? couleurFond : couleurFondScroll : couleurFond}`}>
+           <nav className={`sticky inset-x-0 top-0 z-50 md:hidden flex justify-between w-full items-center ${className} ${activerScroll ? scroll ? couleurFond : couleurFondScroll : couleurFond}`}>
                 {/*Image logo*/}
                 <ImageElement {...imageElement}/>
                 {/*Icone menu et croix pour le menu latérale mobile*/}

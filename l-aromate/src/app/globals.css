@@ -126,23 +126,3 @@ body {
 .animation-apparition-simple-fondu {
     animation: apparition-simple-fondu 0.8s ease forwards;
 }
-
-/*Lévitation de hait en bas*/
-@keyframes levitationHautBas {
-    0% {
-        transform: translateY(0) scale(1);
-    }
-
-    50% {
-        transform: translateY(-8px) scale(1.03);
-    }
-
-    100% {
-        transform: translateY(0) scale(1);
-    }
-}
-
-.animation-levitation-haut-bas {
-    animation: levitationHautBas 4s ease-in-out infinite;
-    transform-origin: center;
-}

@@ -2,7 +2,8 @@
 
 import NavigationPC from "./composants/composantNavigation/NavigationPC";
 import NavigationMobile from "./composants/composantNavigation/NavigationMobile";
-import Titre from "./composants/composantsReutilisables/Titre";
+import Section from "./composants/composantsReutilisables/Section";
+import ImageElement from "./composants/composantsReutilisables/ImageElement";
 
 export default function Home() {
   return (
@@ -10,6 +11,12 @@ export default function Home() {
       
       <NavigationPC/>
       <NavigationMobile/> 
+
+      <main>
+        <Section className="mb-30 flex flex-col items-center text-center">
+          <ImageElement src="/nom_blanc_aromate.png" alt="Nom du restaurant L'Aromate" className="w-38 xs:w-9 sm:w-10 animation-apparition-simple-fondu" width={754} height={195}/>
+        </Section>
+      </main>
     
       <div className="h-1000"></div>
     </div>
