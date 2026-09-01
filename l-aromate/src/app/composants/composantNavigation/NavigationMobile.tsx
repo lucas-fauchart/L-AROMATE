@@ -27,7 +27,7 @@ export default function NavigationMobile() {
         <>
             <BarreNavigationMobile
                 imageElement={{
-                    src: "/logo/logo_blanc_aromate.png",
+                    src: "/logos/logo_blanc_aromate.png",
                     alt: "Logo du restaurant l'Aromate",
                     className: "w-8 xs:w-9 sm:w-10",
                     width: 224,

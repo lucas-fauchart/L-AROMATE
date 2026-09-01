@@ -24,7 +24,7 @@ export default function NavigationPC() {
                     classNameListe: "flex md:gap-12 lg:gap-20 xl:gap-24 md:text-sm lg:text-base xl:text-lg",
                 }}
                 imageElement={{
-                    src: "/logo/logo_blanc_aromate.png",
+                    src: "/logos/logo_blanc_aromate.png",
                     alt: "Logo du restaurant l'Aromate",
                     className: "w-6 md:w-6 lg:w-8 xl:w-10",
                     width: 224,

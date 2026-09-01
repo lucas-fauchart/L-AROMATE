@@ -9,10 +9,11 @@ export type ImageElementProps = {
     className: string;
     height: number;
     width: number;
+    style?: React.CSSProperties;
 };
 
-export default function ImageElement({ src, alt, className, height, width } : ImageElementProps ) {
+export default function ImageElement({ src, alt, className, height, width, style } : ImageElementProps ) {
     return (
-        <Image src={src} alt={alt} width={width} height={height} className={`h-auto ${className}`} loading="eager"/>
+        <Image src={src} alt={alt} width={width} height={height} className={`h-auto ${className}`} style={style} loading="eager"/>
     );
 }
