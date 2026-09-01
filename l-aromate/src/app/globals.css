@@ -126,3 +126,53 @@ body {
 .animation-apparition-simple-fondu {
     animation: apparition-simple-fondu 0.8s ease forwards;
 }
+
+@keyframes apparition-centre {
+    0% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+.animation-apparition-centre {
+    transform-origin: center;
+    animation: apparition-centre 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes apparition-fondu-haut {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animation-apparition-fondu-haut {
+    animation: apparition-fondu-haut 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes apparition-fondu {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.animation-apparition-fondu {
+    opacity: 0;
+    animation: apparition-fondu 0.8s ease-out forwards;
+}
