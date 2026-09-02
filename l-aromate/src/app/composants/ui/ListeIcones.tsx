@@ -1,4 +1,4 @@
-/*LISTE RESEAUX SOCIAUX*/
+/*LISTE ICONE*/
 "use client";
 
 import Lien from "./Lien";
@@ -6,28 +6,28 @@ import Liste, { type ListeProps } from "./Liste";
 import IconeElement from "./IconeElement";
 import { IconType } from "react-icons";
 
-//Icone réseau social
-type IconeReseauSocial = {
+//Icone
+type Icone = {
     href: string;
     icone: IconType;
 };
 
 //Props du composant
-export type ListeReseauxSociauxProps = {
-    iconesReseauxSociaux: IconeReseauSocial[];
+export type ListeIconesProps = {
+    icones: Icone[];
     classNameListe: string;
     classNameElementListe: string;
     animationDelayListe: number;
 };
 
-export default function ListeReseauxSociaux({ iconesReseauxSociaux, classNameListe, classNameElementListe, animationDelayListe }: ListeReseauxSociauxProps) {
+export default function ListeIcones({ icones, classNameListe, classNameElementListe, animationDelayListe }: ListeIconesProps) {
 
     const listeProps: ListeProps = { classNameGlobal: classNameListe, classNameElement: classNameElementListe, animationDelay: animationDelayListe,
-        elements: iconesReseauxSociaux.map((uneIconeReseauSocial) => {
-            const Icone = uneIconeReseauSocial.icone;
+        elements: icones.map((uneIcone) => {
+            const Icone = uneIcone.icone;
 
             return (
-                <Lien key={uneIconeReseauSocial.href} href={uneIconeReseauSocial.href} className="" 
+                <Lien key={uneIcone.href} href={uneIcone.href} className="" 
                     contenu={ <IconeElement icone={Icone} className="w-5 xs:w-6 sm:w-7 h-auto"/> }
                 />
             );

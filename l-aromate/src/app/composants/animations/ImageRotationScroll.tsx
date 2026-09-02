@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import ImageElement, { type ImageElementProps } from "./ImageElement";
+import ImageElement, { type ImageElementProps } from "../ui/ImageElement";
 
 export type ImageRotationScrollProps = {
     imageElement: ImageElementProps;

@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import IconeElement, { IconeElementProps } from "./IconeElement";
+import IconeElement, { IconeElementProps } from "../ui/IconeElement";
 
 //Variables d'animation
 type AnimationIcone = {
