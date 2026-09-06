@@ -1,17 +1,24 @@
 "use client"
 
-import NavigationPC from "./composants/composantNavigation/NavigationPC";
-import NavigationMobile from "./composants/composantNavigation/NavigationMobile";
-import Titre from "./composants/composantsReutilisables/Titre";
+import NavigationPC from "./composants/navigations/NavigationPC";
+import NavigationMobile from "./composants/navigations/NavigationMobile";
+
+import Introduction from "./composants/home/Introduction";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-[#21233C]">
+    <div className="flex flex-col flex-1 w-full items-center justify-center bg-zinc-50 font-sans dark:bg-[#21233C]">
+      
       
       <NavigationPC/>
       <NavigationMobile/> 
+
+      <main className="w-full">
+        <Introduction/>
+        <div className="h-1000 bg-[#FED17C]"></div>
+      </main>
     
-      <div className="h-1000"></div>
+      
     </div>
   );
 }
