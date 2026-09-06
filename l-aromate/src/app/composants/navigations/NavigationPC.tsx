@@ -8,19 +8,19 @@ export default function NavigationPC() {
     
     return (
         <>
-            <BarreNavigationPC couleurFond="bg-[#21233C]" couleurFondScroll="bg-transparent">
+            <BarreNavigationPC couleurFond="bg-[#21233C]" couleurFondScroll="bg-[#21233C]">
                 <ListeLiens 
                     liens= {[
                         { nom: "Accueil", href: "/" },
                         { nom: "La Carte", href: "/laCarte" },
                         { nom: "Notre Histoire", href: "/notreHistoire" },
                     ]}
-                    classNameListe= "flex md:gap-12 lg:gap-20 xl:gap-24 md:text-sm lg:text-base xl:text-lg" 
+                    classNameListe="flex lg:gap-16 xl:gap-20 2xl:gap-24 lg:text-base xl:text-xl 2xl:text-2xl" 
                 />
                 <ImageElement 
                     src= "/logos/logo_blanc_aromate.png"
                     alt= "Logo du restaurant l'Aromate"
-                    className= "w-6 md:w-6 lg:w-8 xl:w-10"
+                    className="lg:w-8 xl:w-10 2xl:w-12"
                     width= {224}
                     height= {405}
                 />
@@ -30,7 +30,7 @@ export default function NavigationPC() {
                         { nom: "Réservation", href: "/reservation" },
                         { nom: "Contact", href: "/contact" },
                     ]}
-                    classNameListe= "flex md:gap-12 lg:gap-20 xl:gap-24 md:text-sm lg:text-base xl:text-lg" 
+                    classNameListe="flex lg:gap-16 xl:gap-20 2xl:gap-24 lg:text-base xl:text-xl 2xl:text-2xl" 
                 />
             </BarreNavigationPC>
         </>

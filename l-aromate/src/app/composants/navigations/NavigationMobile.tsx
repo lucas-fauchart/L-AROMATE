@@ -6,14 +6,12 @@ import { FaYoutube, FaTiktok, FaInstagram, FaFacebook } from "react-icons/fa";
 import { Menu, X } from "lucide-react";
 import BarreNavigationMobile from "./BarreNavigationMobile";
 import MenuLateralMobile from "./MenuLateralMobile";
-import Titre from "../ui/Titre";
-import BarreSeparation from "../ui/BarreSeparation";
 import ListeLiens from "../ui/ListeLiens";
 import ListeIcones from "../ui/ListeIcones";
-import GroupeImages from "../ui/GroupeImages";
 import ImageElement from "../ui/ImageElement";
 import BoutonIconeAlternante from "../animations/BoutonIconeAlternante";
 import TitreAvecSeparation from "../ui/TitreAvecSeparation";
+import GroupeImages from "../ui/GroupeImages";
 
 export default function NavigationMobile() {
     //Variables
@@ -33,16 +31,16 @@ export default function NavigationMobile() {
     
     return (
         <>
-            <BarreNavigationMobile couleurFond="bg-[#21233C]" couleurFondScroll="bg-transparent" className="top-0 text-lg py-4 px-6 transition-all duration-300 animation-glisser-haut">
-                <ImageElement src= "/logos/logo_blanc_aromate.png" alt= "Logo du restaurant l'Aromate" className= "w-8 xs:w-9 sm:w-10" width= {224} height= {405}/>
+            <BarreNavigationMobile couleurFond="bg-[#21233C]" couleurFondScroll="bg-[#21233C]" className="top-0 text-lg py-4 px-6 transition-all duration-300 animation-glisser-haut">
+                <ImageElement src= "/logos/logo_blanc_aromate.png" alt= "Logo du restaurant l'Aromate" className= "w-8 xs:w-9 sm:w-10 md:w-12" width= {224} height= {405}/>
                 <BoutonIconeAlternante
                     premiereIconeElement={{
                         icone: X,
-                        className: "text-[#FFFFFF] w-6 xs:w-7 sm:w-8 h-auto",
+                        className: "text-[#FFFFFF] w-6 xs:w-7 sm:w-8 md:w-9 h-auto",
                     }}
                     deuxiemeIconeElement={{
                         icone: Menu,
-                        className: "text-[#FFFFFF] w-6 xs:w-7 sm:w-8 h-auto",
+                        className: "text-[#FFFFFF] w-6 xs:w-7 sm:w-8 md:w-9 h-auto",
                     }}
                     animationIcone={{
                         premiereAnimation: "animation-rotation-gauche",
@@ -70,16 +68,16 @@ export default function NavigationMobile() {
                         setVisibiliteMenuLateral: setMenuLateralVisible,
                     }}
 
-                    className="gap-5 pt-4 bg-[#292B49]"
+                    className="gap-4 xs:gap-5 sm:gap-5 md:gap-5 pt-4 bg-[#292B49]"
                 >
                     <TitreAvecSeparation 
                         titreProps={{
                             titre: "Menu",
                             type: "h2",
-                            className: "text-[#FFFFFF] text-md xs:text-lg sm:text-2xl",
+                            className: "text-[#FFFFFF] text-base xs:text-xl sm:text-2xl md:text-3xl pb-1 xs:pb-2 sm:pb-2 md:pb-2",
                         }}
                         barreSeparationProps={{
-                            className: "bg-[#FED17C] w-[60px] xs:w-[60px] sm:w-[90px] h-[4px] rounded-full",
+                            className: "bg-[#FED17C] w-[60px] xs:w-[70px] sm:w-[90px] md:w-[100px] h-[4px] xs:h-[5px] sm:h-[5px] md:h-[5px] rounded-full",
                         }}
                     />
                     <ListeLiens
@@ -91,7 +89,7 @@ export default function NavigationMobile() {
                             { nom: "Réservation", href: "/reservation" },
                             { nom: "Contact", href: "/contact" },
                         ]}
-                        classNameListe= "flex flex-col pl-4 pb-2 xs:pb-4 sm:pb-6 gap-5 xs:gap-6 sm:gap-7 text-md xs:text-lg sm:text-2xl"
+                        classNameListe= "flex flex-col pl-4 pb-2 xs:pb-4 sm:pb-6 md:pb-6 gap-5 xs:gap-6 sm:gap-7 md:gap-7 text-base xs:text-xl sm:text-2xl md:text-3xl"
                         classNameElementListe= "animation-glisser-gauche-fondu opacity-0"
                         animationDelayListe= {250}
                     />
@@ -99,10 +97,10 @@ export default function NavigationMobile() {
                         titreProps={{
                             titre: "Réseaux sociaux",
                             type: "h2",
-                            className: "text-[#FFFFFF] text-md xs:text-lg sm:text-2xl pb-1 sm:pb-2",
+                            className: "text-[#FFFFFF] text-base xs:text-xl sm:text-2xl md:text-3xl pb-1 xs:pb-2 sm:pb-2 md:pb-2",
                         }}
                         barreSeparationProps={{
-                            className: "bg-[#FED17C] w-[140px] xs:w-[155px] sm:w-[205px] h-[4px] rounded-full",
+                            className: "bg-[#FED17C] w-[140px] xs:w-[175px] sm:w-[205px] md:w-[250px] h-[4px] xs:h-[5px] sm:h-[5px] md:h-[5px] rounded-full",
                         }}
                     />
                     <ListeIcones 
@@ -124,19 +122,20 @@ export default function NavigationMobile() {
                                 icone: FaFacebook,
                             },
                         ]}
-                        classNameListe= "flex justify-center gap-4 pb-2 xs:pb-4 sm:pb-6 text-md xs:text-lg sm:text-2xl text-[#FFFFFF]"
+                        classNameListe= "flex justify-center gap-4 xs:gap-5 sm:gap-5 md:gap-6 pb-2 xs:pb-4 sm:pb-6 md:pb-8 text-base xs:text-xl sm:text-2xl md:text-3xl text-[#FFFFFF]"
                         classNameElementListe= "animation-apparition-simple-fondu opacity-0"
                         animationDelayListe={250}
+                        classNameIcone="w-5 xs:w-6 sm:w-7 md:w-8 h-auto"
                     />
                     <GroupeImages 
-                        lesImagesGroupe= {[
+                        lesImagesGroupe={[
                             {
                                 imageElementProps: {
                                     src: "/images/agrumes/oranges/orange_1.png",
                                     alt: "Quartier d'orange",
                                     width: 100,
                                     height: 73,
-                                    className: "absolute top-[20%] right-[10%] xs:top-[20%] xs:right-[15%] sm:top-[15%] sm:right-[20%] scale-65 xs:scale-95 sm:scale-110 rotate-270 animation-levitation-haut-bas",
+                                    className: "absolute top-[7cqh] right-[15cqw] w-[24cqmin] h-auto rotate-270 animation-levitation-haut-bas",
                                 },
                             },
                             {
@@ -145,11 +144,11 @@ export default function NavigationMobile() {
                                     alt: "Quartier d'orange",
                                     width: 100,
                                     height: 93,
-                                    className: "absolute top-[30%] left-[25%] xs:top-[35%] xs:left-[25%] sm:top-[35%] sm:left-[35%] scale-120 xs:scale-160 sm:scale-200 rotate-5 animation-levitation-haut-bas",
+                                    className: "absolute top-[6cqh] left-[20cqw] w-[50cqmin] h-auto rotate-5 animation-levitation-haut-bas",
                                 },
                             },
                         ]}
-                        className= "relative h-screen"
+                        className="relative h-full w-full"
                     />
                 </MenuLateralMobile>
             )}

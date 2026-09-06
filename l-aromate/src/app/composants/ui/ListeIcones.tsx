@@ -18,9 +18,10 @@ export type ListeIconesProps = {
     classNameListe: string;
     classNameElementListe: string;
     animationDelayListe: number;
+    classNameIcone: string;
 };
 
-export default function ListeIcones({ icones, classNameListe, classNameElementListe, animationDelayListe }: ListeIconesProps) {
+export default function ListeIcones({ icones, classNameListe, classNameElementListe, animationDelayListe, classNameIcone }: ListeIconesProps) {
 
     const listeProps: ListeProps = { classNameGlobal: classNameListe, classNameElement: classNameElementListe, animationDelay: animationDelayListe,
         elements: icones.map((uneIcone) => {
@@ -28,7 +29,7 @@ export default function ListeIcones({ icones, classNameListe, classNameElementLi
 
             return (
                 <Lien key={uneIcone.href} href={uneIcone.href} className="" 
-                    contenu={ <IconeElement icone={Icone} className="w-5 xs:w-6 sm:w-7 h-auto"/> }
+                    contenu={ <IconeElement icone={Icone} className={classNameIcone}/> }
                 />
             );
         }),

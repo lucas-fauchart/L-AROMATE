@@ -32,7 +32,7 @@ export default function BarreNavigationPC({children, couleurFond, couleurFondScr
 
     return (
         <>
-            <nav className={`sticky inset-x-0 top-0 hidden md:flex justify-center items-center py-2 transition-all duration-300 ${activerScroll ? scroll ? couleurFond : couleurFondScroll : couleurFond} md:gap-16 lg:gap-24 xl:gap-28 animation-glisser-haut`}>
+            <nav className={`sticky inset-x-0 top-0 z-50 hidden w-full lg:flex justify-center items-center py-2 lg:gap-20 xl:gap-22 animation-glisser-haut transition-all duration-300 ${activerScroll ? scroll ? couleurFond : couleurFondScroll : couleurFond}`}>
                 {children}
             </nav>
         </>

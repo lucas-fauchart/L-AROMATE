@@ -36,7 +36,7 @@ export default function BarreNavigationMobile({ children, couleurFond, couleurFo
     
     return (
         <>
-           <nav className={`sticky inset-x-0 top-0 z-50 md:hidden flex justify-between w-full items-center ${className} ${activerScroll ? scroll ? couleurFond : couleurFondScroll : couleurFond}`}>
+           <nav className={`sticky inset-x-0 top-0 z-50 lg:hidden flex justify-between w-full items-center ${className} ${activerScroll ? scroll ? couleurFond : couleurFondScroll : couleurFond}`}>
                 {children}
             </nav>
         </>

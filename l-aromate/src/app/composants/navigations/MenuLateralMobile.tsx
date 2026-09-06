@@ -27,7 +27,7 @@ export default function MenuLateralMobile({ children, overlayProps, ouvertureMen
             <Overlay {...overlayProps}/>
 
             {/*Menu latéral mobile*/}
-            <div className={`fixed left-0 top-0 h-screen z-50 w-3/4 flex flex-col md:hidden ${className} ${ouvertureMenuLateralVisibilite.ouvertureMenuLateral ? "animation-glisser-gauche" : "animation-glisser-droite"}`} onAnimationEnd={() => { if (!ouvertureMenuLateralVisibilite.ouvertureMenuLateral) { ouvertureMenuLateralVisibilite.setVisibiliteMenuLateral(false) }}}>
+            <div className={` @container fixed left-0 top-0 h-screen z-50 w-3/4 xs:w-3/4 sm:w-3/4 md:w-3/4 flex flex-col lg:hidden ${className} ${ouvertureMenuLateralVisibilite.ouvertureMenuLateral ? "animation-glisser-gauche" : "animation-glisser-droite"}`} onAnimationEnd={() => { if (!ouvertureMenuLateralVisibilite.ouvertureMenuLateral) { ouvertureMenuLateralVisibilite.setVisibiliteMenuLateral(false) }}}>
                 {children}
             </div>
         </>
