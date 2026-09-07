@@ -8,11 +8,12 @@ import BarreSeparation, { type BarreSeparationProps } from "./BarreSeparation";
 export type TitreAvecSeparationProps = {
     titreProps: TitreProps;
     barreSeparationProps: BarreSeparationProps;
+    className?: string;
 };
 
-export default function TitreAvecSeparation({ titreProps, barreSeparationProps }: TitreAvecSeparationProps) {
+export default function TitreAvecSeparation({ titreProps, barreSeparationProps, className }: TitreAvecSeparationProps) {
     return (
-        <div className="flex flex-col items-center">
+        <div className={`flex flex-col items-center ${className}`}>
             <Titre {...titreProps} />
 
             <BarreSeparation {...barreSeparationProps} />

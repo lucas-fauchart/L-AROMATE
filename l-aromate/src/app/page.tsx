@@ -4,6 +4,7 @@ import NavigationPC from "./composants/navigations/NavigationPC";
 import NavigationMobile from "./composants/navigations/NavigationMobile";
 
 import Introduction from "./composants/home/Introduction";
+import SignaturesAromatiques from "./composants/home/SignaturesAromatiques"
 
 export default function Home() {
   return (
@@ -15,7 +16,10 @@ export default function Home() {
 
       <main className="w-full">
         <Introduction/>
-        <div className="h-1000 bg-[#FED17C]"></div>
+        
+        <div className="bg-[#FED17C]">
+          <SignaturesAromatiques/>
+        </div>
       </main>
     
       
