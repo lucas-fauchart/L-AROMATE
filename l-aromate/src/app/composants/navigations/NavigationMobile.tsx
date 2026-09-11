@@ -79,6 +79,8 @@ export default function NavigationMobile() {
                         barreSeparationProps={{
                             className: "bg-[#FED17C] w-[60px] xs:w-[70px] sm:w-[90px] md:w-[100px] h-[4px] xs:h-[5px] sm:h-[5px] md:h-[5px] rounded-full",
                         }}
+                        animationTitre={{animation: ""}}
+                        animationBarre={{animation: ""}}
                     />
                     <ListeLiens
                         liens={[
@@ -102,6 +104,8 @@ export default function NavigationMobile() {
                         barreSeparationProps={{
                             className: "bg-[#FED17C] w-[140px] xs:w-[175px] sm:w-[205px] md:w-[250px] h-[4px] xs:h-[5px] sm:h-[5px] md:h-[5px] rounded-full",
                         }}
+                        animationTitre={{animation: ""}}
+                        animationBarre={{animation: ""}}
                     />
                     <ListeIcones 
                         icones= {[

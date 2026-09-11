@@ -1,7 +1,7 @@
 /* INTRODUCTION */
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import TitreAvecSeparation from "../ui/TitreAvecSeparation";
 import CarteImageTitre from "../ui/CarteImageTitre";
 import CarteImageTitreDescription from "../ui/CarteImageTitreDescription";
@@ -11,6 +11,24 @@ import AnimationScroll from "../animations/AnimationScroll";
 export default function SignaturesAromatiques() {
     const [carteOuverte, setCarteOuverte] = useState<string | null>(null);
     const [carteFerme, setCarteFerme] = useState<string | null>(null);
+
+    const refsCartes = useRef<Map<string, HTMLDivElement | null>>(new Map());
+
+    const definirRef = (id: string) => (element: HTMLDivElement | null) => {
+        refsCartes.current.set(id, element);
+    };
+
+    useEffect(() => {
+        if (carteOuverte) {
+            const element = refsCartes.current.get(carteOuverte);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                });
+            }
+        }
+    }, [carteOuverte]);
 
     const ouvrirCarte = (id: string) => {
         setCarteOuverte(id);
@@ -49,7 +67,7 @@ export default function SignaturesAromatiques() {
                         {CartesSignaturesAromatiques.map((uneCarteSignatureAromatique) =>
                             <AnimationScroll  key={uneCarteSignatureAromatique.id}  animation={uneCarteSignatureAromatique.animation} delay={uneCarteSignatureAromatique.delay}>
                                 {carteOuverte === uneCarteSignatureAromatique.id ? (       
-                                    <div className={carteFerme === uneCarteSignatureAromatique.id ? "animation-fermeture-hauteur-ligne-grille" : "animation-ouverture-hauteur-ligne-grille"}>
+                                    <div className={carteFerme === uneCarteSignatureAromatique.id ? "animation-fermeture-hauteur-ligne-grille" : "animation-ouverture-hauteur-ligne-grille"} ref={definirRef(uneCarteSignatureAromatique.id)}>
                                         <div className="overflow-hidden min-h-0">
                                             <div className={carteFerme === uneCarteSignatureAromatique.id ? "animation-fermeture-carte"  : "animation-ouverture-carte"}
                                                 onAnimationEnd={() => {
