@@ -7,6 +7,10 @@ export const CartesSignaturesAromatiques = [
         alt: "Image avec plusieurs herbacés : ciboulette, romarin, basilic et thin.",
         width: 282,
         height: 317,
+        animation: "animation-apparition-fondu-gauche",
+        delay: 1300,
+        animationOuverture: "animation-ouverture-carte",
+        animationFermeture: "animation-fermeture-carte",
     },
     {
         id: "agrumes",
@@ -16,6 +20,10 @@ export const CartesSignaturesAromatiques = [
         alt: "Image avec plusieurs agrumes découpés en tranches : pamplemousse, orange et citron vert.",
         width: 600,
         height: 600,
+        animation: "animation-apparition-fondu-droite",
+        delay: 1800,
+        animationOuverture: "animation-ouverture-carte",
+        animationFermeture: "animation-fermeture-carte",
     },
     {
         id: "florals",
@@ -25,6 +33,10 @@ export const CartesSignaturesAromatiques = [
         alt: "Image avec un mélange de plusieurs fleurs comestibles : rose, lavande, fleur d’oranger et badiane.",
         width: 282,
         height: 317,
+        animation: "animation-apparition-fondu-gauche",
+        delay: 2300,
+        animationOuverture: "animation-ouverture-carte",
+        animationFermeture: "animation-fermeture-carte",
     },
     {
         id: "epices",
@@ -34,5 +46,9 @@ export const CartesSignaturesAromatiques = [
         alt: "Image avec plusieurs épices : poivre rouge, noir et blanc, piments rouges et jaunes.",
         width: 282,
         height: 317,
+        animation: "animation-apparition-fondu-droite",
+        delay: 2800,
+        animationOuverture: "animation-ouverture-carte",
+        animationFermeture: "animation-fermeture-carte",
     },
 ];

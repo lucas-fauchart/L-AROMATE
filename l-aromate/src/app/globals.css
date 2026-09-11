@@ -177,7 +177,7 @@ body {
     animation: apparition-fondu 0.8s ease-out forwards;
 }
 
-/*Lévitation de hait en bas*/
+/*Lévitation de haut en bas*/
 @keyframes levitationHautBas {
     0% {
         transform: translateY(0) scale(1);
@@ -195,4 +195,116 @@ body {
 .animation-levitation-haut-bas {
     animation: levitationHautBas 4s ease-in-out infinite;
     transform-origin: center;
+}
+
+/*Apparition fondu de la gauche*/
+@keyframes apparition-fondu-gauche {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animation-apparition-fondu-gauche {
+    opacity: 0;
+    animation: apparition-fondu-gauche 0.8s ease-out forwards;
+}
+
+/*Apparition fondu de la droite*/
+@keyframes apparition-fondu-droite {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animation-apparition-fondu-droite {
+    opacity: 0;
+    animation: apparition-fondu-droite 0.8s ease-out forwards;
+}
+
+/*Ouverture en hauteur des lignes du grille*/
+@keyframes ouvertureHauteurLigneGrille {
+    from { 
+        grid-template-rows: 0.5fr; 
+    }
+    to { 
+        grid-template-rows: 1fr; 
+    }
+}
+
+.animation-ouverture-hauteur-ligne-grille {
+    display: grid;
+    animation: ouvertureHauteurLigneGrille 0.5s ease-out forwards;
+}
+
+/*Fermeture en hauteur des lignes du grille*/
+@keyframes fermetureHauteurLigneGrille {
+    from { grid-template-rows: 1fr; }
+    to { grid-template-rows: 0.5fr; }
+}
+
+.animation-fermeture-hauteur-ligne-grille {
+    display: grid;
+    animation: fermetureHauteurLigneGrille 0.5s ease-in forwards;
+}
+
+/*Ouverture de carte*/
+@keyframes ouverture-carte {
+    from { 
+        transform: scaleY(1); 
+        transform-origin: top; 
+    }
+    to { 
+        transform: scaleY(1); 
+        transform-origin: top; 
+    }
+}
+
+.animation-ouverture-carte {
+    animation: ouverture-carte 0.5s ease-out forwards;
+}
+
+/*Fermeture de carte*/
+@keyframes fermeture-carte {
+    from { 
+        transform: scaleY(1); 
+        transform-origin: top; 
+    }
+    to { 
+        transform: scaleY(1); 
+        transform-origin: top; 
+    }
+}
+
+.animation-fermeture-carte {
+    animation: fermeture-carte 0.5s ease-in forwards;
+}
+
+/*Apparition du centre pour les côtés*/
+@keyframes apparitionCentreCote {
+    from {
+        
+        transform: scaleY(0);
+        transform-origin: center;
+    }
+    to {
+
+        transform: scaleY(1);
+        transform-origin: center;
+    }
+}
+
+.animation-apparition-carte-fermee {
+    animation: apparitionCentreCote 0.5s ease-out forwards;
 }

@@ -20,6 +20,8 @@ export default function Home() {
         <div className="bg-[#FED17C]">
           <SignaturesAromatiques/>
         </div>
+
+        <div className="h-[500px]"></div>
       </main>
     
       
