@@ -7,6 +7,8 @@ import CarteImageTitre from "../ui/CarteImageTitre";
 import CarteImageTitreDescription from "../ui/CarteImageTitreDescription";
 import { CartesSignaturesAromatiques } from "../../../donnees/CartesSignaturesAromatiques";
 import AnimationScroll from "../animations/AnimationScroll";
+import GroupeImages from "../ui/GroupeImages";
+
 
 export default function SignaturesAromatiques() {
     const [carteOuverte, setCarteOuverte] = useState<string | null>(null);
@@ -63,13 +65,14 @@ export default function SignaturesAromatiques() {
                         animationBarre={{animation: "animation-apparition-centre", delay: 800}}
                     />
 
-                    <div className="mx-8 my-6 flex flex-col">
+                    <div className="mx-8 my-4 flex flex-col">
                         {CartesSignaturesAromatiques.map((uneCarteSignatureAromatique) =>
                             <AnimationScroll  key={uneCarteSignatureAromatique.id}  animation={uneCarteSignatureAromatique.animation} delay={uneCarteSignatureAromatique.delay}>
                                 {carteOuverte === uneCarteSignatureAromatique.id ? (       
-                                    <div className={carteFerme === uneCarteSignatureAromatique.id ? "animation-fermeture-hauteur-ligne-grille" : "animation-ouverture-hauteur-ligne-grille"} ref={definirRef(uneCarteSignatureAromatique.id)}>
+                                    <div className={`relative @container ${carteFerme === uneCarteSignatureAromatique.id ? "animation-fermeture-hauteur-ligne-grille" : "animation-ouverture-hauteur-ligne-grille"}`} ref={definirRef(uneCarteSignatureAromatique.id)}>
+                                        
                                         <div className="overflow-hidden min-h-0">
-                                            <div className={carteFerme === uneCarteSignatureAromatique.id ? "animation-fermeture-carte"  : "animation-ouverture-carte"}
+                                            <div className={`${carteFerme === uneCarteSignatureAromatique.id ? "animation-fermeture-carte"  : "animation-ouverture-carte"}`}
                                                 onAnimationEnd={() => {
                                                     if (carteFerme === uneCarteSignatureAromatique.id) {
                                                         finFermetureCarte(uneCarteSignatureAromatique.id);
@@ -110,7 +113,39 @@ export default function SignaturesAromatiques() {
                                                 />
                                             </div>
                                         </div>
-                                    </div>  
+                                        <GroupeImages
+                                            lesImagesGroupe={[
+                                                {
+                                                    imageElementProps: {
+                                                        src: "/images/herbaces/menthe/menthe_2.png",
+                                                        alt: "Feuille de basilic.",
+                                                        width: 100,
+                                                        height: 73,
+                                                        className: "absolute -top-[1cqh] right-[73cqw] w-[32cqmin] h-auto rotate-320 animation-zoom-leger",
+                                                    },
+                                                },
+                                                {
+                                                    imageElementProps: {
+                                                        src: "/images/herbaces/basilic/basilic_2.png",
+                                                        alt: "Feuille de basilic.",
+                                                        width: 100,
+                                                        height: 93,
+                                                        className: "absolute top-[9cqh] left-[83cqw] w-[18cqmin] h-auto rotate-230 animation-zoom-leger",
+                                                    },
+                                                },
+                                                {
+                                                    imageElementProps: {
+                                                        src: "/images/herbaces/thym/thym_1.png",
+                                                        alt: "Feuille de basilic.",
+                                                        width: 100,
+                                                        height: 73,
+                                                        className: "absolute top-[33cqh] right-[79cqw] w-[26cqmin] h-auto rotate-260 animation-zoom-leger",
+                                                    },
+                                                },
+                                            ]}
+                                            className={`pointer-events-none absolute inset-0 z-10 ${ carteFerme === uneCarteSignatureAromatique.id ? "animation-fermeture-image" : "animation-ouverture-image"}`}
+                                        />
+                                    </div>   
                                 ) : (   
                                     <CarteImageTitre
                                         titreProps={{
