@@ -6,7 +6,9 @@
 }
 
 @theme {
+    --breakpoint-xsm: 530px;
     --breakpoint-xs: 420px;
+    
 }
 
 @theme inline {
@@ -329,11 +331,11 @@ body {
 }
 
 .animation-ouverture-image {
-    animation: ouverture-image 1.5s ease-out forwards;
+    animation: ouverture-image 1s ease-out forwards;
 }
 
 .animation-fermeture-image {
-    animation: fermeture-image 0.1s ease-in forwards;
+    animation: fermeture-image 0.3s ease-in forwards;
 }
 
 @keyframes zoom-leger {

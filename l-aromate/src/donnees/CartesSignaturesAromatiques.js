@@ -11,6 +11,29 @@ export const CartesSignaturesAromatiques = [
         delay: 1200,
         animationOuverture: "animation-ouverture-carte",
         animationFermeture: "animation-fermeture-carte",
+        imagesGroupe: [
+            {
+                src: "/images/herbaces/menthe/menthe_2.png",
+                alt: "Deux feuilles de menthe superposées.",
+                width: 435,
+                height: 232,
+                className: "absolute top-[1%] xs:top-[1%] xsm:top-[1%] md:top-[1%] right-[73%] xs:right-[75%] xsm:right-[75%] md:right-[76%] w-[32%] h-auto rotate-320 animation-zoom-leger",
+            },
+            {
+                src: "/images/herbaces/basilic/basilic_2.png",
+                alt: "Groupe de quatre à cinq feuilles de basilic.",
+                width: 186,
+                height: 394,
+                className: "absolute top-[20%] sm:top-[15%] md:top-[10%] left-[83%] w-[18%] h-auto rotate-230 animation-zoom-leger",
+            },
+            {
+                src: "/images/herbaces/thym/thym_1.png",
+                alt: "Brin de thym avec plusieurs rameaux.",
+                width: 306,
+                height: 322,
+                className: "absolute top-[70%] sm:top-[65%] md:top-[62%] right-[79%] w-[26%] h-auto rotate-260 animation-zoom-leger",
+            },
+        ],
     },
     {
         id: "agrumes",
@@ -24,6 +47,29 @@ export const CartesSignaturesAromatiques = [
         delay: 1400,
         animationOuverture: "animation-ouverture-carte",
         animationFermeture: "animation-fermeture-carte",
+        imagesGroupe: [
+            {
+                src: "/images/agrumes/citrons_vert/citron_vert_1.png",
+                alt: "Deux feuilles de menthe superposées.",
+                width: 435,
+                height: 232,
+                className: "absolute -top-[1%] xs:top-[1%] xsm:-top-[3%] md:top-[2%] right-[72%] xs:right-[72%] xsm:right-[76%] md:right-[78%] w-[32%] h-auto rotate-300 animation-zoom-leger",
+            },
+            {
+                src: "/images/agrumes/citrons_vert/citron_vert_2.png",
+                alt: "Groupe de quatre à cinq feuilles de basilic.",
+                width: 263,
+                height: 301,
+                className: "absolute top-[24%] sm:top-[15%] md:top-[10%] left-[75%] w-[28%] h-auto rotate-350 animation-zoom-leger",
+            },
+            {
+                src: "/images/agrumes/oranges/orange_2.png",
+                alt: "Brin de thym avec plusieurs rameaux.",
+                width: 261,
+                height: 244,
+                className: "absolute top-[73%] xs:top-[72%] sm:top-[70%] md:top-[62%] right-[75%] xs:right-[78%] sm:right-[84%] w-[28%] xs:w-[24%] h-auto -rotate-5 animation-zoom-leger",
+            },
+        ],
     },
     {
         id: "florals",
@@ -37,6 +83,29 @@ export const CartesSignaturesAromatiques = [
         delay: 1600,
         animationOuverture: "animation-ouverture-carte",
         animationFermeture: "animation-fermeture-carte",
+        imagesGroupe: [
+            {
+                src: "/images/herbaces/menthe/menthe_2.png",
+                alt: "Deux feuilles de menthe superposées.",
+                width: 435,
+                height: 232,
+                className: "absolute -top-[1%] xs:-top-[1%] xsm:-top-[3%] md:-top-[1%] right-[73%] xs:right-[75%] xsm:right-[76%] md:right-[78%] w-[32%] h-auto rotate-320 animation-zoom-leger",
+            },
+            {
+                src: "/images/herbaces/basilic/basilic_2.png",
+                alt: "Groupe de quatre à cinq feuilles de basilic.",
+                width: 186,
+                height: 394,
+                className: "absolute top-[20%] sm:top-[15%] md:top-[10%] left-[83%] w-[18%] h-auto rotate-230 animation-zoom-leger",
+            },
+            {
+                src: "/images/herbaces/thym/thym_1.png",
+                alt: "Brin de thym avec plusieurs rameaux.",
+                width: 306,
+                height: 322,
+                className: "absolute top-[70%] sm:top-[65%] md:top-[62%] right-[79%] w-[26%] h-auto rotate-260 animation-zoom-leger",
+            },
+        ],
     },
     {
         id: "epices",
@@ -50,5 +119,28 @@ export const CartesSignaturesAromatiques = [
         delay: 1800,
         animationOuverture: "animation-ouverture-carte",
         animationFermeture: "animation-fermeture-carte",
+        imagesGroupe: [
+            {
+                src: "/images/herbaces/menthe/menthe_2.png",
+                alt: "Deux feuilles de menthe superposées.",
+                width: 435,
+                height: 232,
+                className: "absolute -top-[1%] xs:-top-[1%] xsm:-top-[3%] md:-top-[1%] right-[73%] xs:right-[75%] xsm:right-[76%] md:right-[78%] w-[32%] h-auto rotate-320 animation-zoom-leger",
+            },
+            {
+                src: "/images/herbaces/basilic/basilic_2.png",
+                alt: "Groupe de quatre à cinq feuilles de basilic.",
+                width: 186,
+                height: 394,
+                className: "absolute top-[20%] sm:top-[15%] md:top-[10%] left-[83%] w-[18%] h-auto rotate-230 animation-zoom-leger",
+            },
+            {
+                src: "/images/herbaces/thym/thym_1.png",
+                alt: "Brin de thym avec plusieurs rameaux.",
+                width: 306,
+                height: 322,
+                className: "absolute top-[70%] sm:top-[65%] md:top-[62%] right-[79%] w-[26%] h-auto rotate-260 animation-zoom-leger",
+            },
+        ],
     },
 ];
