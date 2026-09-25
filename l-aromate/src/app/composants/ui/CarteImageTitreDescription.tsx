@@ -25,8 +25,8 @@ export default function CarteImageTitreDescription({ titreAvecSeparationProps, t
     const positionImage = { 
         gauche: "flex-row", 
         droite: "flex-row-reverse", 
-        haut: "flex-col", 
-        bas: "flex-col-reverse" 
+        bas: "flex-col", 
+        haut: "flex-col-reverse" 
     }[imagePosition];
 
     return (

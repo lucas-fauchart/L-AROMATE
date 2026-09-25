@@ -295,7 +295,7 @@ body {
 }
 
 /*Apparition du centre pour les côtés*/
-@keyframes apparitionCentreCote {
+@keyframes apparitionCentreCoteGaucheDroite {
     from {
         
         transform: scaleY(0);
@@ -308,8 +308,26 @@ body {
     }
 }
 
-.animation-apparition-carte-fermee {
-    animation: apparitionCentreCote 0.5s ease-out forwards;
+.animation-apparition-centre-cote-gauche-droite {
+    animation: apparitionCentreCoteGaucheDroite 0.5s ease-out forwards;
+}
+
+/*Apparition du centre pour les côtés*/
+@keyframes apparitionCentreCoteHautBas {
+    from {
+        
+        transform: scaleX(0);
+        transform-origin: center;
+    }
+    to {
+
+        transform: scaleX(1);
+        transform-origin: center;
+    }
+}
+
+.animation-apparition-centre-cote-haut-bas {
+    animation: apparitionCentreCoteHautBas 0.5s linear forwards !important;
 }
 
 @keyframes ouverture-image {
@@ -351,4 +369,71 @@ body {
 
 .animation-zoom-leger {
     animation: zoom-leger 4s ease-in-out infinite;
+}
+
+
+
+
+
+
+/* Ouverture en largeur des colonnes de la grille */
+@keyframes ouvertureLargeurColonneGrille { 
+    from {  
+        grid-template-columns: 0.5fr;  
+    } 
+    to {  
+        grid-template-columns: 1fr;  
+    } 
+} 
+ 
+.animation-ouverture-largeur-colonne-grille { 
+    display: grid; 
+    animation: ouvertureLargeurColonneGrille 0.5s ease-out forwards; 
+} 
+ 
+/* Fermeture en largeur des colonnes de la grille */
+@keyframes fermetureLargeurColonneGrille { 
+    from { 
+        grid-template-columns: 1fr; 
+    } 
+    to { 
+        grid-template-columns: 0.5fr; 
+    } 
+} 
+ 
+.animation-fermeture-largeur-colonne-grille { 
+    display: grid; 
+    animation: fermetureLargeurColonneGrille 0.5s ease-in forwards; 
+}
+
+/*Ouverture de carte*/
+@keyframes ouverture-carte-gauche {
+    from { 
+        transform: scaleX(1); 
+        transform-origin: left; 
+    }
+    to { 
+        transform: scaleX(1); 
+        transform-origin: left; 
+    }
+}
+
+.animation-ouverture-carte-gauche {
+    animation: ouverture-carte-gauche 0.5s ease-out forwards;
+}
+
+/*Fermeture de carte*/
+@keyframes fermeture-carte-gauche {
+    from { 
+        transform: scaleX(1); 
+        transform-origin: left; 
+    }
+    to { 
+        transform: scaleX(1); 
+        transform-origin: left; 
+    }
+}
+
+.animation-fermeture-carte-gauche {
+    animation: fermeture-carte-gauche 0.5s ease-in forwards;
 }

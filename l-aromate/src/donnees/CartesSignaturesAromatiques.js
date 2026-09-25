@@ -1,4 +1,4 @@
-export const CartesSignaturesAromatiques = [
+export const CartesSignaturesAromatiquesMobileTablette = [
     {
         id: "herbaces",
         titre: "Herbacés",
@@ -144,3 +144,59 @@ export const CartesSignaturesAromatiques = [
         ],
     },
 ];
+
+export const CartesSignaturesAromatiquesPC = [
+    {
+        id: "herbaces",
+        titre: "Herbacés",
+        texte: "Basilic, thym, romarin, coriandre et menthe apportent fraîcheur et profondeur à nos plats.",
+        image: "/images/herbaces.png",
+        alt: "Image avec plusieurs herbacés : ciboulette, romarin, basilic et thin.",
+        width: 282,
+        height: 317,
+        animation: "animation-apparition-fondu-gauche",
+        delay: 1200,
+        animationOuverture: "animation-ouverture-carte-gauche",
+        animationFermeture: "animation-fermeture-carte-gauche",
+    },
+    {
+        id: "agrumes",
+        titre: "Agrumes",
+        texte: "Citron, orange et pamplemousse apportent fraîcheur et vivacité à chaque assiette.",
+        image: "/images/agrumes.png",
+        alt: "Image avec plusieurs agrumes découpés en tranches : pamplemousse, orange et citron vert.",
+        width: 600,
+        height: 600,
+        animation: "animation-apparition-fondu-droite",
+        delay: 1400,
+        animationOuverture: "animation-ouverture-carte-gauche",
+        animationFermeture: "animation-fermeture-carte-gauche",
+    },
+    {
+        id: "florals",
+        titre: "Florals",
+        texte: "Jasmin, rose, lavande et fleur d’oranger dévoilent douceur et délicatesse au fil des saveurs.",
+        image: "/images/florals.png",
+        alt: "Image avec un mélange de plusieurs fleurs comestibles : rose, lavande, fleur d’oranger et badiane.",
+        width: 282,
+        height: 317,
+        animation: "animation-apparition-fondu-gauche",
+        delay: 1600,
+        animationOuverture: "animation-ouverture-carte-gauche",
+        animationFermeture: "animation-fermeture-carte-gauche",
+    },
+    {
+        id: "epices",
+        titre: "Épicés",
+        texte: "Des épices sélectionnées pour apporter caractère et intensité à nos créations.",
+        image: "/images/epices.png",
+        alt: "Image avec plusieurs épices : poivre rouge, noir et blanc, piments rouges et jaunes.",
+        width: 282,
+        height: 317,
+        animation: "animation-apparition-fondu-droite",
+        delay: 1800,
+        animationOuverture: "animation-ouverture-carte-gauche",
+        animationFermeture: "animation-fermeture-carte-gauche",
+    },
+];
+
