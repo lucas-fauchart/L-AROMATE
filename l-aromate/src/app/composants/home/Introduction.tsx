@@ -34,6 +34,7 @@ export default function Introduction() {
                         <Texte className="mt-8 xs:mt-10 sm:mt-14 px-6 xs:px-12 sm:px-18 text-md xs:text-xl sm:text-2xl" 
                             texte="Une exploration des aromates essentiels de la cuisine,
                             où chaque herbe dévoile ses arômes uniques pour enrichir et sublimer l’expérience culinaire."
+                            animationTexte={{animation: ""}}
                         />
                     </AnimationScroll>
 
@@ -75,13 +76,14 @@ export default function Introduction() {
                         </AnimationScroll>
                         <AnimationScroll animation="animation-apparition-fondu-haut" delay={800}>
                             <Texte
-                                className="mt-12 lg:w-sm xl:w-xl 2xl:w-2xl lg:text-xl xl:text-2xl 2xl:text-3xl"
+                                className="mt-12 lg:w-sm xl:w-xl 2xl:w-2xl text-2xl"
                                 texte="Une exploration des aromates essentiels de la cuisine, 
                                 où chaque herbe dévoile ses arômes uniques pour enrichir et sublimer l’expérience culinaire."
+                                animationTexte={{animation: ""}}
                             />
                         </AnimationScroll>
                         <AnimationScroll animation="animation-apparition-fondu" delay={1300}>
-                            <Bouton className="lg:mt-18 xl:mt-22 2xl:mt-26 rounded-full bg-[#FED17C] lg:px-8 xl:px-10 2xl:px-12 py-4 lg:text-xl xl:text-2xl 2xl:text-3xl text-[#21233C]" onClick={reserverTable} type="button">
+                            <Bouton className="lg:mt-18 xl:mt-22 2xl:mt-26 rounded-full bg-[#FED17C] lg:px-8 xl:px-10 2xl:px-12 py-4 text-2xl text-[#21233C]" onClick={reserverTable} type="button">
                                 Réserver une table
                             </Bouton>
                         </AnimationScroll>
