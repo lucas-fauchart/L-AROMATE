@@ -151,8 +151,8 @@ body {
     }
 }
 .animation-glisser-fondu-haut {
-    animation: glisserFonduHaut 0.8s ease-out forwards;
     opacity: 0;
+    animation: glisserFonduHaut 0.8s ease-out forwards;  
 }
 
 /*Glisser fondu du bas*/
@@ -302,7 +302,7 @@ body {
     }
 }
 .animation-ouverture-carte {
-    animation: ouverture-carte 0.5s ease-out forwards;
+    animation: ouvertureCarte 0.5s ease-out forwards;
 }
 
 /*Fermeture de carte*/
@@ -317,7 +317,7 @@ body {
     }
 }
 .animation-fermeture-carte {
-    animation: fermeture-carte 0.5s ease-in forwards;
+    animation: fermetureCarte 0.5s ease-in forwards;
 }
 
 
@@ -352,20 +352,10 @@ body {
     }
 }
 .animation-ouverture-image {
-    animation: ouverture-image 1s ease-out forwards;
+  
+    animation: ouvertureImage 1s ease-out forwards;
 }
 
-@keyframes fermetureImage {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-.animation-fermeture-image {
-    animation: fermeture-image 0.3s ease-in forwards;
-}
 
 
 
