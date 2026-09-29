@@ -6,7 +6,9 @@
 }
 
 @theme {
+    --breakpoint-xsm: 530px;
     --breakpoint-xs: 420px;
+    
 }
 
 @theme inline {
@@ -27,9 +29,10 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
-/*Rotation à droite*/
+/*Rotation à 180 degrés droite*/
 @keyframes rotationDroite { 
   from { 
     transform: rotate(0deg); 
@@ -40,7 +43,7 @@ body {
 } 
 .animation-rotation-droite { animation: rotationDroite 0.6s ease forwards; } 
 
-/*Rotation à gauche*/
+/*Rotation à 180 degrés gauche*/
 @keyframes rotationGauche { 
   from { 
     transform: rotate(180deg); 
@@ -51,7 +54,11 @@ body {
 } 
 .animation-rotation-gauche { animation: rotationGauche 0.6s ease forwards; }
 
-/*Apparition glisser de la gauche*/
+
+
+/*GLISSER*/
+
+/*Glisser de la gauche*/
 @keyframes glisserGauche {
     from {
         transform: translateX(-100%);
@@ -65,7 +72,7 @@ body {
     animation: glisserGauche 0.6s ease forwards;
 }
 
-/*Apparition glisser de la droite*/
+/*Glisser de la droite*/
 @keyframes glisserDroite {
     from {
         transform: translateX(0);
@@ -79,7 +86,7 @@ body {
     animation: glisserDroite 0.6s ease forwards;
 }
 
-/*Apparition glisser du haut*/
+/*Glisser du haut*/
 @keyframes glisserHaut {
     from {
         transform: translateY(-100%);
@@ -93,7 +100,11 @@ body {
     animation: glisserHaut 1.0s ease forwards;
 }
 
-/*Apparition glisser de la gauche en fondu*/
+
+
+/*GLISSER FONDU*/
+
+/*Glisser de la gauche en fondu*/
 @keyframes glisserGaucheFondu {
     from {
         opacity: 0;
@@ -105,47 +116,30 @@ body {
         transform: translateX(0);
     }
 }
-
 .animation-glisser-gauche-fondu {
+    opacity: 0;
     animation: glisserGaucheFondu 0.8s ease forwards;
 }
 
-/*Apparition simple fondu*/
-@keyframes apparition-simple-fondu {
+/*Apparition fondu de la droite*/
+@keyframes apparitionFonduDroite {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateX(30px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
-
-.animation-apparition-simple-fondu {
-    animation: apparition-simple-fondu 0.8s ease forwards;
-}
-
-@keyframes apparition-centre {
-    0% {
-        transform: scaleX(0);
-        opacity: 0;
-    }
-
-    100% {
-        transform: scaleX(1);
-        opacity: 1;
-    }
-}
-
-.animation-apparition-centre {
-    transform-origin: center;
-    animation: apparition-centre 0.8s ease-out forwards;
+.animation-apparition-fondu-droite {
     opacity: 0;
+    animation: apparitionFonduDroite 0.8s ease-out forwards;
 }
 
-@keyframes apparition-fondu-haut {
+/*Glisser fondu du haut*/
+@keyframes glisserFonduHaut {
     from {
         opacity: 0;
         transform: translateY(-30px);
@@ -156,13 +150,51 @@ body {
         transform: translateY(0);
     }
 }
-
-.animation-apparition-fondu-haut {
-    animation: apparition-fondu-haut 0.8s ease-out forwards;
+.animation-glisser-fondu-haut {
+    animation: glisserFonduHaut 0.8s ease-out forwards;
     opacity: 0;
 }
 
-@keyframes apparition-fondu {
+/*Glisser fondu du bas*/
+@keyframes apparitionFonduBas {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animation-glisser-fondu-bas {
+     opacity: 0;
+    animation: apparitionFonduBas 0.8s ease-out forwards;
+}
+
+
+
+/*APPARITION FONDU*/
+
+/*Apparition simple fondu*/
+@keyframes apparitionSimpleFondu {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animation-apparition-simple-fondu {
+    animation: apparitionSimpleFondu 0.8s ease forwards;
+}
+
+/*Apparition fondu*/
+@keyframes apparitionFondu {
     0% {
         opacity: 0;
     }
@@ -171,13 +203,39 @@ body {
         opacity: 1;
     }
 }
-
 .animation-apparition-fondu {
     opacity: 0;
-    animation: apparition-fondu 0.8s ease-out forwards;
+    animation: apparitionFondu 0.8s ease-out forwards;
 }
 
-/*Lévitation de hait en bas*/
+
+
+
+/*APPARITION*/
+
+/*Apparition depuis le centre*/
+@keyframes apparitionCentre {
+    0% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+.animation-apparition-centre {
+    transform-origin: center;
+    animation: apparitionCentre 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+
+
+/*LEVITATION*/
+
+/*Lévitation de haut en bas*/
 @keyframes levitationHautBas {
     0% {
         transform: translateY(0) scale(1);
@@ -191,8 +249,138 @@ body {
         transform: translateY(0) scale(1);
     }
 }
-
 .animation-levitation-haut-bas {
     animation: levitationHautBas 4s ease-in-out infinite;
     transform-origin: center;
+}
+
+
+
+/**GRILLE/
+
+/*Ouverture en hauteur des lignes du grille*/
+@keyframes ouvertureHauteurLigneGrille {
+    from { 
+        grid-template-rows: 0.5fr; 
+    }
+    to { 
+        grid-template-rows: 1fr; 
+    }
+}
+.animation-ouverture-hauteur-ligne-grille {
+    display: grid;
+    animation: ouvertureHauteurLigneGrille 0.5s ease-out forwards;
+}
+
+/*Fermeture en hauteur des lignes du grille*/
+@keyframes fermetureHauteurLigneGrille {
+    from { 
+        grid-template-rows: 1fr; 
+    }
+    to { 
+        grid-template-rows: 0.5fr; 
+    }
+}
+.animation-fermeture-hauteur-ligne-grille {
+    display: grid;
+    animation: fermetureHauteurLigneGrille 0.5s ease-in forwards;
+}
+
+
+
+/*CARTE*/
+
+/*Ouverture de carte*/
+@keyframes ouvertureCarte {
+    from { 
+        transform: scaleY(1); 
+        transform-origin: top; 
+    }
+    to { 
+        transform: scaleY(1); 
+        transform-origin: top; 
+    }
+}
+.animation-ouverture-carte {
+    animation: ouverture-carte 0.5s ease-out forwards;
+}
+
+/*Fermeture de carte*/
+@keyframes fermetureCarte {
+    from { 
+        transform: scaleY(1); 
+        transform-origin: top; 
+    }
+    to { 
+        transform: scaleY(1); 
+        transform-origin: top; 
+    }
+}
+.animation-fermeture-carte {
+    animation: fermeture-carte 0.5s ease-in forwards;
+}
+
+
+
+/*Apparition du centre pour les côtés*/
+@keyframes apparitionCentreCoteHautBas {
+    from {
+        
+        transform: scaleY(0);
+        transform-origin: center;
+    }
+    to {
+
+        transform: scaleY(1);
+        transform-origin: center;
+    }
+}
+.animation-apparition-centre-cote-haut-bas {
+    animation: apparitionCentreCoteHautBas 0.5s ease-out forwards;
+}
+
+
+
+/*IMAGE*/
+
+@keyframes ouvertureImage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.animation-ouverture-image {
+    animation: ouverture-image 1s ease-out forwards;
+}
+
+@keyframes fermetureImage {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.animation-fermeture-image {
+    animation: fermeture-image 0.3s ease-in forwards;
+}
+
+
+
+/* ZOOM */
+
+@keyframes zoom {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.10);
+    }
+}
+.animation-zoom {
+    animation: zoom ease-in-out infinite;
 }

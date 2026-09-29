@@ -79,6 +79,8 @@ export default function NavigationMobile() {
                         barreSeparationProps={{
                             className: "bg-[#FED17C] w-[60px] xs:w-[70px] sm:w-[90px] md:w-[100px] h-[4px] xs:h-[5px] sm:h-[5px] md:h-[5px] rounded-full",
                         }}
+                        animationTitre={{animation: ""}}
+                        animationBarre={{animation: ""}}
                     />
                     <ListeLiens
                         liens={[
@@ -102,6 +104,8 @@ export default function NavigationMobile() {
                         barreSeparationProps={{
                             className: "bg-[#FED17C] w-[140px] xs:w-[175px] sm:w-[205px] md:w-[250px] h-[4px] xs:h-[5px] sm:h-[5px] md:h-[5px] rounded-full",
                         }}
+                        animationTitre={{animation: ""}}
+                        animationBarre={{animation: ""}}
                     />
                     <ListeIcones 
                         icones= {[
@@ -132,7 +136,7 @@ export default function NavigationMobile() {
                             {
                                 imageElementProps: {
                                     src: "/images/agrumes/oranges/orange_1.png",
-                                    alt: "Quartier d'orange",
+                                    alt: "Un quartier d'orange",
                                     width: 100,
                                     height: 73,
                                     className: "absolute top-[7cqh] right-[15cqw] w-[24cqmin] h-auto rotate-270 animation-levitation-haut-bas",
@@ -141,7 +145,7 @@ export default function NavigationMobile() {
                             {
                                 imageElementProps: {
                                     src: "/images/agrumes/oranges/orange_2.png",
-                                    alt: "Quartier d'orange",
+                                    alt: "Un quartier d'orange",
                                     width: 100,
                                     height: 93,
                                     className: "absolute top-[6cqh] left-[20cqw] w-[50cqmin] h-auto rotate-5 animation-levitation-haut-bas",
