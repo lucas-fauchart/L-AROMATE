@@ -312,23 +312,6 @@ body {
     animation: apparitionCentreCoteGaucheDroite 0.5s ease-out forwards;
 }
 
-/*Apparition du centre pour les côtés*/
-@keyframes apparitionCentreCoteHautBas {
-    from {
-        
-        transform: scaleX(0);
-        transform-origin: center;
-    }
-    to {
-
-        transform: scaleX(1);
-        transform-origin: center;
-    }
-}
-
-.animation-apparition-centre-cote-haut-bas {
-    animation: apparitionCentreCoteHautBas 0.5s linear forwards !important;
-}
 
 @keyframes ouverture-image {
     from {
@@ -437,3 +420,21 @@ body {
 .animation-fermeture-carte-gauche {
     animation: fermeture-carte-gauche 0.5s ease-in forwards;
 }
+
+@keyframes apparitionFonduBas {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animation-apparition-fondu-bas {
+     opacity: 0;
+    animation: apparitionFonduBas 0.8s ease-out forwards;
+}
+
