@@ -26,7 +26,7 @@ export default function SignaturesAromatiques() {
                             className: "bg-[#21233C] w-[210px] xs:w-[250px] xsm:w-[310px] sm:w-[370px] md:w-[380px] h-[5px] xs:h-[6px] xsm:h-[6px] sm:h-[6px] md:h-[7px] rounded-full",
                         }}  
                         className="pt-8 pb-6 sm:pb-8"
-                        animationTitre={{animation: "animation-apparition-fondu-haut", delay: 300 }}
+                        animationTitre={{animation: "animation-glisser-fondu-haut", delay: 300 }}
                         animationBarre={{animation: "animation-apparition-centre", delay: 800}}
                     />
 
@@ -49,7 +49,7 @@ export default function SignaturesAromatiques() {
                                     className: "h-full w-full object-cover",
                                 }}
                                 imagePosition="gauche"
-                                classNameCarte="mb-6 sm:mb-8 w-full overflow-hidden rounded-4xl bg-[#21233C] animation-apparition-centre-cote-gauche-droite"
+                                classNameCarte="mb-6 sm:mb-8 w-full overflow-hidden rounded-4xl bg-[#21233C] animation-apparition-centre-cote-haut-bas"
                                 classNameTitre="flex flex-1 items-center justify-center px-10"
                                 classNameImage="h-[80px] xsm:h-[100px] sm:h-[120px] md:h-[140px] w-[80px] xsm:w-[100px] sm:w-[120px] md:w-[140px] shrink-0 animation-apparition"
                                 onClick={() => ouvrirCarte(carte.id)}
@@ -122,7 +122,7 @@ export default function SignaturesAromatiques() {
                             className: "bg-[#21233C] lg:w-[320px] 2xl:w-[320px] h-[7px] rounded-full",
                         }}  
                         className="pt-8"
-                        animationTitre={{animation: "animation-apparition-fondu-haut", delay: 300 }}
+                        animationTitre={{animation: "animation-glisser-fondu-haut", delay: 300 }}
                         animationBarre={{animation: "animation-apparition-centre", delay: 800}}
                     />
 
@@ -151,7 +151,7 @@ export default function SignaturesAromatiques() {
                                         className: "text-center text-2xl text-white pb-2 mt-8",
                                     },
                                     animationTitre: {
-                                        animation: "animation-apparition-fondu-haut",
+                                        animation: "animation-glisser-fondu-haut",
                                         delay: 300,
                                     },
                                     barreSeparationProps: {
@@ -168,7 +168,7 @@ export default function SignaturesAromatiques() {
                                     texte: uneCarteSignatureAromatique.texte,
                                     className: "text-center text-xl px-8 mb-8",
                                     animationTexte: {
-                                        animation: "animation-apparition-fondu-haut",
+                                        animation: "animation-glisser-fondu-haut",
                                         delay: 1300,
                                     },
                                 }}

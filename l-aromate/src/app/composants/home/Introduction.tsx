@@ -30,7 +30,7 @@ export default function Introduction() {
                         />
                     </AnimationScroll>
 
-                    <AnimationScroll animation="animation-apparition-fondu-haut" delay={800}>
+                    <AnimationScroll animation="animation-glisser-fondu-haut" delay={800}>
                         <Texte className="mt-8 xs:mt-10 sm:mt-14 px-6 xs:px-12 sm:px-18 text-md xs:text-xl sm:text-2xl" 
                             texte="Une exploration des aromates essentiels de la cuisine,
                             où chaque herbe dévoile ses arômes uniques pour enrichir et sublimer l’expérience culinaire."
@@ -74,7 +74,7 @@ export default function Introduction() {
                                 height={195}
                             />
                         </AnimationScroll>
-                        <AnimationScroll animation="animation-apparition-fondu-haut" delay={800}>
+                        <AnimationScroll animation="animation-glisser-fondu-haut" delay={800}>
                             <Texte
                                 className="mt-12 lg:w-sm xl:w-xl 2xl:w-2xl text-2xl"
                                 texte="Une exploration des aromates essentiels de la cuisine, 
