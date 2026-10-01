@@ -7,6 +7,7 @@ import ImageElement from "../ui/ImageElement";
 import Texte from "../ui/Texte";
 import Titre from "../ui/Titre";
 import TitreAvecSeparation from "../ui/TitreAvecSeparation";
+import TitreTexte from "../ui/TitreTexte";
 
 export default function CreationJour() {
     return (
@@ -40,15 +41,24 @@ export default function CreationJour() {
                             animationTitre={{animation: ""}}
                             animationBarre={{animation: ""}}
                         />
-                        <div>
-                            <Titre titre="Poulet au piment de cayenne" type="h2" className="pb-6 text-[#FFFFFF] text-xl xs:text-2xl xsm:text-3xl sm:text-4xl md:text-4xl"/>
-
-                            <Texte className="text-center text-base xs:text-lg xsm:text-xl sm:text-2xl px-6" animationTexte={{animation: ""}} texte="Poulet relevé au piment de Cayenne, 
-                                servi avec un riz blanc délicat, 
-                                rehaussé de ciboulette fraîche et d’une touche de poivre pour un équilibre simple et intense."
-                            />
-                        </div>
-
+                        <TitreTexte
+                            titreProps={{
+                                titre: "Poulet au piment de cayenne",
+                                type: "h2",
+                                className:
+                                    "pb-6 text-[#FFFFFF] text-xl xs:text-2xl xsm:text-3xl sm:text-4xl md:text-4xl",
+                            }}
+                            texteProps={{
+                                texte: `Poulet relevé au piment de Cayenne,
+                                    servi avec un riz blanc délicat,
+                                    rehaussé de ciboulette fraîche et d’une touche de poivre pour un équilibre simple et intense.`,
+                                className:
+                                    "text-center text-base xs:text-lg xsm:text-xl sm:text-2xl px-6",
+                                animationTexte: {
+                                    animation: "",
+                                },
+                            }}
+                        />
                         <GroupeImages 
                             lesImagesGroupe={[
                                 {
@@ -57,7 +67,7 @@ export default function CreationJour() {
                                         alt: "Un quartier d'orange",
                                         width: 150,
                                         height: 240,
-                                        className: "absolute top-[3cqh] right-[12cqw] w-[10cqmin] h-auto rotate-280 animation-zoom",
+                                        className: "absolute top-[5cqh] right-[12cqw] w-[10cqmin] h-auto rotate-280 animation-zoom",
                                     },
                                 }, 
                                 {
@@ -66,7 +76,7 @@ export default function CreationJour() {
                                         alt: "Un quartier d'orange",
                                         width: 150,
                                         height: 240,
-                                        className: "absolute top-[2cqh] right-[68cqw] w-[10cqmin] h-auto rotate-250 animation-zoom",
+                                        className: "absolute top-[4cqh] right-[68cqw] w-[10cqmin] h-auto rotate-250 animation-zoom",
                                     },
                                 },
                                 {
@@ -75,12 +85,9 @@ export default function CreationJour() {
                                         alt: "Un quartier d'orange",
                                         width: 150,
                                         height: 240,
-                                        className: "absolute top-[6cqh] right-[78cqw] w-[6cqmin] h-auto rotate-250 animation-zoom",
+                                        className: "absolute top-[8cqh] right-[78cqw] w-[6cqmin] h-auto rotate-250 animation-zoom",
                                     },
-                                },
-                                
-
-                              
+                                }, 
                             ]}
                             className="relative h-full w-full"
                         />
@@ -90,8 +97,51 @@ export default function CreationJour() {
 
             {/*PC*/}
             <div className="hidden lg:block">
-                <div className="flex flex-col text-center py-4">
-                    
+                <div className="mx-auto flex max-w-[1600px] text-center items-center justify-center gap-12 px-8 py-8 xl:gap-20 xl:px-12 2xl:px-16">   
+                        <div>
+                        <TitreAvecSeparation 
+                            titreProps={{
+                                titre: "La création du jour",
+                                type: "h2",
+                                className: "text-[#FFFFFF] text-3xl pb-2 xs:pb-2 sm:pb-2 md:pb-2",
+                            }}
+                            barreSeparationProps={{
+                                className: "bg-[#FED17C] w-[200px] h-[5px] xs:h-[6px] xsm:h-[6px] sm:h-[6px] md:h-[7px] rounded-full",
+                            }}  
+                            className=" pb-6 sm:pb-8"
+                            animationTitre={{animation: ""}}
+                            animationBarre={{animation: ""}}
+                        />
+                        <TitreTexte
+                            titreProps={{
+                                titre: "Poulet au piment de cayenne",
+                                type: "h2",
+                                className:
+                                    "pb-6 text-[#FFFFFF] text-3xl ",
+                            }}
+                            texteProps={{
+                                texte: `Poulet relevé au piment de Cayenne,
+                                    servi avec un riz blanc délicat,
+                                    rehaussé de ciboulette fraîche et d’une touche de poivre pour un équilibre simple et intense.`,
+                                className:
+                                    "text-center text-2xl xl:px-14",
+                                animationTexte: {
+                                    animation: "",
+                                },
+                            }}
+                        />
+                        </div>
+                        <AnimationScroll animation="animation-apparition-fondu" delay={200}>
+                            <ImageElement 
+                                src="/images/creationJour/pouletPimentCayenne.png"
+                                alt="Assiette grise contenant du riz blanc, 
+                                    avec de la poudre de piment de Cayenne, 
+                                    de la ciboulette et du poivre par-dessus le riz."
+                                width= {1491}
+                                height= {1055}
+                                className= "w-[1500px] h-auto object-cover rounded-4xl"
+                            />
+                        </AnimationScroll>
                 </div>
             </div>
         </>
