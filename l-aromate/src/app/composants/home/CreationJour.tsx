@@ -48,7 +48,7 @@ export default function CreationJour() {
                         <TitreTexte
                             titreProps={{
                                 titre: "Poulet au piment de cayenne",
-                                type: "h2",
+                                type: "h3",
                                 className: "pb-6 text-[#FFFFFF] text-xl xs:text-2xl xsm:text-3xl sm:text-4xl md:text-4xl",
                                 animationTitre: { animation: "animation-glisser-fondu-haut", delay: 1200 },
                             }}
