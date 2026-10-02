@@ -372,5 +372,5 @@ body {
     }
 }
 .animation-zoom {
-    animation: zoom ease-in-out infinite;
+    animation: zoom ease-in-out 4s infinite;
 }

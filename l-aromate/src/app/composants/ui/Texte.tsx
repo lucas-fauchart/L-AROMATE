@@ -8,7 +8,7 @@ import AnimationScroll from "../animations/AnimationScroll";
 export type TexteProps = {
     texte: ReactNode;
     className?: string;
-    animationTexte: { animation: string; delay?: number; };
+    animationTexte: { animation: string; delay?: number };
 };
 
 export default function Texte({ texte, className, animationTexte }: TexteProps) {

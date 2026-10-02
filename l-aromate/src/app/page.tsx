@@ -5,6 +5,7 @@ import NavigationMobile from "./composants/navigations/NavigationMobile";
 
 import Introduction from "./composants/home/Introduction";
 import SignaturesAromatiques from "./composants/home/SignaturesAromatiques"
+import CreationJour from "./composants/home/CreationJour";
 
 export default function Home() {
   return (
@@ -20,6 +21,8 @@ export default function Home() {
         <div className="bg-[#FED17C]">
           <SignaturesAromatiques/>
         </div>
+
+        <CreationJour/>
 
         <div className="h-[500px]"></div>
       </main>
