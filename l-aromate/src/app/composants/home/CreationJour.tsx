@@ -12,7 +12,7 @@ export default function CreationJour() {
         <>
             {/*MOBILE / TABLETTE*/}
             <div className="lg:hidden">
-                <div className="flex flex-col text-center mb-24">
+                <div className="flex flex-col text-center mb-10">
                     <div className="relative">
                         <AnimationScroll animation="animation-apparition-fondu" delay={400}>
                             <ImageElement 

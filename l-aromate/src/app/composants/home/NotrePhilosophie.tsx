@@ -13,7 +13,7 @@ export default function NotrePhilosophie() {
         <>
             {/*MOBILE / TABLETTE*/}
             <div className="lg:hidden">
-                <div className="flex flex-col text-center py-8">
+                <div className="flex flex-col text-center py-10 xsm:py-14 md:py-16">
                     <TitreAvecSeparation 
                         titreProps={{
                             titre: "Notre philosophie",
@@ -21,7 +21,7 @@ export default function NotrePhilosophie() {
                             className: "text-[#21233C] text-xl xs:text-2xl xsm:text-3xl sm:text-4xl md:text-4xl pb-2 xs:pb-2 sm:pb-2 md:pb-2",
                         }}
                         barreSeparationProps={{
-                            className: "bg-[#21233C] w-[120px] xs:w-[250px] xsm:w-[310px] sm:w-[370px] md:w-[380px] h-[5px] xs:h-[6px] xsm:h-[6px] sm:h-[6px] md:h-[7px] rounded-full",
+                            className: "bg-[#21233C] w-[120px] xs:w-[150px] xsm:w-[180px] sm:w-[220px] md:w-[230px] h-[5px] xs:h-[6px] xsm:h-[6px] sm:h-[6px] md:h-[7px] rounded-full",
                         }}  
                         className="pb-6 sm:pb-8"
                         animationTitre={{ animation: "animation-glisser-fondu-haut", delay: 700 }}
@@ -32,8 +32,8 @@ export default function NotrePhilosophie() {
                         citation="Nous construisons chaque assiette autour d'un équilibre d'arômes, de textures et de saisons."
                         auteur="L'AROMATE"
                         className="px-6 pb-8"
-                        classNameCitation="pb-4 text-[#21233C]"
-                        classNameAuteur="block text-right text-[#21233C]"
+                        classNameCitation="text-base xs:text-lg xsm:text-xl sm:text-2xl pb-4 text-[#21233C]"
+                        classNameAuteur="block text-right text-[#21233C] text-base xs:text-lg xsm:text-xl sm:text-2xl"
                     />
 
                     <ImageElement
@@ -42,7 +42,7 @@ export default function NotrePhilosophie() {
                         width={1298}
                         height={1212}
                         className="block w-full object-cover"
-                        classNameConteneur="mx-6 sm:mx-10 md:mx-16 overflow-hidden rounded-4xl"
+                        classNameConteneur="mx-10 xs:mx-12 xsm:mx-16 sm:mx-18 md:mx-22 overflow-hidden rounded-4xl"
                     />
                 </div>
             </div>
