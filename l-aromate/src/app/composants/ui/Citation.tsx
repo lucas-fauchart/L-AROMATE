@@ -1,4 +1,7 @@
+"use client";
+
 import { ReactNode } from "react";
+import AnimationScroll from "../animations/AnimationScroll";
 
 export type CitationProps = {
     citation: ReactNode;
@@ -6,19 +9,47 @@ export type CitationProps = {
     className?: string;
     classNameCitation?: string;
     classNameAuteur?: string;
+
+    animationCitation?: {
+        animation: string;
+        delay?: number;
+    };
+
+    animationAuteur?: {
+        animation: string;
+        delay?: number;
+    };
 };
 
-export default function Citation({ citation, auteur, className = "", classNameCitation = "", classNameAuteur = "" }: CitationProps) {
+export default function Citation({
+    citation,
+    auteur,
+    className = "",
+    classNameCitation = "",
+    classNameAuteur = "",
+    animationCitation,
+    animationAuteur,
+}: CitationProps) {
     return (
         <blockquote className={className}>
-            <p className={classNameCitation}>
-                « {citation} »
-            </p>
+            <AnimationScroll
+                animation={animationCitation?.animation ?? ""}
+                delay={animationCitation?.delay}
+            >
+                <p className={classNameCitation}>
+                    « {citation} »
+                </p>
+            </AnimationScroll>
 
             {auteur && (
-                <cite className={classNameAuteur}>
-                    — {auteur}
-                </cite>
+                <AnimationScroll
+                    animation={animationAuteur?.animation ?? ""}
+                    delay={animationAuteur?.delay}
+                >
+                    <cite className={classNameAuteur}>
+                        — {auteur}
+                    </cite>
+                </AnimationScroll>
             )}
         </blockquote>
     );
