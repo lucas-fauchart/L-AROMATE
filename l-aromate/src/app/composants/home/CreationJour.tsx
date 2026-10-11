@@ -35,7 +35,7 @@ export default function CreationJour() {
                             barreSeparationProps={{
                                 className: "bg-[#FED17C] w-[120px] xs:w-[250px] xsm:w-[310px] sm:w-[370px] md:w-[380px] h-[5px] xs:h-[6px] xsm:h-[6px] sm:h-[6px] md:h-[7px] rounded-full",
                             }}  
-                            className="pt-8 pb-6 sm:pb-8"
+                            className="pt-10 xsm:pt-12 md:pt-14 pb-10 sm:pb-14"
                             animationTitre={{
                                 animation: "animation-glisser-fondu-haut",
                                 delay: 900
@@ -56,8 +56,7 @@ export default function CreationJour() {
                                 texte: `Poulet relevé au piment de Cayenne,
                                     servi avec un riz blanc délicat,
                                     rehaussé de ciboulette fraîche et d’une touche de poivre pour un équilibre simple et intense.`,
-                                className:
-                                    "text-center text-base xs:text-lg xsm:text-xl sm:text-2xl px-6",
+                                className: "text-center text-base xs:text-lg xsm:text-xl sm:text-2xl px-6 pb-2 xsm:pb-6",
                                 animationTexte: { animation: "animation-glisser-fondu-haut", delay: 2400 },
                             }}
                         />
@@ -78,7 +77,7 @@ export default function CreationJour() {
                             barreSeparationProps={{
                                 className: "bg-[#FED17C] w-[200px] h-[5px] xs:h-[6px] xsm:h-[6px] sm:h-[6px] md:h-[7px] rounded-full",
                             }}  
-                            className=" pb-12"
+                            className="pb-12"
                              animationTitre={{
                                 animation: "animation-glisser-fondu-haut",
                                 delay: 200

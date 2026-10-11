@@ -3,10 +3,8 @@
 
 import AnimationScroll from "../animations/AnimationScroll";
 import Citation from "../ui/Citation";
-import GroupeImages from "../ui/GroupeImages";
 import ImageElement from "../ui/ImageElement";
 import TitreAvecSeparation from "../ui/TitreAvecSeparation";
-import TitreTexte from "../ui/TitreTexte";
 
 export default function NotrePhilosophie() {
     return (
