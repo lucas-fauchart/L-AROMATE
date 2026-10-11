@@ -67,7 +67,7 @@ export default function CreationJour() {
 
             {/*PC*/}
             <div className="hidden lg:block">
-                <div className="mx-auto flex max-w-[1600px] text-center items-center justify-center gap-12 px-8 py-8 xl:gap-20 xl:px-12 2xl:px-16">   
+                <div className="mx-auto flex max-w-[1600px] text-center items-center justify-center gap-12 px-8 py-20 xl:gap-20 xl:px-12 2xl:px-16">   
                     <div>
                         <TitreAvecSeparation 
                             titreProps={{
@@ -78,7 +78,7 @@ export default function CreationJour() {
                             barreSeparationProps={{
                                 className: "bg-[#FED17C] w-[200px] h-[5px] xs:h-[6px] xsm:h-[6px] sm:h-[6px] md:h-[7px] rounded-full",
                             }}  
-                            className=" pb-6 sm:pb-8"
+                            className=" pb-12"
                              animationTitre={{
                                 animation: "animation-glisser-fondu-haut",
                                 delay: 200
@@ -92,14 +92,12 @@ export default function CreationJour() {
                             titreProps={{
                                 titre: "Poulet au piment de cayenne",
                                 type: "h2",
-                                className: "pb-6 text-[#FFFFFF] text-3xl ",
+                                className: "pb-6 text-[#FFFFFF] text-2xl ",
                                 animationTitre: { animation: "animation-glisser-fondu-haut", delay: 1200 },
                             }}
                             texteProps={{
-                                texte: `Poulet relevé au piment de Cayenne,
-                                    servi avec un riz blanc délicat,
-                                    rehaussé de ciboulette fraîche et d’une touche de poivre pour un équilibre simple et intense.`,
-                                className: "text-center text-2xl xl:px-14",
+                                texte: `Poulet relevé au piment de Cayenne, servi avec un riz blanc délicat, rehaussé de ciboulette fraîche et d’une touche de poivre pour un équilibre simple et intense. La chaleur subtile des épices se marie à la douceur du riz, tandis que les herbes aromatiques apportent une note de fraîcheur qui sublime chaque bouchée.`,
+                                className: "text-center text-xl xl:px-14",
                                 animationTexte: { animation: "animation-glisser-fondu-haut", delay: 2200 },
                             }}
                         />
@@ -112,7 +110,7 @@ export default function CreationJour() {
                                 de la ciboulette et du poivre par-dessus le riz."
                             width= {1491}
                             height= {1055}
-                            className= "w-[1500px] h-auto object-cover rounded-4xl"
+                            className= "w-[2500px] h-auto object-cover rounded-4xl"
                         />
                     </AnimationScroll>
                 </div>
