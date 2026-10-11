@@ -2,6 +2,7 @@
 "use client";
 
 import AnimationScroll from "../animations/AnimationScroll";
+import Citation from "../ui/Citation";
 import GroupeImages from "../ui/GroupeImages";
 import ImageElement from "../ui/ImageElement";
 import TitreAvecSeparation from "../ui/TitreAvecSeparation";
@@ -27,26 +28,22 @@ export default function NotrePhilosophie() {
                         animationBarre={{ animation: "animation-apparition-centre", delay: 1200 }}
                     />
 
-                    <blockquote className="px-6 pb-8">
-                        <p className="text-[#21233C] pb-4">
-                            “Nous construisons chaque assiette autour d'un équilibre d'arômes, de textures et de saisons.”
-                        </p>
+                    <Citation
+                        citation="Nous construisons chaque assiette autour d'un équilibre d'arômes, de textures et de saisons."
+                        auteur="L'AROMATE"
+                        className="px-6 pb-8"
+                        classNameCitation="pb-4 text-[#21233C]"
+                        classNameAuteur="block text-right text-[#21233C]"
+                    />
 
-                        <cite className="block text-right text-[#21233C]">
-                            — L'AROMATE
-                        </cite>
-                    </blockquote>
-
-
-<ImageElement
-    src="/images/notrePhilosophie/chefCuisineAromate.png"
-    alt="Chef de cuisine de L'Aromate"
-    width={1298}
-    height={1212}
-    className="block w-full object-cover"
-    classNameConteneur="mx-6 sm:mx-10 md:mx-16 overflow-hidden rounded-4xl"
-/>
-
+                    <ImageElement
+                        src="/images/notrePhilosophie/chefCuisineAromate.png"
+                        alt="Chef de cuisine de L'Aromate"
+                        width={1298}
+                        height={1212}
+                        className="block w-full object-cover"
+                        classNameConteneur="mx-6 sm:mx-10 md:mx-16 overflow-hidden rounded-4xl"
+                    />
                 </div>
             </div>
 
