@@ -7,11 +7,11 @@ import Introduction from "./composants/home/Introduction";
 import SignaturesAromatiques from "./composants/home/SignaturesAromatiques"
 import CreationJour from "./composants/home/CreationJour";
 import NotrePhilosophie from "./composants/home/NotrePhilosophie";
+import RevervationFinPage from "./composants/home/ReservationFinPage";
 
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 w-full items-center justify-center bg-zinc-50 font-sans dark:bg-[#21233C]">
-      
       
       <NavigationPC/>
       <NavigationMobile/> 
@@ -29,10 +29,11 @@ export default function Home() {
           <NotrePhilosophie/>
         </div>
 
+        <RevervationFinPage/>
+
         <div className="h-[500px]"></div>
       </main>
     
-      
     </div>
   );
 }
