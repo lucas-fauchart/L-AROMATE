@@ -3,7 +3,6 @@
 //Importation
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-
 import React, { useEffect, useState } from "react"
 import { ArrowRight, Menu, ShieldAlert } from "lucide-react"
 import { AnimatePresence, motion } from "framer-motion"

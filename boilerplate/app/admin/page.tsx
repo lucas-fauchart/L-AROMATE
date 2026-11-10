@@ -10,6 +10,7 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { Button } from "@/components/ui/button"
 import { cn } from "cn"
 
+//Faux message
 const fauxMessages = [
     {
         id: 1,
@@ -192,6 +193,7 @@ export default function AdminPage() {
                             </motion.div>
                         ))}
 
+                        {/* Aucun message */}
                         {messages.length === 0 && (
                             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-16 border rounded-xl bg-card shadow-sm space-y-2">
                                 <CheckCircle2 className="w-10 h-10 text-emerald-500 mx-auto"/>

@@ -5,7 +5,6 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog"
 import { FaInstagram, FaLinkedin, FaFacebook, FaYoutube, FaTiktok } from "react-icons/fa";
 import { Button } from "../ui/button";
@@ -57,7 +56,7 @@ const configurationPiedPage = {
     ],
 
     textesLegaux: {
-        mentionsLegales: "Ce site est édité par la société [Nom]. Capital social de 1000€. Siège social : [Adresse]. Directeur de la publication : [Nom]. Hébergé par [Nom hébergeur], [Adresse hébergeur], [Ville hébergeur], [Code postal hébergeur], [Pays hébergeur].",
+        mentionsLegales: "Ce site est édité par la société DevWeb. Capital social de 1000€. Siège social : 12 Rue du Code, 75000 Paris. Directeur de la publication : Jean Dupont. Hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina (Californie), CA 91723, Etats-Unis (USA).",
 
         confidentialite: "Nous collectons vos données uniquement via le formulaire de contact pour répondre à vos demandes. Vos données ne sont jamais vendues ni partagées à des tiers. Vous disposez d'un droit d'accès et de suppression sur simple demande par email.",
     },
@@ -70,8 +69,13 @@ export function PiedPage() {
     const pathname = usePathname()
     const estSurPageAdmin = pathname === "/admin"
     const { theme, setTheme } = useTheme()
+    const [estMonte, setEstMonte] = useState(false);
 
     //Chargement au lancement du composant
+    useEffect(() => {
+        setEstMonte(true);
+    }, []);
+
     useEffect(() => {
         setAnneeActuelle(new Date().getFullYear());
     }, []);
@@ -188,14 +192,16 @@ export function PiedPage() {
                             )}
                         </div>
 
-                         {/* Bouton dark mode */}
+                        {/* Bouton dark mode */}
                         <div className="flex items-center justify-center">
                            <span className="text-muted-foreground/40 hidden md:inline">·</span>
                             <Button variant="ghost" size="icon" className="w-8 h-8 rounded-xl text-muted-foreground md:ml-1 hover:text-foreground opacity-60 hover:opacity-100 transition-all duration-200 active:scale-95 cursor-pointer hover:bg-muted/50 border border-transparent" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} aria-label="Changer de thème">
-                                {theme === "dark" ? ( 
-                                    <Sun className="w-4 h-4 text-muted-foreground"/> 
-                                ) : ( 
-                                    <Moon className="w-4 h-4 text-slate-700"/> 
+                                {!estMonte ? (
+                                    <Moon className="w-4 h-4 text-muted-foreground" />
+                                ) : theme === "dark" ? (
+                                    <Sun className="w-4 h-4 text-muted-foreground" />
+                                ) : (
+                                    <Moon className="w-4 h-4 text-muted-foreground" />
                                 )}
                             </Button>
                         </div>
