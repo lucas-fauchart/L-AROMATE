@@ -2,7 +2,6 @@
  
 //Importation
 import { useRouter } from "next/navigation"
-
 import { Button } from "@/components/ui/button"
 import { ScrollRotation } from "@/components/motion/scrollRotation"
 import { FlottementItem } from "@/components/motion/flottementItem"
@@ -15,6 +14,7 @@ export function Introduction() {
     //Variable
     const router = useRouter()
 
+    //Handle de redirection 
     const handleRedirectionCommencerProjet = () => {
         router.push("/contact")
     }

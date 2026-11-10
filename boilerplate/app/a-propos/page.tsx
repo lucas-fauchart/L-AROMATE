@@ -1,11 +1,11 @@
 "use client"
 
 //Importation
-import React from "react"
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Users, Eye, Target, Code2, Rocket, Award } from "lucide-react"
 
+//Information de l'agence
 const infoAgence = {
     titre: "Propulser votre vision sur le web",
     description: "Fondée par des passionnées du code et du design, DevWeb est une agence à taille humaine. Notre mission est simple : concevoir des structures web robustes, esthétiques et ultra-rapides pour aider nos clients à se démarquer.",
@@ -39,6 +39,7 @@ export default function AProposPage() {
     return(
         <div className="w-full min-h-[calc(100vh-64px)] bg-background">
 
+            {/* Présentation */}
             <section className="py-14 md:py-20 px-4 border-b bg-gradient-to-b from-background to-muted/20">
                 <div className="container mx-auto max-w-4xl text-center space-y-6">
                     <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
@@ -47,16 +48,19 @@ export default function AProposPage() {
                         </span>
                     </motion.div>
 
+                    {/* Titre */}
                     <motion.h1 initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground leading-[1.1]">
                         {infoAgence.titre}
                     </motion.h1>
                     
+                    {/* Description */}
                     <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
                         {infoAgence.description}
                     </motion.p>
                 </div>
             </section>
 
+            {/* Les chiffres */}
             <section className="py-16 px-8 sm:px-10 border-b bg-background">
                 <div className="container mx-auto max-w-5xl">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -80,12 +84,15 @@ export default function AProposPage() {
                 </div>
             </section>
 
+            {/* Les valeurs */}
             <section className="py-16 md:py-20 px-4 sm:px-6  bg-muted/10">
                 <div className="container mx-auto max-w-5xl">
                     <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                        {/* Titre */}
                         <motion.h2 initial={{ opacity: 0, y: -15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="text-3xl font-extrabold tracking-tight text-foreground">
                             Ce qui nous guide au quotidien
                         </motion.h2>
+                        {/* Description */}
                         <motion.p initial={{ opacity: 0, y: -15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="text-sm text-muted-foregroundleading-relaxed">
                             Trois piliers fondamentaux inscrits dans l'ADN de notre agence pour chaque ligne de code écrite.
                         </motion.p>
@@ -94,6 +101,7 @@ export default function AProposPage() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {infoAgence.valeurs.map((uneInfoAgence, index) => {
                             const Icone = uneInfoAgence.icon
+                            {/* Cartes */}
                             return(
                                 <motion.div key={uneInfoAgence.titre} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: index * 0.2, ease: "easeOut" }} className="flex">
                                     <Card className="group relative w-full flex flex-col justifu-between border bg-card text-card-foreground shadow-none hover:shadow-sm transition-all duration-300 hover:border-primary/40 rounded-2xl overflow-hidden">

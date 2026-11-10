@@ -23,22 +23,24 @@ export function Contact(){
 
     //Varible
     const [estEnvoye, setEstEnvoye] = useState(false)
-
     const [dateNaissance, setDateNaissance] = useState<Date>()
     const [paysSelectionnee, setPaysSelection] = useState<string>("")
     const [villeSelectionnee, setVilleSelectionne] = useState<string>("")
     const [dateDuJour, setDateDuJour] = useState<Date | undefined>(undefined);
 
+    //Handle pour le changement de pays et ville
     const handleChangePaysVille = (pays: string) => {
         setPaysSelection(pays)
         setVilleSelectionne("")
     }
 
+    //Handle pour l'envoi
     const handleEnvoyer = (evenement: SyntheticEvent<HTMLFormElement>) => {
         evenement.preventDefault()
         setEstEnvoye(true)
     }
 
+    //Se déclenche au lancement du composant
     useEffect(() => {
         setDateDuJour(new Date());
     }, [])
