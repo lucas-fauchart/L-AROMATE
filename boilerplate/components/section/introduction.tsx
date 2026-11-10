@@ -60,39 +60,64 @@ export function Introduction() {
                     <img 
                         src="/images/image-scroll-rotation.png" 
                         alt="Bandes noires arrondies avec des chiffres." 
-                        className="w-full h-wull object-contain drop-shadow-[0_0_35px_rgba(59, 130, 246, 0.3)]"
+                        className="w-full h-wull object-contain drop-shadow-[0_0_35px_rgba(59, 130, 246, 0.3)] block dark:hidden"
+                    />
+                    <img 
+                        src="/images/image-scroll-rotation-blanc.png" 
+                        alt="Bandes noires arrondies avec des chiffres." 
+                        className="w-full h-wull object-contain drop-shadow-[0_0_35px_rgba(59, 130, 246, 0.3)] hidden dark:block"
                     />
                 </ScrollRotation>
 
                 <FlottementItem duree={3.2} yOffset={14} className="absolute top-4 left-4 md:top-10 md:left-10 w-14 h-14 md:w-16 md:h-16 bg-background rounded-2xl flex items-center justify-center border shadow-md z-20 text-xl">
                     <img 
                         src="/images/egal.png" 
-                        alt="Bandes noires arrondies avec des chiffres." 
-                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg]"
+                        alt="Signe égal noir de mathématique." 
+                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg] block dark:hidden"
+                    />
+                    <img 
+                        src="/images/egal-blanc.png" 
+                        alt="Signe égal blanc de mathématique." 
+                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg] hidden dark:block"
                     />
                 </FlottementItem>
 
                 <FlottementItem duree={2} delai={0.4} yOffset={12} className="absolute bottom-6 right-6 md:bottom-12 md:right-12 w-12 h-12 md:w-14 md:h-14 bg-background rounded-full flex items-center justify-center border shadow-md z-20 text-lg">
                     <img 
                         src="/images/division.png" 
-                        alt="Bandes noires arrondies avec des chiffres." 
-                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg]"
+                        alt="Signe division noir de mathématique." 
+                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg] block dark:hidden"
+                    />
+                    <img 
+                        src="/images/division-blanc.png" 
+                        alt="Signe division noir de mathématique." 
+                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg] hidden dark:block"
                     />
                 </FlottementItem>
 
                 <FlottementItem duree={4} delai={0.8} yOffset={14} className="hidden md:flex absolute top-14 right-14 w-12 h-12 bg-background rounded-xl flex items-center justify-center border shadow-sm z-0 text-base">
                     <img 
                         src="/images/multiplication.png" 
-                        alt="Bandes noires arrondies avec des chiffres." 
-                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg]"
+                        alt="Signe multiplication noir de mathématique." 
+                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg] block dark:hidden"
+                    />
+                    <img 
+                        src="/images/multiplication-blanc.png" 
+                        alt="Signe multiplication noir de mathématique." 
+                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg] hidden dark:block"
                     />
                 </FlottementItem>
 
                 <FlottementItem duree={2.6} delai={0.16} yOffset={14} className="hidden md:flex absolute bottom-16 left-12 w-12 h-12 bg-background rounded-xl flex items-center justify-center border shadow-sm z-0 text-lg">
                     <img 
                         src="/images/addition.png" 
-                        alt="Bandes noires arrondies avec des chiffres." 
-                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg]"
+                        alt="Signe addition noir de mathématique." 
+                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg] block dark:hidden"
+                    />
+                    <img 
+                        src="/images/addition-blanc.png" 
+                        alt="BSigne addition noir de mathématique." 
+                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg] hidden dark:block"
                     />
                 </FlottementItem>
             </motion.div>

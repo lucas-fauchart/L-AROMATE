@@ -3,10 +3,13 @@
 //Importation
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog"
 import { FaInstagram, FaLinkedin, FaFacebook, FaYoutube, FaTiktok } from "react-icons/fa";
+import { Button } from "../ui/button";
+import { Moon, Sun } from "lucide-react";
 
 //Configaration du pied de page
 const configurationPiedPage = {
@@ -66,6 +69,7 @@ export function PiedPage() {
     const [anneeActuelle, setAnneeActuelle] = useState<number | null>(null);
     const pathname = usePathname()
     const estSurPageAdmin = pathname === "/admin"
+    const { theme, setTheme } = useTheme()
 
     //Chargement au lancement du composant
     useEffect(() => {
@@ -73,7 +77,7 @@ export function PiedPage() {
     }, []);
 
     return(
-        <footer className="w-full border-t bg-muted/30 pt-10 pb-6">
+        <footer className="w-full border-t bg-muted/30 pt-10 pb-3">
             <div className="container mx-auto px-4">
 
                 {/* Haut du pied de page */}
@@ -132,54 +136,69 @@ export function PiedPage() {
                 </div>
 
                 {/* Bas du pied de page : copyright, mentions légales et confidentialité */}
-                <div className="mt-8 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="mt-8 pt-6 border-t flex flex-col md:flex-row items-center justify-between gap-4 w-full md:w-auto">
                     {/* Copyright */}
-                    <p className=" text-xs text-muted-foreground text-center sm:text-left">
+                    <div className=" text-xs text-muted-foreground text-center sm:text-left">
                         © {anneeActuelle} {configurationPiedPage.nomEntreprise}. Tous droits réservés.
-                    </p>
+                    </div>
 
-                    <div className="flex items-center space-x-6">
-                        {/* Mentions légales */}
-                        <Dialog>
-                            <DialogTrigger className="text-xs text-muted-foreground hover:text-primary cursor-pointer transition-colors">
-                                Mentions Légales
-                            </DialogTrigger>
-                            <DialogContent className="sm:max-w-[500px]">
-                                <DialogHeader>
-                                    <DialogTitle className="text-xl font-bold mb-2">Mentions Légales</DialogTitle>
-                                    <DialogDescription className="text-foreground leading-relaxed whitespace-pre-line text-sm">
-                                        {configurationPiedPage.textesLegaux.mentionsLegales}
-                                    </DialogDescription>
-                                </DialogHeader>
-                            </DialogContent>
-                        </Dialog>
+                    <div className="flex flex-col md:flex-row items-center justify-center md:justify-end gap-x-3 gap-y-4 md:gap-y-0 w-full md:w-auto">
+                        <div className="flex items-center justify-center gap-x-4 md:gap-x-3">
+                            {/* Mentions légales */}
+                            <Dialog>
+                                <DialogTrigger className="text-xs text-muted-foreground hover:text-primary cursor-pointer transition-colors">
+                                    Mentions Légales
+                                </DialogTrigger>
+                                <DialogContent className="sm:max-w-[500px]">
+                                    <DialogHeader>
+                                        <DialogTitle className="text-xl font-bold mb-2">Mentions Légales</DialogTitle>
+                                        <DialogDescription className="text-foreground leading-relaxed whitespace-pre-line text-sm">
+                                            {configurationPiedPage.textesLegaux.mentionsLegales}
+                                        </DialogDescription>
+                                    </DialogHeader>
+                                </DialogContent>
+                            </Dialog>
 
-                        <span className="text-muted-foreground/40 hidden sm:inline">·</span>
+                            <span className="text-muted-foreground/40 hidden md:inline">·</span>
 
-                        {/* Confidentialité */}
-                        <Dialog>
-                            <DialogTrigger className="text-xs text-muted-foreground hover:text-primary cursor-pointer transition-colors">
-                                Confidentialité
-                            </DialogTrigger>
-                            <DialogContent className="sm:max-w-[500px]">
-                                <DialogHeader>
-                                    <DialogTitle className="text-xl font-bold mb-2">Confidentialité</DialogTitle>
-                                    <DialogDescription className="text-foreground leading-relaxed whitespace-pre-line text-sm">
-                                        {configurationPiedPage.textesLegaux.confidentialite}
-                                    </DialogDescription>
-                                </DialogHeader>
-                            </DialogContent>
-                        </Dialog>
+                            {/* Confidentialité */}
+                            <Dialog>
+                                <DialogTrigger className="text-xs text-muted-foreground hover:text-primary cursor-pointer transition-colors">
+                                    Confidentialité
+                                </DialogTrigger>
+                                <DialogContent className="sm:max-w-[500px]">
+                                    <DialogHeader>
+                                        <DialogTitle className="text-xl font-bold mb-2">Confidentialité</DialogTitle>
+                                        <DialogDescription className="text-foreground leading-relaxed whitespace-pre-line text-sm">
+                                            {configurationPiedPage.textesLegaux.confidentialite}
+                                        </DialogDescription>
+                                    </DialogHeader>
+                                </DialogContent>
+                            </Dialog>
 
-                        {!estSurPageAdmin && (
-                            <>
-                                <span className="text-muted-foreground/40 hidden sm:inline">·</span>
+                            {/* Page d'administration */}
+                            {!estSurPageAdmin && (
+                                <>
+                                    <span className="text-muted-foreground/40 hidden md:inline">·</span>
 
-                                <Link href="/admin" className="text-xs text-muted-foreground hover:text-primary cursor-pointer transition-colors">
-                                    Espace Admin
-                                </Link>
-                            </>
-                        )}
+                                    <Link href="/admin" className="text-xs text-muted-foreground hover:text-primary cursor-pointer transition-colors">
+                                        Espace Admin
+                                    </Link>
+                                </>
+                            )}
+                        </div>
+
+                         {/* Bouton dark mode */}
+                        <div className="flex items-center justify-center">
+                           <span className="text-muted-foreground/40 hidden md:inline">·</span>
+                            <Button variant="ghost" size="icon" className="w-8 h-8 rounded-xl text-muted-foreground md:ml-1 hover:text-foreground opacity-60 hover:opacity-100 transition-all duration-200 active:scale-95 cursor-pointer hover:bg-muted/50 border border-transparent" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} aria-label="Changer de thème">
+                                {theme === "dark" ? ( 
+                                    <Sun className="w-4 h-4 text-muted-foreground"/> 
+                                ) : ( 
+                                    <Moon className="w-4 h-4 text-slate-700"/> 
+                                )}
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>

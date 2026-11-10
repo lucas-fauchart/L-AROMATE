@@ -96,7 +96,7 @@ export default function AdminPage() {
     }
 
     return(
-        <div className="w-full min-h-[calc-(100vh-64px)] bg-muted/30 py-12 md:py-16 px-4 md:px-10">
+        <div className="w-full min-h-[calc-(100vh-64px)] bg-muted/10 py-12 md:py-16 px-4 md:px-10">
 
             {/*Boite de dialog*/}
             <AlertDialog open={alerteOuverte} onOpenChange={setAlerteOuverte}>

@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { BarreNavigation } from "@/components/common/barreNavigation";
 import { PiedPage } from "@/components/common/piedPage";
+import { ThemeProvider } from "@/components/themeProvider"
 import { ApparitionFonduHautProps } from "@/components/motion/apparitionFonduHaut";
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
@@ -25,18 +26,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
-    >
+    <html lang="en" suppressHydrationWarning className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}>
       <body className="min-h-full flex flex-col">
-        <BarreNavigation/>
-        <main>
-          {children} 
-        </main>
-        <ApparitionFonduHautProps>
-          <PiedPage/>
-        </ApparitionFonduHautProps> 
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <BarreNavigation/>
+          <main>
+            {children} 
+          </main>
+          <ApparitionFonduHautProps>
+            <PiedPage/>
+          </ApparitionFonduHautProps> 
+        </ThemeProvider>
       </body>
     </html>
   );

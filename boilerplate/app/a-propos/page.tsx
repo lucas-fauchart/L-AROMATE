@@ -80,7 +80,7 @@ export default function AProposPage() {
                 </div>
             </section>
 
-            <section className="py-16 md:py-20 px-4 sm:px-6 bg-background">
+            <section className="py-16 md:py-20 px-4 sm:px-6  bg-muted/10">
                 <div className="container mx-auto max-w-5xl">
                     <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
                         <motion.h2 initial={{ opacity: 0, y: -15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="text-3xl font-extrabold tracking-tight text-foreground">
