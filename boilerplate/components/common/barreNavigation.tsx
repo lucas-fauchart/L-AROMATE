@@ -42,7 +42,7 @@ export function BarreNavigation(){
     return(
         <motion.header initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }} className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
 
-            {/*Boite de dialog*/}
+            {/*Boite de dialog
             <AlertDialog open={alerteOuverte} onOpenChange={setAlerteOuverte}>
                 <AnimatePresence>
                     {alerteOuverte && estSurPageAccueil && (
@@ -68,6 +68,7 @@ export function BarreNavigation(){
                     )}
                 </AnimatePresence>
             </AlertDialog>
+            */}
 
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
 
