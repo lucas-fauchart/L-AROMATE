@@ -2,6 +2,7 @@
 
 //Importation
 import Link from "next/link"
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation"
 import React, { useEffect, useState } from "react"
 import { ArrowRight, Menu, ShieldAlert } from "lucide-react"
@@ -10,13 +11,57 @@ import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuL
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog"
+import { SeparateurSection } from "@/components/ui/separateurSection";
+import { FaInstagram, FaLinkedin, FaFacebook, FaYoutube, FaTiktok } from "react-icons/fa";
 
 //Liste des catégories
+const categoriesGauche = [
+    { label: "Accueil", href: "/" },
+    { label: "La Carte", href:"/la-carte" },
+    { label: "Notre Histoire", href:"/notre-histoire" },
+]
+
+const categoriesDroite = [
+    { label: "Les Aromates", href: "/les-aromates" },
+    { label: "Réservation", href:"/reservation" },
+    { label: "Nous contacter", href:"/nous-contacter" },
+]
+
 const categories = [
     { label: "Accueil", href: "/" },
-    { label: "Prestation", href:"/#prestation" },
-    { label: "A propos", href:"/a-propos" },
-    { label: "Contact", href:"/contact" }
+    { label: "La Carte", href:"/la-carte" },
+    { label: "Notre Histoire", href:"/notre-histoire" },
+    { label: "Les Aromates", href: "/les-aromates" },
+    { label: "Réservation", href:"/reservation" },
+    { label: "Nous contacter", href:"/nous-contacter" },
+]
+
+const reseauxSociaux = [ 
+    {
+        nom: "Instagram",
+        url: "https://www.instagram.com/",
+        Icone: FaInstagram,
+    },
+    {
+        nom: "LinkedIn",
+        url: "https://www.linkedin.com/",
+        Icone: FaLinkedin,
+    },
+    {
+        nom: "Facebook",
+        url: "https://www.facebook.com/",
+        Icone: FaFacebook,
+    },
+    {
+        nom: "YouTube",
+        url: "https://www.youtube.com/",
+        Icone: FaYoutube,
+    },
+    {
+        nom: "TikTok",
+        url: "https://www.tiktok.com/",
+        Icone: FaTiktok,
+    },
 ]
 
 //Composant
@@ -40,7 +85,7 @@ export function BarreNavigation(){
     }
 
     return(
-        <motion.header initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }} className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <motion.header initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }} className="sticky top-0 z-50 w-full border-b bg-background">
 
             {/*Boite de dialog
             <AlertDialog open={alerteOuverte} onOpenChange={setAlerteOuverte}>
@@ -70,22 +115,17 @@ export function BarreNavigation(){
             </AlertDialog>
             */}
 
-            <div className="container mx-auto flex h-16 items-center justify-between px-4">
-
-                {/* Logo */}
-                <Link href="/" className="flex items-center space-x-2 font-extrabold text-xl tracking-tight">
-                    <span>DevWeb</span>
-                </Link>
+            <div className="container mx-auto flex h-16 items-center justify-between md:justify-center px-4 md:gap-14 lg:gap-28">
 
                 {/* Navigation PC */}
                 <NavigationMenu className="hidden md:flex">
-                    <NavigationMenuList className="gap-1">
-                        {categories.map((uneCategorie, index) => (
-                            <motion.div key={uneCategorie.label} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: index * 0.1, ease: "easeOut"}}> 
+                    <NavigationMenuList className="md:gap-2 lg:gap-6">
+                        {categoriesGauche.map((uneCategorieGauche, index) => (
+                            <motion.div key={uneCategorieGauche.label} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: index * 0.1, ease: "easeOut"}}> 
                                 <NavigationMenuItem> 
                                     <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} relative bg-transparent hover:bg-tranparent text-muted-foreground hover:text-foreground transition-colors cursor-pointer py-2 group/link`}>
-                                        <Link href={uneCategorie.href}>
-                                            {uneCategorie.label}
+                                        <Link href={uneCategorieGauche.href}>
+                                            {uneCategorieGauche.label}
                                             <span className="absolute bottom-1 left-2 right-2 h-[2px] bg-primary scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 origin-center ease-out"/>
                                         </Link>
                                     </NavigationMenuLink>
@@ -95,12 +135,27 @@ export function BarreNavigation(){
                     </NavigationMenuList>
                 </NavigationMenu>
 
-                {/* Bouton d'action PC */}
-                <motion.div className="hidden md:flex items-center" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.3, delay: 0.4}}>
-                    <Button size="sm" className="gap-2 p-4 group/btn relative overflow-hidden transition-all duration-300 horver:shadow-[0_0_20px_rgba(var(--primary), 0.30)] active:scale-95">
-                        Demander un devis <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-out group-hover/btn:translate-x-1"/>
-                    </Button>
-                </motion.div>
+                {/* Logo */}
+                <Link href="/" className="flex items-center shrink-0">
+                    <Image src="/images/logo/logo_blanc_aromate.png" alt="Logo du restaurent L'Aromate." width={224} height={405} priority className="h-12 w-auto object-contain"/>
+                </Link>
+
+                <NavigationMenu className="hidden md:flex">
+                    <NavigationMenuList className="md:gap-2 lg:gap-6">
+                        {categoriesDroite.map((uneCategorieDroite, index) => (
+                            <motion.div key={uneCategorieDroite.label} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: index * 0.1, ease: "easeOut"}}> 
+                                <NavigationMenuItem> 
+                                    <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} relative bg-transparent hover:bg-tranparent text-muted-foreground hover:text-foreground transition-colors cursor-pointer py-2 group/link`}>
+                                        <Link href={uneCategorieDroite.href}>
+                                            {uneCategorieDroite.label}
+                                            <span className="absolute bottom-1 left-2 right-2 h-[2px] bg-primary scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 origin-center ease-out"/>
+                                        </Link>
+                                    </NavigationMenuLink>
+                                </NavigationMenuItem>
+                            </motion.div>
+                        ))}
+                    </NavigationMenuList>
+                </NavigationMenu>
 
                 {/* Navigation mobile */}
                 <div className="flex md:hidden">
@@ -111,27 +166,54 @@ export function BarreNavigation(){
                                 <Menu className="size-5"/>
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="left" className="w-[300px]">
-                            <SheetTitle className="text-left font-extrabold text-xl border-b py-4 pl-4">Menu</SheetTitle>
-                            <nav className="flex flex-col space-y-3 mt-6">
+                        <SheetContent side="left" className="w-[300px] [&>button]:bg-muted-foreground/10">
+
+                            <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay:0.1, ease: "easeOut"}}> 
+                                <SheetTitle className="text-center font-extrabold text-xl pt-4 pb-2">Menu</SheetTitle>
+                                <SeparateurSection className="w-18" />
+                            </motion.div>
+
+                            {/* Catégories */}
+                            <nav className="flex flex-col space-y-3 pt-4">
                                 {categories.map((uneCategorie, index ) => (
-                                    <motion.div key={uneCategorie.label} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ type: "spring", stiffness: 260, damping: 22, delay: index * 0.10 }}>
+                                    <motion.div key={uneCategorie.label} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ type: "spring", stiffness: 260, damping: 22, delay: index * 0.10 }}>
                                         <SheetClose asChild>
-                                            <Link href={uneCategorie.href} className="text-lg font-medium transition-colors hover:text-primary py-2 pl-4 relative block w-fit group/mobile-link">
+                                            <Link href={uneCategorie.href} className="text-lg font-medium transition-colors py-1 pl-4 relative block w-fit group/mobile-link">
                                                 {uneCategorie.label}
                                                 <span className="absolute bottom-1 left-4 right-0 h-[2px] bg-primary scale-x-0 group-hover/mobile-link:scale-x-100 transition-transform duration-300 origin-left ease-out"/>
                                             </Link>
                                         </SheetClose>
                                     </motion.div>
                                 ))}
-                                <motion.div className="pt-6 mx-auto" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2, delay: 0.5 }}>
-                                    <SheetClose asChild>
-                                        <Button onClick={handleRedirectionDevis} className="w-full gap-2 px-6 active:scale-95">
-                                            Demander un devis <ArrowRight className="w-4 h-4"/>
-                                        </Button>
-                                    </SheetClose>
-                                </motion.div>
                             </nav>
+                            
+                            <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1, ease: "easeOut"}}>
+                                <SheetTitle className="text-center font-extrabold text-xl pt-8 pb-2">Réseaux sociaux</SheetTitle>
+                                <SeparateurSection className="w-40"/>
+                            </motion.div>
+
+                            {/* Réseaux sociaux */}
+                            <div className="flex flex-wrap justify-center pt-4 gap-6">
+                                {reseauxSociaux.map((unReseauSocial, index) =>    
+                                    unReseauSocial.url ? (
+                                        <motion.div key={unReseauSocial.nom} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", stiffness: 260, damping: 22, delay: index * 0.10 }}>
+                                            <SheetClose asChild>
+                                                <a
+                                                    key={unReseauSocial.nom}
+                                                    href={unReseauSocial.url}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    aria-label={unReseauSocial.nom}
+                                                    title={unReseauSocial.nom}
+                                                    className="text-foreground transition-all hover:text-primary duration-200 hover:scale-110 active:scale-95 ease-out cursor-pointer"
+                                                >
+                                                    <unReseauSocial.Icone className="h-5 w-5" />
+                                                </a>
+                                            </SheetClose>
+                                        </motion.div>
+                                    ) : null
+                                )}
+                            </div>
                         </SheetContent>
                     </Sheet>
                 </div>
