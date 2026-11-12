@@ -11,7 +11,7 @@ import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuL
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog"
-import { SeparateurSection } from "@/components/ui/separateurSection";
+import { Separateur } from "@/components/custom/separateur";
 import { FaInstagram, FaLinkedin, FaFacebook, FaYoutube, FaTiktok } from "react-icons/fa";
 
 //Liste des catégories
@@ -170,7 +170,7 @@ export function BarreNavigation(){
 
                             <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay:0.1, ease: "easeOut"}}> 
                                 <SheetTitle className="text-center font-extrabold text-xl pt-4 pb-2">Menu</SheetTitle>
-                                <SeparateurSection className="w-18" />
+                                <Separateur className="w-18" />
                             </motion.div>
 
                             {/* Catégories */}
@@ -189,7 +189,7 @@ export function BarreNavigation(){
                             
                             <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1, ease: "easeOut"}}>
                                 <SheetTitle className="text-center font-extrabold text-xl pt-8 pb-2">Réseaux sociaux</SheetTitle>
-                                <SeparateurSection className="w-40"/>
+                                <Separateur className="w-40"/>
                             </motion.div>
 
                             {/* Réseaux sociaux */}

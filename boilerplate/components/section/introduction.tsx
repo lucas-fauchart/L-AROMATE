@@ -15,99 +15,47 @@ export function Introduction() {
     const router = useRouter()
 
     //Handle de redirection 
-    const handleRedirectionCommencerProjet = () => {
-        router.push("/contact")
-    }
-
-    const handleRedirectionRealisation = () => {
-        router.push("/a-propos")
+    const handleRedirectionReservation = () => {
+        router.push("/reservation")
     }
 
     return(
-        <section className="relative min-h-[calc(100vh-64px)] w-full flex flex-col md:flex-row items-center justify-center px-6 md:px-48 py-16 overflow-hidden bg-gradient-to-b from-background to-muted/20">
+        <section className="relative min-h-[calc(100vh-64px)] w-full flex flex-col md:gap-8 md:flex-row items-center justify-center px-6 md:px-10 py-16 overflow-hidden bg-gradient-to-b from-background to-muted/20">
            
             {/*Côté gauche*/}
-            <div className="flex flex-col space-y-6 max-w-xl text-center md:text-left z-10">
+            <div className="flex flex-col space-y-8 max-w-xl text-center md:text-left z-10">
                 <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{duration: 0.4, delay: 0.2, ease: "easeOut" }} className="inline-flex items-center mx-auto md:mx-0 w-fit gap-2 px-3 py-1 rounded-full border bg-background/50 text-xs font-medium text-muted-foreground shadow-sm">
                     <Sparkles className="w-3.5 h-3.5 text-primary"/>
-                    <span>Nouveau site disponible</span>
+                    <span>Nouvelle création du jour disponible</span>
                 </motion.div>
 
-                <motion.h1 initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }} className="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1]">
-                    Créer un site web <br/>
-                    <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-tansparent">
-                        unique et sur-mesure
-                    </span>
+                <motion.h1 initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }} className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1]">
+                    L'AROMATE
                 </motion.h1>
 
-                <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }} className="text-base md:text-lg text-muted-foreground max-w-md leading-relaxed">
-                    Une structure robuste, responsive et ultra-rapide conçue de vos propres mains pour propulser l'activité de vos clients.
+                <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }} className="text-base sm:text-lg text-muted-foreground max-w-md leading-relaxed">
+                    Une exploration des aromates essentiels de la cuisine, ou chaque herbe dévoile ses arôme uniques pour enrichir et sublimer l’expérience culinaire.
                 </motion.p>
 
-                <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }} className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
-                    <Button onClick={handleRedirectionCommencerProjet} size="lg" className="gap-2 h-12 px-6 text-base group/btn relative overflow-hidden transition-all duratio-300 horver:shadow-[0_0_20px_rgba(var(--primary), 0.30)] active:scale-95">
-                        Commencer le projet <ArrowRight className="w-5 h-5 transition-transform duration-300 ease-out group-hover/btn:translate-x-1"/>
-                    </Button>
-                    <Button onClick={handleRedirectionRealisation} size="lg" variant="outline" className="h-12 px-6 text-base active:scale-95">
-                        Voir nos réalisations
+                <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }} className="flex gap-4 justify-center md:justify-start pt-2">
+                    <Button onClick={handleRedirectionReservation} size="lg" className="gap-2 h-12 px-6 text-base group/btn relative overflow-hidden transition-all duratio-300 horver:shadow-[0_0_20px_rgba(var(--primary), 0.30)] active:scale-95">
+                        Réserver une table <ArrowRight className="w-5 h-5 transition-transform duration-300 ease-out group-hover/btn:translate-x-1"/>
                     </Button>
                 </motion.div>
             </div>
 
             {/*Côté droite*/}
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }} className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] flex items-center justify-center mt-16 md:mt-16">
-                <ScrollRotation className="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 z-10">
+                <ScrollRotation className="w-60 h-60 sm:w-68 sm:h-68 md:w-90 md:h-90 z-10">
                     <img 
-                        src="/images/image-scroll-rotation.png" 
+                        src="/images/assiettes/assiette_sans_fond_saumon_aux_agrumes.png" 
                         alt="Bandes noires arrondies avec des chiffres." 
-                        className="w-full h-wull object-contain drop-shadow-[0_0_35px_rgba(59, 130, 246, 0.3)] block dark:hidden"
+                        className="w-full h-wull object-contain drop-shadow-[0_0_35px_rgba(59, 130, 246, 0.3)]"
                     />
-                    <img 
-                        src="/images/image-scroll-rotation-blanc.png" 
-                        alt="Bandes noires arrondies avec des chiffres." 
-                        className="w-full h-wull object-contain drop-shadow-[0_0_35px_rgba(59, 130, 246, 0.3)] hidden dark:block"
-                    />
+                
                 </ScrollRotation>
-
-                <FlottementItem duree={3.2} yOffset={14} className="absolute top-4 left-4 md:top-10 md:left-10 w-14 h-14 md:w-16 md:h-16 bg-background rounded-2xl flex items-center justify-center border shadow-md z-20 text-xl">
-                    <img 
-                        src="/images/egal.png" 
-                        alt="Signe égal noir de mathématique." 
-                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg] block dark:hidden"
-                    />
-                    <img 
-                        src="/images/egal-blanc.png" 
-                        alt="Signe égal blanc de mathématique." 
-                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg] hidden dark:block"
-                    />
-                </FlottementItem>
-
-                <FlottementItem duree={2} delai={0.4} yOffset={12} className="absolute bottom-6 right-6 md:bottom-12 md:right-12 w-12 h-12 md:w-14 md:h-14 bg-background rounded-full flex items-center justify-center border shadow-md z-20 text-lg">
-                    <img 
-                        src="/images/division.png" 
-                        alt="Signe division noir de mathématique." 
-                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg] block dark:hidden"
-                    />
-                    <img 
-                        src="/images/division-blanc.png" 
-                        alt="Signe division noir de mathématique." 
-                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg] hidden dark:block"
-                    />
-                </FlottementItem>
-
-                <FlottementItem duree={4} delai={0.8} yOffset={14} className="hidden md:flex absolute top-14 right-14 w-12 h-12 bg-background rounded-xl flex items-center justify-center border shadow-sm z-0 text-base">
-                    <img 
-                        src="/images/multiplication.png" 
-                        alt="Signe multiplication noir de mathématique." 
-                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg] block dark:hidden"
-                    />
-                    <img 
-                        src="/images/multiplication-blanc.png" 
-                        alt="Signe multiplication noir de mathématique." 
-                        className="w-full h-wull object-contain drop-shadow-md rotate-[15deg] hidden dark:block"
-                    />
-                </FlottementItem>
-
+                
+                {/*
                 <FlottementItem duree={2.6} delai={0.16} yOffset={14} className="hidden md:flex absolute bottom-16 left-12 w-12 h-12 bg-background rounded-xl flex items-center justify-center border shadow-sm z-0 text-lg">
                     <img 
                         src="/images/addition.png" 
@@ -119,7 +67,7 @@ export function Introduction() {
                         alt="BSigne addition noir de mathématique." 
                         className="w-full h-wull object-contain drop-shadow-md rotate-[15deg] hidden dark:block"
                     />
-                </FlottementItem>
+                </FlottementItem> */}
             </motion.div>
         </section>
     )
