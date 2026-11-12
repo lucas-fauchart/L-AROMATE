@@ -20,13 +20,13 @@ export function Introduction() {
     }
 
     return(
-        <section className="relative min-h-[calc(100vh-64px)] w-full flex flex-col md:gap-8 md:flex-row items-center justify-center px-6 md:px-10 py-16 overflow-hidden bg-gradient-to-b from-background to-muted/20">
+        <section className="relative min-h-[calc(100vh-64px)] w-full flex flex-col md:gap-8 lg:gap-16 md:flex-row items-center justify-center px-6 md:px-10 py-16 overflow-hidden bg-gradient-to-b from-background to-muted/20">
            
             {/*Côté gauche*/}
             <div className="flex flex-col space-y-8 max-w-xl text-center md:text-left z-10">
                 <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{duration: 0.4, delay: 0.2, ease: "easeOut" }} className="inline-flex items-center mx-auto md:mx-0 w-fit gap-2 px-3 py-1 rounded-full border bg-background/50 text-xs font-medium text-muted-foreground shadow-sm">
                     <Sparkles className="w-3.5 h-3.5 text-primary"/>
-                    <span>Nouvelle création du jour disponible</span>
+                    <span>Nouveau plat du jour disponible</span>
                 </motion.div>
 
                 <motion.h1 initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }} className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1]">
