@@ -28,7 +28,7 @@ const fontMono = Courgette({
 
 export const metadata: Metadata = {
   title: "L'Aromate",
-  description: "Découvrez L'Aromate, le restaurant de Sylvie Lagrand. Une cuisine d'auteur moderne sublimant les aromates, herbes fraîches et plantes sauvages de saison.",
+  description: "Découvrez L'Aromate, le restaurent de Sylvie Lagrand. Une cuisine d'auteur moderne sublimant les aromates, herbes fraîches et plantes sauvages de saison.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
