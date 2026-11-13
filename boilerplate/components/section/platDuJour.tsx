@@ -36,7 +36,7 @@ export function PlatDuJour() {
                         </div>
                     </motion.div>
 
-                    <motion.div key={estPc ? "img-pc" : "img-mobile"} initial={ estPc ? { opacity: 0, x: -20} : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, x: 0, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.15 }} className="flex flex-col text-center order-2 md:order-1 space-y-6 pb-12 px-6 md:px-0 md:pb-0">
+                    <motion.div key={estPc ? "img-pc" : "img-mobile"} initial={ estPc ? { opacity: 0, x: -20} : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, x: 0, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.15 }} className="flex flex-col text-center order-2 md:order-1 space-y-6 pb-12 px-6 sm:px-16 md:px-0 md:pb-0">
                         <div className="space-y-2">
                             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-secondary-foreground leading-tight">
                                 Le Plat du Jour

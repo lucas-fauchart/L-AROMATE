@@ -22,7 +22,7 @@ export function NotrePhilosophie() {
     })
 
     return(
-        <section className="w-full md:px-4 py-10 md:py-24 border-t bg-background overflow-hidden">
+        <section className="w-full sm:px-16 md:px-4 py-10 md:py-24 border-t bg-background overflow-hidden">
             <div className="container mx-auto max-w-6xl">
                 <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:gap-16 items-center">     
 
