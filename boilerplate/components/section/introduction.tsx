@@ -38,7 +38,7 @@ export function Introduction() {
                 </motion.p>
 
                 <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }} className="flex gap-4 justify-center md:justify-start pt-2">
-                    <Button onClick={handleRedirectionReservation} size="lg" className="gap-2 h-12 px-6 text-base group/btn relative overflow-hidden transition-all duratio-300 horver:shadow-[0_0_20px_rgba(var(--primary), 0.30)] active:scale-95">
+                    <Button onClick={handleRedirectionReservation} size="lg" className="gap-2 h-12 px-6 text-base group/btn relative overflow-hidden transition-all duration-300 horver:shadow-[0_0_20px_rgba(var(--primary), 0.30)] active:scale-95">
                         Réserver une table <ArrowRight className="w-5 h-5 transition-transform duration-300 ease-out group-hover/btn:translate-x-1"/>
                     </Button>
                 </motion.div>
@@ -46,13 +46,12 @@ export function Introduction() {
 
             {/*Côté droite*/}
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }} className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] flex items-center justify-center mt-16 md:mt-16">
-                <ScrollRotation className="w-60 h-60 sm:w-68 sm:h-68 md:w-90 md:h-90 z-10">
+                 <ScrollRotation className="w-60 h-60 sm:w-78 sm:h-78 md:w-90 md:h-90 z-10">
                     <img 
                         src="/images/assiettes/assiette_sans_fond_saumon_aux_agrumes.png" 
                         alt="Bandes noires arrondies avec des chiffres." 
                         className="w-full h-wull object-contain drop-shadow-[0_0_35px_rgba(59, 130, 246, 0.3)]"
                     />
-                
                 </ScrollRotation>
                 
                 {/*
