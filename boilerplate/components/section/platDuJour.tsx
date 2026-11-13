@@ -24,7 +24,7 @@ export function PlatDuJour() {
     return(
         <section className="w-full md:px-4 md:py-24 border-t bg-secondary overflow-hidden">
             <div className="container mx-auto max-w-6xl">
-                <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:gap-16 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 lg:gap-16 items-center">
                     <motion.div initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once:true }} transition={{ duration: 0.5 }} className="order-1 md:order-2">
                         <div className="relative aspect-[4/3] md:rounded-4xl w-full overflow-hidden shadow-2xl">
                             <motion.img whileTap={{ scale: 1.05 }} src={"/images/platDuJour/pouletPimentCayenne.png"} alt="Poulet au piment de cayenne avec riz, poivre noir et ciboulette." className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"/>
@@ -36,7 +36,7 @@ export function PlatDuJour() {
                         </div>
                     </motion.div>
 
-                    <motion.div key={estPc ? "img-pc" : "img-mobile"} initial={ estPc ? { opacity: 0, x: -20} : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, x: 0, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.15 }} className="flex flex-col text-center order-2 md:order-1 space-y-6 py-8 px-6">
+                    <motion.div key={estPc ? "img-pc" : "img-mobile"} initial={ estPc ? { opacity: 0, x: -20} : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, x: 0, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.15 }} className="flex flex-col text-center order-2 md:order-1 space-y-6 pb-12 px-6 md:px-0 md:pb-0">
                         <div className="space-y-2">
                             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-secondary-foreground leading-tight">
                                 Le Plat du Jour
