@@ -166,7 +166,7 @@ export function BarreNavigation(){
                                 <Menu className="size-5"/>
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="left" className="w-[300px] [&>button]:bg-muted-foreground/10">
+                        <SheetContent side="left" className="w-[300px] [&>button]:bg-muted-foreground/10 [&>button]:hover:bg-muted-foreground [&>button]:active:scale-95">
 
                             <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay:0.1, ease: "easeOut"}}> 
                                 <SheetTitle className="text-center font-extrabold text-xl pt-4 pb-2">Menu</SheetTitle>

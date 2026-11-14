@@ -13,7 +13,6 @@ export default function Home() {
       <PlatDuJour/>
       <NotrePhilosophie/>
       <ReservationFinDePage/>
-      <Prestation/>
     </>
   );
 }

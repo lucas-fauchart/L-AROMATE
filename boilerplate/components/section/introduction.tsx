@@ -37,9 +37,12 @@ export function Introduction() {
                     Une exploration des aromates essentiels de la cuisine, ou chaque herbe dévoile ses arôme uniques pour enrichir et sublimer l’expérience culinaire.
                 </motion.p>
 
-                <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }} className="flex gap-4 justify-center md:justify-start pt-2">
+                <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }} className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2 px-8 md:px-0">
                     <Button onClick={handleRedirectionReservation} size="lg" className="gap-2 h-12 px-6 text-base group/btn relative overflow-hidden transition-all duration-300 horver:shadow-[0_0_20px_rgba(var(--primary), 0.30)] active:scale-95">
-                        Réserver une table <ArrowRight className="w-5 h-5 transition-transform duration-300 ease-out group-hover/btn:translate-x-1"/>
+                        Réserver une table
+                    </Button>
+                    <Button  size="lg" variant="outline" className="h-12 px-6 text-base active:scale-95">
+                        Voir la carte
                     </Button>
                 </motion.div>
             </div>

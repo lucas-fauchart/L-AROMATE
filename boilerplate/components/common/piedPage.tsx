@@ -8,12 +8,20 @@ import { useEffect, useState } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog"
 import { FaInstagram, FaLinkedin, FaFacebook, FaYoutube, FaTiktok } from "react-icons/fa";
 import { Button } from "../ui/button";
-import { Moon, Sun } from "lucide-react";
+import { Mail, MapPin, Moon, Phone, Sun } from "lucide-react";
 
 //Configaration du pied de page
 const configurationPiedPage = {
-    nomEntreprise: "DevWeb",
-    description: "Création de sites internet uniques et sur-mesure pour booster votre activité.",
+    nomEntreprise: "L'AROMATE",
+    description: "Une cuisine d’auteur moderne où chaque création est pensée et articulée autour d’aromates, d’herbes fraîches et de plantes sauvages.",
+
+    contact: {
+        adresse: "89 Bd Maillol, 66750 Saint-Cyprien",
+        lienMaps: "https://share.google/Yzlv3taZj9PnEsSs6",
+        telephone: "03.20.45.67.48",
+        lienTelephone: "+33320456748",
+        email: "l.aromate.saint.cyprien@gmail.com",
+    },
 
     reseauxSociaux: [
         {
@@ -48,17 +56,25 @@ const configurationPiedPage = {
             titre: "Navigation",
             categories: [
                 { label: "Accueil", href: "/" },
-                { label: "Prestation", href: "#features" },
-                { label: "À propos", href: "/a-propos" },
-                { label: "Contact", href: "/contact" },
+                { label: "La Carte", href:"/la-carte" },
+                { label: "Notre Histoire", href:"/notre-histoire" },
+                { label: "Les Aromates", href: "/les-aromates" },
+                { label: "Réservation", href:"/reservation" },
+                { label: "Nous contacter", href:"/nous-contacter" },
             ],
         },
     ],
 
-    textesLegaux: {
-        mentionsLegales: "Ce site est édité par la société DevWeb. Capital social de 1000€. Siège social : 12 Rue du Code, 75000 Paris. Directeur de la publication : Jean Dupont. Hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina (Californie), CA 91723, Etats-Unis (USA).",
+    horaires: [
+        { jours: "Lundi - Jeudi", heures: "11h30 - 15h00 · 18h00 - 23h00", ferme: false},
+        { jours: "Vendredi - Samedi", heures: "11h30 - 15h30 · 18h00 - 01h00", ferme: false},
+        { jours: "Dimanche", heures: " Fermé", ferme: true },
+    ],
 
-        confidentialite: "Nous collectons vos données uniquement via le formulaire de contact pour répondre à vos demandes. Vos données ne sont jamais vendues ni partagées à des tiers. Vous disposez d'un droit d'accès et de suppression sur simple demande par email.",
+    textesLegaux: {
+        mentionsLegales: "Ce site est édité par la société L'Aromate. Capital social de 360 000€. Siège social : 89 Bd Maillol, 66750 Saint-Cyprien. Directeur de la publication : Sylvie Lagrand. Hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina (Californie), CA 91723, Etats-Unis (USA).",
+
+        confidentialite: "Nous collectons vos données uniquement via le formulaire de réservation. Vos données ne sont jamais vendues ni partagées à des tiers. Vous disposez d'un droit d'accès et de suppression sur simple demande par email.",
     },
 };
 
@@ -81,7 +97,7 @@ export function PiedPage() {
     }, []);
 
     return(
-        <footer className="w-full border-t bg-muted/30 pt-10 pb-3">
+        <footer className="w-full border-t bg-background pt-10 pb-3">
             <div className="container mx-auto px-4">
 
                 {/* Haut du pied de page */}
@@ -109,7 +125,7 @@ export function PiedPage() {
                                         rel="noreferrer"
                                         aria-label={unReseauSocial.nom}
                                         title={unReseauSocial.nom}
-                                        className="text-muted-foreground transition-all hover:text-primary duration-200 hover:scale-110 active:scale-95 ease-out cursor-pointer"
+                                        className="text-muted-foreground transition-all hover:text-foreground duration-200 hover:scale-110 active:scale-95 ease-out cursor-pointer"
                                     >
                                         <unReseauSocial.Icone className="h-5 w-5" />
                                     </a>
@@ -120,10 +136,11 @@ export function PiedPage() {
                     
                     {/* Bloc de droite : colonnes de liens */}
                     <div className="flex flex-wrap gap-10 md:gap-20">
+                        {/* Catégories du menu */}
                         {configurationPiedPage.colonnes.map((uneColonne) => (
                             <div key={uneColonne.titre}>
                                 <h3 className="text-sm font-bold uppercase tracking-wider mb-4">{uneColonne.titre}</h3>
-                                <ul className="space-y-2.5">
+                                <ul className="space-y-2">
                                     {uneColonne.categories.map((uneCategorie) => (
                                         <li key={uneCategorie.label}>
                                             <Link href={uneCategorie.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors relative pb-1 block w-fit duration-200 group/link">
@@ -132,10 +149,54 @@ export function PiedPage() {
                                             </Link>
                                         </li>
                                     ))}
-
                                 </ul>
                             </div>
                         ))}
+
+                        <div>
+                            <h3 className="text-sm font-bold uppercase tracking-wider mb-4">Horaires</h3>
+                            <ul className="space-y-2 text-sm text-muted-foreground">
+                                {configurationPiedPage.horaires.map((unHoraire) => (
+                                    <li key={unHoraire.jours}>
+                                        {unHoraire.ferme ? (
+                                            <>
+                                                <span className="font-medium text-foreground">{unHoraire.jours}</span>
+                                                <span>{unHoraire.heures}</span>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <span className="font-medium text-foreground block">{unHoraire.jours}</span>
+                                                <span>{unHoraire.heures}</span>
+                                            </>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 className="text-sm font-bold uppercase tracking-wider mb-4">Contact</h3>
+                            <ul className="space-y-3 text-sm text-mded-foreground">
+                                <li>
+                                    <Link href={configurationPiedPage.contact.lienMaps} target="_blank" rel="noreferrer" className="flex items-start gap-2.5 hover:text-foreground transition-colors relative pb-1 block w-fit duration-200 group/link">
+                                        <span className="text-muted-foreground hover:text-foreground">{configurationPiedPage.contact.adresse}</span>
+                                        <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 origin-left ease-out"/>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={`tel:${configurationPiedPage.contact.lienTelephone}`} className="flex items-start gap-2.5 hover:text-foreground transition-colors relative pb-1 block w-fit duration-200 group/link">
+                                        <span className="text-muted-foreground hover:text-foreground">{configurationPiedPage.contact.telephone}</span>
+                                        <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 origin-left ease-out"/>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={`mailto:${configurationPiedPage.contact.email}`} className="flex items-start gap-2.5 hover:text-foreground transition-colors relative pb-1 block w-fit duration-200 group/link">
+                                        <span className="text-muted-foreground hover:text-foreground">{configurationPiedPage.contact.email}</span>
+                                        <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 origin-left ease-out"/>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -150,10 +211,10 @@ export function PiedPage() {
                         <div className="flex items-center justify-center gap-x-4 md:gap-x-3">
                             {/* Mentions légales */}
                             <Dialog>
-                                <DialogTrigger className="text-xs text-muted-foreground hover:text-primary cursor-pointer transition-colors">
+                                <DialogTrigger className="text-xs text-muted-foreground hover:text-foreground cursor-pointer transition-colors">
                                     Mentions Légales
                                 </DialogTrigger>
-                                <DialogContent className="sm:max-w-[500px]">
+                                <DialogContent className="sm:max-w-[500px] [&>button]:bg-muted-foreground/10 [&>button]:hover:bg-muted-foreground [&>button]:active:scale-95">
                                     <DialogHeader>
                                         <DialogTitle className="text-xl font-bold mb-2">Mentions Légales</DialogTitle>
                                         <DialogDescription className="text-foreground leading-relaxed whitespace-pre-line text-sm">
@@ -167,10 +228,10 @@ export function PiedPage() {
 
                             {/* Confidentialité */}
                             <Dialog>
-                                <DialogTrigger className="text-xs text-muted-foreground hover:text-primary cursor-pointer transition-colors">
+                                <DialogTrigger className="text-xs text-muted-foreground hover:text-foreground cursor-pointer transition-colors">
                                     Confidentialité
                                 </DialogTrigger>
-                                <DialogContent className="sm:max-w-[500px]">
+                                <DialogContent className="sm:max-w-[500px] [&>button]:bg-muted-foreground/10 [&>button]:hover:bg-muted-foreground [&>button]:active:scale-95">
                                     <DialogHeader>
                                         <DialogTitle className="text-xl font-bold mb-2">Confidentialité</DialogTitle>
                                         <DialogDescription className="text-foreground leading-relaxed whitespace-pre-line text-sm">
@@ -185,25 +246,11 @@ export function PiedPage() {
                                 <>
                                     <span className="text-muted-foreground/40 hidden md:inline">·</span>
 
-                                    <Link href="/admin" className="text-xs text-muted-foreground hover:text-primary cursor-pointer transition-colors">
+                                    <Link href="/admin" className="text-xs text-muted-foreground hover:text-foreground cursor-pointer transition-colors">
                                         Espace Admin
                                     </Link>
                                 </>
                             )}
-                        </div>
-
-                        {/* Bouton dark mode */}
-                        <div className="flex items-center justify-center">
-                           <span className="text-muted-foreground/40 hidden md:inline">·</span>
-                            <Button variant="ghost" size="icon" className="w-8 h-8 rounded-xl text-muted-foreground md:ml-1 hover:text-foreground opacity-60 hover:opacity-100 transition-all duration-200 active:scale-95 cursor-pointer hover:bg-muted/50 border border-transparent" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} aria-label="Changer de thème">
-                                {!estMonte ? (
-                                    <Moon className="w-4 h-4 text-muted-foreground" />
-                                ) : theme === "dark" ? (
-                                    <Sun className="w-4 h-4 text-muted-foreground" />
-                                ) : (
-                                    <Moon className="w-4 h-4 text-muted-foreground" />
-                                )}
-                            </Button>
                         </div>
                     </div>
                 </div>
