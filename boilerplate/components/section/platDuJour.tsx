@@ -3,9 +3,10 @@
 //Importation
 import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { Flame, Sparkles, Utensils } from "lucide-react"
+import { ArrowRight, Flame, Sparkles, Utensils } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Separateur } from "../custom/separateur"
+import { Button } from "@/components/ui/button"
 
 //Composant
 export function PlatDuJour() {
@@ -24,7 +25,7 @@ export function PlatDuJour() {
     return(
         <section className="w-full md:px-4 md:py-24 border-t bg-secondary overflow-hidden">
             <div className="container mx-auto max-w-6xl">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 lg:gap-16 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 lg:gap-16 items-center">
                     <motion.div initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once:true }} transition={{ duration: 0.5 }} className="order-1 md:order-2">
                         <div className="relative aspect-[4/3] md:rounded-4xl w-full overflow-hidden shadow-2xl">
                             <motion.img whileTap={{ scale: 1.05 }} src={"/images/platDuJour/pouletPimentCayenne.png"} alt="Poulet au piment de cayenne avec riz, poivre noir et ciboulette." className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"/>
@@ -62,6 +63,13 @@ export function PlatDuJour() {
                             <Badge variant="secondary" className="rounded-xl px-3 py-1 text-xs">
                                 Quantité limitée
                             </Badge>
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 px-8 md:px-0">
+                            <Button size="lg" className="gap-2 h-12 px-24 text-base bg-background text-foreground group/btn relative overflow-hidden transition-all duration-300 hover:bg-background/90 active:scale-95">
+                                Voir la carte
+                                <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-out group-hover/btn:translate-x-1"/>
+                            </Button>
                         </div>
                     </motion.div>
                 </div>
