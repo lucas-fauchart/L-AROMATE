@@ -19,7 +19,7 @@ export function ReservationFinDePage() {
     }
 
     return(
-        <section className="w-full py-12 md:py-16 bg-secondary">
+        <section className="w-full bg-muted/50">
             <div>
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="relative w-full h-64 sm:h-80 md:h-140 overflow-hidden shadaw-xl flex items-center justify-center">
                     <img src="/images/reservationFinPage/interieurRestaurent.png" alt="Intérieur du restaurent L'Aromate." className="absolute inset-0 w-full h-full object-cover"/>
