@@ -47,13 +47,15 @@ export function Introduction() {
                 </motion.div>
             </div>
 
-            {/*Côté droite*/}
+            {/*Côté droite*/} 
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }} className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] flex items-center justify-center mt-16 md:mt-16">
                  <ScrollRotation className="w-60 h-60 sm:w-78 sm:h-78 md:w-90 md:h-90 z-10">
-                    <img 
+                    <motion.img 
+                        whileTap={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.05 }}
                         src="/images/assiettes/assiette_sans_fond_saumon_aux_agrumes.png" 
                         alt="Bandes noires arrondies avec des chiffres." 
-                        className="w-full h-wull object-contain drop-shadow-[0_0_35px_rgba(59, 130, 246, 0.3)]"
+                        className="w-full h-wull object-contain drop-shadow-[0_0_35px_rgba(59, 130, 246, 0.3)] hover:scale-1.05"
                     />
                 </ScrollRotation>
                 
