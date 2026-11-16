@@ -51,7 +51,7 @@ export function NotrePhilosophie() {
 
                     <motion.div initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once:true }} transition={{ duration: 0.5 }} className="order-2 md:order-1 px-8 pb-8 md:px-0 md:pb-0">
                         <div className="relative aspect-[4/3] rounded-4xl w-full overflow-hidden shadow-2xl">
-                            <motion.img whileTap={{ scale: 1.05 }} src={"/images/notrePhilosophie/chefCuisineAromate.png"} alt="Poulet au piment de cayenne avec riz, poivre noir et ciboulette." className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"/>
+                            <motion.img whileTap={{ scale: 1.05 }} src={"/images/notrePhilosophie/chefCuisineAromate.png"} alt="Chef cuisinier du restaurant L'Aromate." className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"/>
                         </div>
                     </motion.div>
                 </div>

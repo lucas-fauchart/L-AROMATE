@@ -20,7 +20,7 @@ export function Introduction() {
     }
 
     return(
-        <section className="relative min-h-[calc(100vh-64px)] w-full flex flex-col md:gap-8 lg:gap-16 md:flex-row items-center justify-center px-6 md:px-10 py-16 overflow-hidden bg-gradient-to-b from-background to-muted/20">
+        <section className="relative min-h-[calc(100vh-64px)] w-full flex flex-col md:gap-8 lg:gap-16 md:flex-row items-center justify-center px-6 md:px-10 py-16 overflow-hidden bg-backgound">
            
             {/*Côté gauche*/}
             <div className="flex flex-col space-y-8 max-w-xl text-center md:text-left z-10">
