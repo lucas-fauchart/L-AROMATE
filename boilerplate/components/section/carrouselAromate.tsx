@@ -113,7 +113,6 @@ export function CarrouselAromate() {
                         Une exploration des aromates essentiels de la cuisine, ou chaque herbe dévoile ses arôme uniques pour enrichir et sublimer l’expérience culinaire.
                     </p>
                 </motion.div>
-
             </div>
         </section>
     )
