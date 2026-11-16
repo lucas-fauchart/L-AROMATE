@@ -37,7 +37,7 @@ export default function LesAromatesPage() {
                             </div>
 
                             <div className="w-fit mx-auto md:mx-0 space-y-2">
-                                <h2 className="text-4xl sm:text-5xl md:text6xl font-extrabold tracking-tight text-foreground leading-[1.1]">
+                                <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground leading-[1.1]">
                                     Nos Aromates
                                 </h2>
                                 <Separateur className="bg-secondary md:mx-0 w-5/8 md:w-4/8"/>
