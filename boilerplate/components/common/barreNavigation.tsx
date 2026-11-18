@@ -23,7 +23,7 @@ const categoriesGauche = [
 
 const categoriesDroite = [
     { label: "Les Aromates", href: "/les-aromates" },
-    { label: "Réservation", href:"/reservation" },
+    { label: "Réservation", href:"/contact" },
     { label: "Nous contacter", href:"/nous-contacter" },
 ]
 
