@@ -7,6 +7,7 @@ import { ScrollRotation } from "@/components/motion/scrollRotation"
 import { FlottementItem } from "@/components/motion/flottementItem"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { motion } from "framer-motion"
+import { Separateur } from "../custom/separateur"
 
 //Composant
 export function Introduction() {
@@ -29,15 +30,21 @@ export function Introduction() {
                     <span>Nouveau plat du jour disponible</span>
                 </motion.div>
 
-                <motion.h1 initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }} className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1]">
-                    L'AROMATE
-                </motion.h1>
+                <div className="space-y-2">
+                    <motion.h1 initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }} className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1]">
+                        L'AROMATE
+                    </motion.h1>
 
-                <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }} className="text-base sm:text-lg text-muted-foreground max-w-md leading-relaxed">
+                    <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}>
+                        <Separateur className="w-4/10 md:w-6/14 mx-auto md:mx-0"/>
+                    </motion.div>
+                </div>
+
+                <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }} className="text-base sm:text-lg text-muted-foreground max-w-md leading-relaxed">
                     Une exploration des aromates essentiels de la cuisine, ou chaque herbe dévoile ses arôme uniques pour enrichir et sublimer l’expérience culinaire.
                 </motion.p>
 
-                <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }} className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2 px-8 md:px-0">
+                <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.6, ease: "easeOut" }} className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2 px-8 md:px-0">
                     <Button onClick={handleRedirectionReservation} size="lg" className="gap-2 h-12 px-6 text-base group/btn relative overflow-hidden transition-all duration-300 horver:shadow-[0_0_20px_rgba(var(--primary), 0.30)] active:scale-95">
                         Réserver une table
                     </Button>
@@ -48,7 +55,7 @@ export function Introduction() {
             </div>
 
             {/*Côté droite*/} 
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }} className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] flex items-center justify-center mt-16 md:mt-16">
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.7, ease: "easeOut" }} className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] flex items-center justify-center mt-16 md:mt-16">
                  <ScrollRotation className="w-60 h-60 sm:w-78 sm:h-78 md:w-90 md:h-90 z-10">
                     <motion.img 
                         whileTap={{ scale: 1.05 }}
