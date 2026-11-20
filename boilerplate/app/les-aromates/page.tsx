@@ -37,9 +37,9 @@ export default function LesAromatesPage() {
                             </div>
 
                             <div className="w-fit mx-auto md:mx-0 space-y-2">
-                                <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground leading-[1.1]">
+                                <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground leading-[1.1]">
                                     Nos Aromates
-                                </h2>
+                                </h1>
                                 <Separateur className="bg-secondary md:mx-0 w-5/8 md:w-4/8"/>
                             </div>
 
@@ -51,7 +51,7 @@ export default function LesAromatesPage() {
                         </motion.div>
 
                         <motion.div initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once:true }} transition={{ duration: 0.5 }} className="order-2 md:order-2 px-8 md:px-0">
-                            <div className="relative aspect-[4/3] rounded-4xl w-full overflow-hidden shadow-2xl">
+                            <div className="relative rounded-4xl w-full overflow-hidden shadow-2xl">
                                 <motion.img whileTap={{ scale: 1.05 }} src={"/images/lesAromates/cuillereAromates.png"} alt="Poulet au piment de cayenne avec riz, poivre noir et ciboulette." className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"/>
                             </div>
                         </motion.div>

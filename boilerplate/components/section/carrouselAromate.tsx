@@ -88,7 +88,7 @@ export function CarrouselAromate() {
                                                     </h2>
                                                 </div>
                                                 
-                                                <Separateur className="w-8 h-0.5 mx-0"/>
+                                                <Separateur className="w-18 h-0.5 mx-0"/>
                                                 
                                                 <p className="text-sm text-muted-foreground leading-relaxed">
                                                     {uneFamilleSaveurAromate.description}

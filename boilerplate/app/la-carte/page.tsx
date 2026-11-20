@@ -235,7 +235,7 @@ const menuData: Record<Categories, Plat[]> = {
 
 }
 
-export default function LaCarte() {
+export default function LaCartePage() {
     const [categorieActive, setCategorieActive] = useState<Categories>("plats")
     const platsAffiches = menuData[categorieActive]
 
@@ -249,7 +249,7 @@ export default function LaCarte() {
                     </motion.div>
 
                     <div className="space-y-2">
-                        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground">
+                        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
                             La Carte
                         </h1>
                         <Separateur className="bg-secondary w-7/10 md:w-5/8"/>
@@ -257,7 +257,7 @@ export default function LaCarte() {
                     </div>
 
                     <div>
-                        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-base text-justify sm:text-lg text-muted-foreground leading-relaxed">
                             Une cuisine de saison entièrement faite maison, où chaque entrée, plat et dessert est imaginé pour révéler la fraicheur et le caractère de nos plantes aromatiques.
                         </p>
                     </div>
